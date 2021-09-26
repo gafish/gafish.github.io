@@ -1,0 +1,44 @@
+title: "Mr.Fish"
+baseurl: "http://gafish.code.so/"
+theme: "hugo-rapid-theme"
+copyright: "Copyright (c) 2021. All rights reserved."
+params:
+  CopyrightHTML: "Copyright &#xA9; 2021. All Rights Reserved."
+  GitHubUser: "coderzh"
+  SidebarRecentLimit: 5
+  # DateForm : "2021年09月26日"
+  Tagline: "一个躺平闲鱼的思考"
+  Description: "如果你没有感觉到时间不够用时，你多半正在虚度光阴。"
+  Keywords: "技术博客,程序员,读书思考,技术分享"
+  Categories:
+    - "懒人教程"
+    - "技术文章"
+    - "思考感悟"
+menu:
+  main:
+      - Name: "归档"
+        Pre: "<i class='fa fa-heart'></i>"
+        Weight: -110
+        Identifier: "post"
+        URL: "/post/"
+      - Name: "关于我"
+        Pre: "<i class='fa fa-road'></i>"
+        Identifier: "about"
+        Weight: -100
+        URL: "/about/"
+author:
+  name: "gafish"
+
+images:
+  - 480x
+  - 768x
+  - 960x
+  - 1024x
+  - 1920x
+  - 720x340
+  - 520x245
+  
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
