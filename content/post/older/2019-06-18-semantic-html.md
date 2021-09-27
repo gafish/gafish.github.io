@@ -2,11 +2,12 @@
 title: "HTML5语义化开发指南"
 date: 2019-06-18T22:11:00+08:00
 description: ""
+author: "gafish"
 categories:
   - "技术文章"
 keywords:
  - "HTML语义化"
-url: "/old/semantic-html/"
+url: "/older/semantic-html/"
 
 ---
 

@@ -2,9 +2,10 @@
 title: "Hello"
 date: 2021-09-26T21:32:16+08:00
 description: ""
+author: "gafish"
 categories:
   - "思考感悟"
-url: "/2021/09/hello/"
+url: "/2021/09/26/hello/"
 
 ---
 
