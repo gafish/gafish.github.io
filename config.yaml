@@ -11,7 +11,7 @@ params:
   Description: "如果你没有感觉到时间不够用时，你多半正在虚度光阴。"
   Keywords: "技术博客,程序员,读书思考,技术分享"
   Categories:
-    - "懒人教程"
+    - "原创教程"
     - "编程开发"
     - "思考感悟"
     - "精品软件"
@@ -28,6 +28,11 @@ menu:
         Identifier: "about"
         Weight: -100
         URL: "/about/"
+      - Name: "实用工具"
+        Pre: "<i class='fa fa-road'></i>"
+        Identifier: "tools"
+        Weight: -100
+        URL: "/tools/"
 author:
   name: "gafish"
 
