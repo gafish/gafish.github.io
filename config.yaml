@@ -1,4 +1,4 @@
-title: "Mr.Fish"
+title: "gafish's blog"
 baseurl: "http://gafish.code.so/"
 theme: "hugo-rapid-theme"
 copyright: "Copyright (c) 2021. All rights reserved."
@@ -7,13 +7,15 @@ params:
   GitHubUser: "coderzh"
   SidebarRecentLimit: 5
   # DateForm : "2021年09月26日"
-  Tagline: "一个躺平闲鱼的思考"
+  Tagline: "/** 编程、读书、资源分享 **/"
   Description: "如果你没有感觉到时间不够用时，你多半正在虚度光阴。"
   Keywords: "技术博客,程序员,读书思考,技术分享"
   Categories:
     - "懒人教程"
-    - "技术文章"
+    - "编程开发"
     - "思考感悟"
+    - "精品软件"
+    - "资源分享"
 menu:
   main:
       - Name: "归档"

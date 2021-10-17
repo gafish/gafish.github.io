@@ -4,7 +4,7 @@ date: 2019-06-18T22:11:00+08:00
 description: ""
 author: "gafish"
 categories:
-  - "技术文章"
+  - "编程开发"
 keywords:
  - "HTML语义化"
 url: "/older/semantic-html/"
