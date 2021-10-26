@@ -4,10 +4,9 @@ date: {{ .Date }}
 description: ""
 author: "gafish"
 categories:
-  - "原创教程"
   - "编程开发"
   - "思考感悟"
-  - "精品软件"
+  - "软件推荐"
   - "资源分享"
 keywords:
  - xxx

@@ -28,14 +28,13 @@ params:
   GitHubUser: "gafish"
   SidebarRecentLimit: 5
   ateForm : "2021年09月26日"
-  Tagline: "/** 编程、读书、资源分享 **/"
-  Description: "如果你没有感觉到时间不够用时，你多半正在虚度光阴。"
+  Tagline: ""
+  Description: ""
   Keywords: "技术博客,程序员,读书思考,技术分享"
   Categories:
-    - "原创教程"
     - "编程开发"
     - "思考感悟"
-    - "精品软件"
+    - "软件推荐"
     - "资源分享"
 menu:
   main:
