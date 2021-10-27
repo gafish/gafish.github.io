@@ -6,6 +6,7 @@ url: /tools/
 
 ### 编程开发辅助
 
+- [nginx playground](https://nginx-playground.wizardzines.com/)
 - [JSFiddle](http://jsfiddle.net/)
 - [JS Bin](http://jsbin.com/?html,output)
 - [CodePen](http://codepen.io/)
