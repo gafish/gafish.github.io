@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gafish&#39;s blog</title>
+    <link>http://gafish.code.so/</link>
+    <description>Recent content on gafish&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2021. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 28 Oct 2021 08:52:29 +0800</lastBuildDate><atom:link href="http://gafish.code.so/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML入门视频教程</title>
+      <link>http://gafish.code.so/2021/10/28/html-tutorial/</link>
+      <pubDate>Thu, 28 Oct 2021 08:52:29 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/2021/10/28/html-tutorial/</guid>
+      <description>资源截图 下载方式 我用阿里云盘分享了「HTML入门教程」，你可以不限速下载🚀 链接：https://www.aliyundrive.com/s/</description>
+    </item>
+    
+    <item>
+      <title>实用工具</title>
+      <link>http://gafish.code.so/tools/</link>
+      <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/tools/</guid>
+      <description>编程开发辅助 nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator Jso</description>
+    </item>
+    
+    <item>
+      <title>Calibre 入门指南</title>
+      <link>http://gafish.code.so/2021/10/17/calibre-introduction/</link>
+      <pubDate>Sun, 17 Oct 2021 11:00:52 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/2021/10/17/calibre-introduction/</guid>
+      <description>Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。 具体的功能列表如下： 可以管理各种类别的电</description>
+    </item>
+    
+    <item>
+      <title>Hello World! 博客重出江湖</title>
+      <link>http://gafish.code.so/2021/09/26/hello-world/</link>
+      <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/2021/09/26/hello-world/</guid>
+      <description>Hello World! 不管出于何种目的，我又开始写博客了。 作为开篇，我想说一下，我对博客的态度是如何一步一步变化的。 作为一个大龄码农，其实我接触的博客的时间很</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>http://gafish.code.so/about/</link>
+      <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/about/</guid>
+      <description>一个爱折腾的程序员 一个非科班的程序员 一个有点理想的程序员 一个喜欢编程的程序员 反正，我是个程序员 我开发的小工具 用户脚本 新浪微博-新版-一键删除</description>
+    </item>
+    
+    <item>
+      <title>HTML Lang 规范用法</title>
+      <link>http://gafish.code.so/older/html-lang/</link>
+      <pubDate>Thu, 20 Jun 2019 23:22:00 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/older/html-lang/</guid>
+      <description>前言 做 web 无障碍相关的研究时，遇到的第一件事就是要给 &amp;lt;html&amp;gt; 设置正确的 lang 属性，这么简单的一件事，想也不用就写好了：&amp;lt;html lang=&amp;quo</description>
+    </item>
+    
+    <item>
+      <title>HTML5语义化开发指南</title>
+      <link>http://gafish.code.so/older/semantic-html/</link>
+      <pubDate>Tue, 18 Jun 2019 22:11:00 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/older/semantic-html/</guid>
+      <description>为什么要做 HTML5 语义化 HTML5的主要进步之一是引入了一组标准化的语义元素。 ”语义元素“是用于以更有意义的方式标记文档结构的元素，这种方式可以清</description>
+    </item>
+    
+  </channel>
+</rss>
