@@ -10,6 +10,7 @@ keywords:
  - calibre
  - Calibre
  - Calibre 入门
+ - Calibre 中文
  - Calibre 教程
 url: "/2021/10/17/calibre-introduction"
 
@@ -29,7 +30,7 @@ Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮
 
 作为一个入门指南，本文将介绍如何使用 Calibre 制作电子书，并且对电子书进行管理，分享等操作。
 
-本文所使用的环境 
+本文所使用的环境及版本
 
 - MacOS Big Sur 11.6
 - Calibre 5.30
