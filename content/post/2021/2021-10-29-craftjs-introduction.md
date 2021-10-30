@@ -18,11 +18,12 @@ url: ""
 
 `grapes.js` 是一个 HTML Web 构建器框架，它提供了一个开箱即用的解决方案，自带非常完整的组件，基本用法如下：
 
-```js
+```html
 <div id="gjs">
   <h1>Hello World Component!</h1>
 </div>
-
+```
+```js
 const editor = grapesjs.init({
   container: '#gjs',
   fromElement: true,
@@ -35,7 +36,7 @@ const editor = grapesjs.init({
 
 `craft.js` 是一个用于构建可扩展的拖放页面编辑器的 React 框架，不提供组件本身，可以根据业务需要完全自己开发组件，基本用法如下：
 
-```jsx
+```js
 import React from "react";
 import {Editor, Frame, Canvas, Element} from "@craftjs/core";
 import TextComponent from './TextComponent'
@@ -67,18 +68,134 @@ const App = () => {
 本文所使用的环境及版本
 
 - MacOS Big Sur 11.6
+- node: 16.13.0
+- yarn: 1.22.4
 - react: 17.0.2
 - craft.js: v0.1.0-beta.20
 
 本文会以一个Demo项目的形式讲解如何使用craft.js，项目开源仓库地址： [https://github.com/gafish/craft.js_demo](https://github.com/gafish/craft.js_demo)
 
-## 安装及项目初始化
-...
+## 项目初始化及安装
+
+```bash
+# 初始化React项目
+npx create-react-app craft.js_demo
+
+# 安装craft.js
+yarn add craft.js
+
+# 运行项目
+cd craft.js_demo
+yarn start
+```
+
+## 基本概念
+
+`craft.js` 的API非常简单，只有3个组件、2个Hook
+
+```js
+import { Editor, Frame, Element, useEditor, useNode } from '@craftjs/core'
+```
+
+#### 组件
+
+- `<Editor />`        创建存储编辑器状态的上下文
+- `<Frame />`         定义了页面编辑器中的可编辑区域
+- `<Element />`       定义了可拖拽组件的放置区域给定用户元素的节点
+
+#### HOOK
+
+- `useEditor()`        提供与整个编辑器相关联的方法和状态信息
+- `useNode()`          提供与管理当前组件的相应方法和状态信息相关的方法和状态信息
 
 ## 基本使用
-...
 
-## 拖拽组件
+我们先添加第1个Demo，如示例仓库中的 `src/Demo1`，文件结构如下：
+
+```
+src/
+  Demo1/
+    index.js
+    Main.js
+    Main.css
+```
+
+这里之所以要新建一个 `<Main />` 组件，是因为 `<Editor />` 组件需要注入状态给到它后面的组件中，下面的组件才可以通过  `useEditor()` 拿到编辑器的状态。
+
+本文中我们主要讲解js逻辑，所以本文会省略css代码，此时代码如下：
+
+`src/Demo1/index.js`
+
+```js
+import React from 'react'
+import { Editor } from '@craftjs/core'
+
+import Main from './Main'
+
+function App() {
+  return (
+    <Editor>
+      <Main />
+    </Editor>
+  )
+}
+
+export default App
+
+```
+
+`src/Demo1/Main.js`
+
+```js
+import React from 'react'
+import { Frame, Element } from '@craftjs/core'
+
+import './Main.css'
+
+function App() {
+  return (
+    <div className="app">
+      <div className="head">
+        <div className="item">折线图</div>
+        <div className="item">饼图</div>
+      </div>
+      <div className="container">
+
+        <Frame>
+            <Element is="div" className="main" canvas>
+              <div className="text">
+                显示第一段文本
+              </div>
+              <div className="image">
+                <img src="https://picsum.photos/200/200" alt=""/>
+              </div>
+              <div className="text">
+                显示第二段文本
+              </div>
+              <div className="image">
+                <img src="https://picsum.photos/200/200" alt=""/>
+              </div>
+            </Element>
+        </Frame>
+        
+        <div className="sider">
+          <div className="title">配置栏</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+```
+
+以上代码我们定义了编辑器的基本结构，当拖拽 `<Element />` 的子节点时，会出现一个绿色的占位条，放开组件就会移动到当前占位位置。
+
+预览效果
+
+![](/images/2021-10-29-craftjs-introduction/1.jpg)
+
+## 添加组件
 ...
 
 ## 组件设置

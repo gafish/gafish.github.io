@@ -6,6 +6,7 @@ url: /tools/
 
 ### 编程开发辅助
 
+- [random image](https://picsum.photos/)
 - [nginx playground](https://nginx-playground.wizardzines.com/)
 - [JSFiddle](http://jsfiddle.net/)
 - [JS Bin](http://jsbin.com/?html,output)

@@ -1,5 +1,5 @@
 ---
-title: "HTML入门视频教程"
+title: "[资源]HTML入门视频教程下载"
 date: 2021-10-28T08:52:29+08:00
 description: ""
 author: "gafish"
