@@ -1,5 +1,5 @@
 ---
-title: "Craft.js 从入门到进阶"
+title: "Craft.js 入门与实践"
 date: 2021-10-29T21:22:59+08:00
 description: "Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库"
 author: "gafish"
@@ -125,7 +125,6 @@ src/
 本文中我们主要讲解js逻辑，所以本文会省略css代码，此时代码如下：
 
 `src/Demo1/index.js`
-
 ```js
 import React from 'react'
 import { Editor } from '@craftjs/core'
@@ -145,7 +144,6 @@ export default App
 ```
 
 `src/Demo1/Main.js`
-
 ```js
 import React from 'react'
 import { Frame, Element } from '@craftjs/core'
@@ -156,8 +154,8 @@ function App() {
   return (
     <div className="app">
       <div className="head">
-        <div className="item">折线图</div>
-        <div className="item">饼图</div>
+        <div className="item">文本</div>
+        <div className="item">图片</div>
       </div>
       <div className="container">
 
@@ -189,17 +187,282 @@ function App() {
 export default App
 ```
 
-以上代码我们定义了编辑器的基本结构，当拖拽 `<Element />` 的子节点时，会出现一个绿色的占位条，放开组件就会移动到当前占位位置。
+以上代码我们定义了编辑器的基本结构，当拖拽 `<Element />` 的子节点时，会出现一个绿色的**放置指示器**，放开组件就会移动到当前放置位置。
 
 预览效果
 
 ![](/images/2021-10-29-craftjs-introduction/1.jpg)
 
 ## 添加组件
-...
+
+上述示例中，编辑器中的组件是固定不变的，接下来我们通过 `useEditor()` 提供的 `create` 方法以拖拽的方式来为编辑器添加组件。
+
+修改 `src/Demo1/Main.js`
+```diff
+import React from 'react'
+-import { Frame, Element } from '@craftjs/core'
++import { Frame, Element, useEditor } from '@craftjs/core'
+
+import './Main.css'
+
+function App() {
++  const { connectors } = useEditor()
++  const { create } = connectors
+
+  return (
+    <div className="app">
+      <div className="head">
+-        <div className="item">文本</div>
+-        <div className="item">图片</div>
++        <div
++          className="item"
++          ref={ref => create(ref, <div className="text">显示一段文本</div>)}
++        >文本</div>
++        <div
++          className="item"
++          ref={ref => create(ref, 
++            <div className="image">
++              <img src="https://picsum.photos/200/200" alt=""/>
++            </div>
++          )}
++        >图片</div>
+      </div>
+      <div className="container">
+
+        <Frame>
+            <Element is="div" className="main" canvas>
+-              <div className="text">
+-                显示第一段文本
+-              </div>
+-              <div className="image">
+-                <img src="https://picsum.photos/200/200" alt=""/>
+-              </div>
+-              <div className="text">
+-                显示第二段文本
+-              </div>
+-              <div className="image">
+-                <img src="https://picsum.photos/200/200" alt=""/>
+-              </div>
+            </Element>
+        </Frame>
+        
+        <div className="sider">
+          <div className="title">配置栏</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+```
+
+此时我们就可以通过拖拽的方式不断的从顶部拖动新组件到编辑器中，同时组件之间也可以调整位置。
+
+预览效果
+
+![](/images/2021-10-29-craftjs-introduction/2.jpg)
+
+## 组件抽象
+
+在目前的示例代码中，我们将组件 `<div className="text">显示一段文本</div>` 在代码中写死作为 `create` 的第2个参数，接下来我们来讲解如何将组件抽象成独立的组件，该章节中我们仅以文本组件为讲解示例，图片组件方法类似所以过程省略。
+
+新建文本组件 `src/Demo1/Text.js`
+```js
+function Text(props) {
+  const { text = '默认文本' } = props
+  return (
+    <div className="text">
+      {text}
+    </div>
+  )
+}
+
+export default Text
+```
+
+在 `src/Demo1/Main.js` 中引入新建的组件替换之前的组件部分，此时如果预览页面，你会发现从顶部拖拽可以添加新组件，但添加的组件之间位置无法调整了，WHY?
+
+这是因为在抽象成自定义组件之前，`create` 的参数是一个原生的 `div` 组件，它和 `<Editor />` 的默认行为是连接且可拖拽，但是自定义组件默认和 `<Editor />` 没有连接且不可拖拽，所以我们需要在自定义组件中使用 `connect` 方法连接到 `<Editor />`，并通过 `drag` 方法为自定义组件添加拖拽行为。
+
+这里要注意的是 `connect` 方法的执行位置，决定了**放置指示器**的位置， `drag` 方法的执行位置，决定了自定义组件可拖拽区域的位置。
+
+修改文本组件 `src/Demo1/Text.js`
+```diff
++import { useNode } from '@craftjs/core'
+
+function Text(props) {
+  const { text = '默认文本' } = props
++  const { connectors } = useNode()
++  const { connect, drag } = connectors
+
+  return (
+    <div
+      className="text"
++      ref={ref => {
++        connect(ref)
++        drag(ref)
++      }}
+    >
+      {text}
+    </div>
+  )
+}
+
+export default Text
+```
+
+修改 `src/Demo1/Main.js`
+```diff
+import React from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
+
++import Text from './Text'
++import Image from './Image'
+
+import './Main.css'
+
+function App() {
+  const { connectors } = useEditor()
+  const { create } = connectors
+
+  return (
+    <div className="app">
+      <div className="head">
+        <div
+          className="item"
+-          ref={ref => create(ref, <div className="text">显示一段文本</div>)}
++          ref={ref => create(ref, <Text />)}
+        >文本</div>
+        <div
+          className="item"
+-          ref={ref => create(ref, 
+-            <div className="image">
+-              <img src="https://picsum.photos/200/200" alt=""/>
+-            </div>
+-          )}
++          ref={ref => create(ref, <Image />)}
+        >图片</div>
+      </div>
+      <div className="container">
+
+        <Frame>
+            <Element is="div" className="main" canvas>
+            </Element>
+        </Frame>
+        
+        <div className="sider">
+          <div className="title">配置栏</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+```
+
+预览效果
+
+![](/images/2021-10-29-craftjs-introduction/3.jpg)
 
 ## 组件设置
-...
+
+在可视化编辑器中，`组件`和`组件设置`通常是相关联的，我们在设置中做的改动都需要即时的在组件中得到显示反馈，所以这里就存在一个共享上下文的问题。
+
+`craft.js` 可以给自定义组件添加静态属性 `craft` ，它的值会与`组件设置`共享
+
+我们先新建一个文本设置组件 `src/Demo1/TextSetting.js`
+```js
+function TextSetting() {
+  return (
+    <div>
+      文本内容：
+      <input />
+    </div>
+  )
+}
+
+export default TextSetting
+```
+
+在文本组件中，通过在静态属性 `craft` 的 `related` 字段中添加对 `TextSetting` 的引用，这样就可以将`组件`和`组件设置`进行关联，同时在静态属性 `craft` 中设置 `props` ，将组件的默认配置放在这里，这样就可以在`组件`和`组件设置`之间进行 `props` 共享。
+
+修改 `src/Demo1/Text.js`
+```diff
+import { useNode } from '@craftjs/core'
++import TextSetting from './TextSetting'
+
+function Text(props) {
+-  const { text = '默认文本' } = props
+-  const { connectors } = useNode()
++  const { connectors, node } = useNode(node => ({ node }))
++  const { text } = node.data.props
+  const { connect, drag } = connectors
+
+  return (
+    <div
+      className="text"
+      ref={ref => {
+        connect(ref)
+        drag(ref)
+      }}
+    >
+      {text}
+    </div>
+  )
+}
+
++Text.craft = {
++  props: {
++    text: '默认文本',
++  },
++  related: {
++    setting: TextSetting,
++  },
++}
+
+export default Text
+```
+
+修改 `src/Demo1/TextSetting.js`
+```diff
++import { useNode } from '@craftjs/core'
+
+function TextSetting() {
++  const { node } = useNode(node => ({ node }))
++  const { text } = node.data.props
+
+  return (
+    <div>
+      文本内容：
+-      <input />
++      <input value={text} />
+    </div>
+  )
+}
+
+export default TextSetting
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+另外 `<Editor />` 需要知道连接到它的自定义组件名称所对应的真实组件，所以这里需要给 `<Editor />` 添加一个 `resolver` 属性，明确告诉编辑器自定义组件的映射关系。
+
+
+
+ -->
 
 ## 编辑器结构序列化
 ...
