@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软件推荐 on gafish&#39;s blog</title>
-    <link>http://gafish.code.so/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</link>
+    <link>https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</link>
     <description>Recent content in 软件推荐 on gafish&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 17 Oct 2021 11:00:52 +0800</lastBuildDate><atom:link href="http://gafish.code.so/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 11:00:52 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calibre 入门指南</title>
-      <link>http://gafish.code.so/2021/10/17/calibre-introduction/</link>
+      <link>https://gafish.github.io/2021/10/17/calibre-introduction/</link>
       <pubDate>Sun, 17 Oct 2021 11:00:52 +0800</pubDate>
       
-      <guid>http://gafish.code.so/2021/10/17/calibre-introduction/</guid>
+      <guid>https://gafish.github.io/2021/10/17/calibre-introduction/</guid>
       <description>Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。 具体的功能列表如下： 可以管理各种类别的电</description>
     </item>
     

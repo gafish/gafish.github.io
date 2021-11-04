@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-  <base href="http://gafish.code.so//">
+  <base href="https://gafish.github.io//">
   <script>
     document._writeOriginal = document.write;
     document.write = function(str) {
@@ -24,12 +24,12 @@
 
 <meta itemprop="name" content="Craft.js 入门与实践 - gafish&#39;s blog">
 <meta itemprop="description" content="Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库">
-<meta itemprop="image" content="http://gafish.code.so//public/gafish.png">
+<meta itemprop="image" content="https://gafish.github.io//public/gafish.png">
 
 <meta property="og:title" content="Craft.js 入门与实践 - gafish&#39;s blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/" />
-<meta property="og:image" content="http://gafish.code.so//public/gafish.png" />
+<meta property="og:url" content="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/" />
+<meta property="og:image" content="https://gafish.github.io//public/gafish.png" />
 <meta property="og:description" content="Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库">
 
 <meta name="twitter:card" content="summary">
@@ -37,21 +37,21 @@
 <meta name="twitter:title" content="Craft.js 入门与实践 - gafish&#39;s blog">
 <meta name="twitter:description" content="Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库">
 <meta name="twitter:creator" content="@im_gafish">
-<meta name="twitter:image" content="http://gafish.code.so//public/gafish.png">
+<meta name="twitter:image" content="https://gafish.github.io//public/gafish.png">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/">
-  <link rel='shortlink' href="http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/"/>
-  <link rel="shortcut icon" href="http://gafish.code.so//public/favicon.ico"/>
+  <link rel="canonical" href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/">
+  <link rel='shortlink' href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/"/>
+  <link rel="shortcut icon" href="https://gafish.github.io//public/favicon.ico"/>
   
-<link rel="stylesheet" id="human-style-css" href="http://gafish.code.so/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="human-style-css2" href="http://gafish.code.so/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="responsive-css" href="http://gafish.code.so/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="font-awesome-css" href="http://gafish.code.so/wp-content/themes/hueman/fonts/font-awesome.min.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="http://gafish.code.so/public/highlight/styles/monokai.css">
-<script src="http://gafish.code.so/public/highlight/highlight.min.js"></script>
+<link rel="stylesheet" id="human-style-css" href="https://gafish.github.io/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="human-style-css2" href="https://gafish.github.io/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="responsive-css" href="https://gafish.github.io/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="font-awesome-css" href="https://gafish.github.io/wp-content/themes/hueman/fonts/font-awesome.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://gafish.github.io/public/highlight/styles/monokai.css">
+<script src="https://gafish.github.io/public/highlight/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<link rel="stylesheet" id="human-style-css3" href="http://gafish.code.so/wp-content/themes/hueman-child/user.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="human-style-css3" href="https://gafish.github.io/wp-content/themes/hueman-child/user.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="public/font/hack/css/hack.min.css">
 
 <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
@@ -71,41 +71,41 @@
     <div class="nav-toggle"><i class="fa fa-bars"></i></div>
     <div class="nav-text"></div>
     <div class="nav-wrap container">
-      <a rel="nofollow" href="http://gafish.code.so//" class="nav-cs-icon">
-        <img width="40" height="40" src="http://gafish.code.so/public/gafish.png" alt="gafish" title="Home">
+      <a rel="nofollow" href="https://gafish.github.io//" class="nav-cs-icon">
+        <img width="40" height="40" src="https://gafish.github.io/public/gafish.png" alt="gafish" title="Home">
       </a>
       <ul id="menu-default-menu" class="nav container-inner group">
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/">首页</a>
+          <a rel="nofollow" href="https://gafish.github.io/">首页</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
         </li>
         
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/post/">归档</a>
+          <a rel="nofollow" href="https://gafish.github.io/post/">归档</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/about/">关于我</a>
+          <a rel="nofollow" href="https://gafish.github.io/about/">关于我</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="http://gafish.code.so/tools/">实用工具</a>
+          <a rel="nofollow" href="https://gafish.github.io/tools/">实用工具</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -144,8 +144,8 @@
 
         <div class="group pad">
           <h1 class="site-title">
-            <a rel="nofollow" href="http://gafish.code.so//" rel="home">
-              <img style="border-radius: 50%;width:72px;height:72px;margin:0 auto;" alt="gafish" src="http://gafish.code.so/public/gafish.png"></img>
+            <a rel="nofollow" href="https://gafish.github.io//" rel="home">
+              <img style="border-radius: 50%;width:72px;height:72px;margin:0 auto;" alt="gafish" src="https://gafish.github.io/public/gafish.png"></img>
               gafish&#39;s blog
             </a>
           </h1>
@@ -171,7 +171,7 @@
               <ul class="meta-single group">
                 
                 <li class="category">
-                  <a href="http://gafish.code.so/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" rel="category tag">编程开发</a>
+                  <a href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" rel="category tag">编程开发</a>
                 </li>
                 
               </ul>
@@ -343,7 +343,7 @@ export default App
 </code></pre>
 <p>以上代码我们定义了编辑器的基本结构，当拖拽 <code>&lt;Element /&gt;</code> 的子节点时，会出现一个绿色的<strong>放置指示器</strong>，放开组件就会移动到当前放置位置。</p>
 <p>预览效果</p>
-<p><img src="http://gafish.code.so/images/2021-10-29-craftjs-introduction/1.jpg" alt=""></p>
+<p><img src="https://gafish.github.io/images/2021-10-29-craftjs-introduction/1.jpg" alt=""></p>
 <h2 id="添加组件">添加组件</h2>
 <p>上述示例中，编辑器中的组件是固定不变的，接下来我们通过 <code>useEditor()</code> 提供的 <code>create</code> 方法以拖拽的方式来为编辑器添加组件。</p>
 <p>修改 <code>src/Demo1/Main.js</code></p>
@@ -406,7 +406,7 @@ export default App
 </code></pre>
 <p>此时我们就可以通过拖拽的方式不断的从顶部拖动新组件到编辑器中，同时组件之间也可以调整位置。</p>
 <p>预览效果</p>
-<p><img src="http://gafish.code.so/images/2021-10-29-craftjs-introduction/2.jpg" alt=""></p>
+<p><img src="https://gafish.github.io/images/2021-10-29-craftjs-introduction/2.jpg" alt=""></p>
 <h2 id="组件抽象">组件抽象</h2>
 <p>在目前的示例代码中，我们将组件 <code>&lt;div className=&quot;text&quot;&gt;显示一段文本&lt;/div&gt;</code> 在代码中写死作为 <code>create</code> 的第2个参数，接下来我们来讲解如何将组件抽象成独立的组件，该章节中我们仅以文本组件为讲解示例，图片组件方法类似所以过程省略。</p>
 <p>新建文本组件 <code>src/Demo1/Text.js</code></p>
@@ -496,7 +496,7 @@ function App() {
 export default App
 </code></pre>
 <p>预览效果</p>
-<p><img src="http://gafish.code.so/images/2021-10-29-craftjs-introduction/3.jpg" alt=""></p>
+<p><img src="https://gafish.github.io/images/2021-10-29-craftjs-introduction/3.jpg" alt=""></p>
 <h2 id="组件设置">组件设置</h2>
 <p>在可视化编辑器中，<code>组件</code>和<code>组件设置</code>通常是相关联的，我们在设置中做的改动都需要即时的在组件中得到显示反馈，所以这里就存在一个共享上下文的问题。</p>
 <p><code>craft.js</code> 可以给自定义组件添加静态属性 <code>craft</code> ，它的值会与<code>组件设置</code>共享</p>
@@ -622,7 +622,7 @@ export default App
 </code></pre>
 <p>通过以上修改，当我们选中文本或图片组件时，就可以在设置面板中可以设置文本和图片的属性。</p>
 <p>预览效果</p>
-<p><img src="http://gafish.code.so/images/2021-10-29-craftjs-introduction/4.jpg" alt=""></p>
+<p><img src="https://gafish.github.io/images/2021-10-29-craftjs-introduction/4.jpg" alt=""></p>
 <h2 id="编辑器结构序列化">编辑器结构序列化</h2>
 <p>到目前为止，我们实现了可视化编辑器组件的添加、移动、设置，基本上实现了一个较完整的编辑器，但是，我们还需要一个方法来将编辑器的结构序列化成 Schema，这样我们就可以将编辑器的结构保存下来，以便下次打开时直接加载。</p>
 <p><code>useEditor()</code> 提供了一个 <code>serialize</code> 方法，可以将编辑器的结构序列化为 JSON 字符串，另外还提供了一个 <code>deserialize</code> 方法反序列化 JSON 字符串，可以将编辑器的 Schema 反序列化为结构。</p>
@@ -720,7 +720,7 @@ export default App
 
 </code></pre>
 <p>预览效果</p>
-<p><img src="http://gafish.code.so/images/2021-10-29-craftjs-introduction/5.jpg" alt=""></p>
+<p><img src="https://gafish.github.io/images/2021-10-29-craftjs-introduction/5.jpg" alt=""></p>
 <p>好了，<code>craft.js</code> 入门篇先更新到这里，后续如果有新的想法了再继续。</p>
 <h2 id="资源来源">资源来源</h2>
 <p><a href="https://craft.js.org/" target="_blank" rel="noopener">craft.js</a>
@@ -732,8 +732,8 @@ export default App
                         <div style="float:left;margin-top:0px;">
                         </div>
                         <div>
-                            <p style="margin-top:0px;">作者：<a target="_blank" href="http://gafish.code.so/">gafish</a>
-                            <br />本文出处：<a target="_blank" href="http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/">http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/</a>
+                            <p style="margin-top:0px;">作者：<a target="_blank" href="https://gafish.github.io/">gafish</a>
+                            <br />本文出处：<a target="_blank" href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/">https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/</a>
                             <br />
                             文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
                         </div>
@@ -778,7 +778,7 @@ export default App
       </li>
       <li class="previous">
         
-        <a href="http://gafish.code.so/2021/10/28/html-tutorial/" rel="prev">
+        <a href="https://gafish.github.io/2021/10/28/html-tutorial/" rel="prev">
           <i class="fa fa-chevron-left"></i>
           <strong>Previous Post</strong>
           <span>[资源]HTML入门视频教程下载</span>
@@ -807,19 +807,19 @@ export default App
       <ul>
         
           <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="http://gafish.code.so/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
           </li>
         
           <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="http://gafish.code.so/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
           </li>
         
           <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="http://gafish.code.so/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
           </li>
         
           <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="http://gafish.code.so/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
           </li>
         
       </ul>

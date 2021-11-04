@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on gafish&#39;s blog</title>
-    <link>http://gafish.code.so/page/</link>
+    <link>https://gafish.github.io/page/</link>
     <description>Recent content in Pages on gafish&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 17 Oct 2021 21:32:16 +0800</lastBuildDate><atom:link href="http://gafish.code.so/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 21:32:16 +0800</lastBuildDate><atom:link href="https://gafish.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实用工具</title>
-      <link>http://gafish.code.so/tools/</link>
+      <link>https://gafish.github.io/tools/</link>
       <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
       
-      <guid>http://gafish.code.so/tools/</guid>
+      <guid>https://gafish.github.io/tools/</guid>
       <description>编程开发辅助 random image nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator J</description>
     </item>
     
     <item>
       <title>关于我</title>
-      <link>http://gafish.code.so/about/</link>
+      <link>https://gafish.github.io/about/</link>
       <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
       
-      <guid>http://gafish.code.so/about/</guid>
+      <guid>https://gafish.github.io/about/</guid>
       <description>一个爱折腾的程序员 一个非科班的程序员 一个有点理想的程序员 一个喜欢编程的程序员 反正，我是个程序员 我开发的小工具 用户脚本 新浪微博-新版-一键删除</description>
     </item>
     

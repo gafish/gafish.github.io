@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>思考感悟 on gafish&#39;s blog</title>
-    <link>http://gafish.code.so/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</link>
+    <link>https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</link>
     <description>Recent content in 思考感悟 on gafish&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 26 Sep 2021 21:32:16 +0800</lastBuildDate><atom:link href="http://gafish.code.so/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 21:32:16 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World! 博客重出江湖</title>
-      <link>http://gafish.code.so/2021/09/26/hello-world/</link>
+      <link>https://gafish.github.io/2021/09/26/hello-world/</link>
       <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
       
-      <guid>http://gafish.code.so/2021/09/26/hello-world/</guid>
+      <guid>https://gafish.github.io/2021/09/26/hello-world/</guid>
       <description>Hello World! 不管出于何种目的，我又开始写博客了。 作为开篇，我想说一下，我对博客的态度是如何一步一步变化的。 作为一个大龄码农，其实我接触的博客的时间很</description>
     </item>
     
