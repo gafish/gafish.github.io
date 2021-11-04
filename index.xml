@@ -7,9 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 28 Oct 2021 08:52:29 +0800</lastBuildDate><atom:link href="http://gafish.code.so/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Oct 2021 21:22:59 +0800</lastBuildDate><atom:link href="http://gafish.code.so/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HTML入门视频教程</title>
+      <title>Craft.js 入门与实践</title>
+      <link>http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/</link>
+      <pubDate>Fri, 29 Oct 2021 21:22:59 +0800</pubDate>
+      
+      <guid>http://gafish.code.so/post/2021/2021-10-29-craftjs-introduction/</guid>
+      <description>在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： grapes.js 和 craft.js grapes.js 是一个 HTML Web 构建器框架，它提供了一个开箱即用的解决方案，自带非常完整</description>
+    </item>
+    
+    <item>
+      <title>[资源]HTML入门视频教程下载</title>
       <link>http://gafish.code.so/2021/10/28/html-tutorial/</link>
       <pubDate>Thu, 28 Oct 2021 08:52:29 +0800</pubDate>
       
@@ -23,7 +32,7 @@
       <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
       
       <guid>http://gafish.code.so/tools/</guid>
-      <description>编程开发辅助 nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator Jso</description>
+      <description>编程开发辅助 random image nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator J</description>
     </item>
     
     <item>
