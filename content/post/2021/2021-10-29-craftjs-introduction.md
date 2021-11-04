@@ -620,26 +620,9 @@ export default App
 
 ![](/images/2021-10-29-craftjs-introduction/5.jpg)
 
-## 操作历史记录
-...
-
-## 图层管理
-...
-
-## 项目实战
-...
-
-
-<!-- 
-
-另外 `<Editor />` 需要知道连接到它的自定义组件名称所对应的真实组件，所以这里需要给 `<Editor />` 添加一个 `resolver` 属性，明确告诉编辑器自定义组件的映射关系。
-
-
-
- -->
-
+好了，`craft.js` 入门篇先更新到这里，后续如果有新的想法了再继续。
 
 ## 资源来源
 
-[grape.js](https://grapesjs.com/)
 [craft.js](https://craft.js.org/)
+[grape.js](https://grapesjs.com/)
