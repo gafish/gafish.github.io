@@ -206,26 +206,26 @@ import React from 'react'
 import './Main.css'
 
 function App() {
-+  const { connectors } = useEditor()
-+  const { create } = connectors
+  const { connectors } = useEditor()
+  const { create } = connectors
 
   return (
     <div className="app">
       <div className="head">
 -        <div className="item">文本</div>
 -        <div className="item">图片</div>
-+        <div
-+          className="item"
-+          ref={ref => create(ref, <div className="text">显示一段文本</div>)}
-+        >文本</div>
-+        <div
-+          className="item"
-+          ref={ref => create(ref, 
-+            <div className="image">
-+              <img src="https://picsum.photos/200/200" alt=""/>
-+            </div>
-+          )}
-+        >图片</div>
+        <div
+          className="item"
+          ref={ref => create(ref, <div className="text">显示一段文本</div>)}
+        >文本</div>
+        <div
+          className="item"
+          ref={ref => create(ref, 
+            <div className="image">
+              <img src="https://picsum.photos/200/200" alt=""/>
+            </div>
+          )}
+        >图片</div>
       </div>
       <div className="container">
 
@@ -293,16 +293,16 @@ export default Text
 
 function Text(props) {
   const { text = '默认文本' } = props
-+  const { connectors } = useNode()
-+  const { connect, drag } = connectors
+  const { connectors } = useNode()
+  const { connect, drag } = connectors
 
   return (
     <div
       className="text"
-+      ref={ref => {
-+        connect(ref)
-+        drag(ref)
-+      }}
+      ref={ref => {
+        connect(ref)
+        drag(ref)
+      }}
     >
       {text}
     </div>
@@ -332,7 +332,7 @@ function App() {
         <div
           className="item"
 -          ref={ref => create(ref, <div className="text">显示一段文本</div>)}
-+          ref={ref => create(ref, <Text />)}
+          ref={ref => create(ref, <Text />)}
         >文本</div>
         <div
           className="item"
@@ -341,7 +341,7 @@ function App() {
 -              <img src="https://picsum.photos/200/200" alt=""/>
 -            </div>
 -          )}
-+          ref={ref => create(ref, <Image />)}
+          ref={ref => create(ref, <Image />)}
         >图片</div>
       </div>
       <div className="container">
@@ -396,8 +396,8 @@ import { useNode } from '@craftjs/core'
 function Text(props) {
 -  const { text = '默认文本' } = props
 -  const { connectors } = useNode()
-+  const { connectors, node } = useNode(node => ({ node }))
-+  const { text } = node.data.props
+  const { connectors, node } = useNode(node => ({ node }))
+  const { text } = node.data.props
   const { connect, drag } = connectors
 
   return (
@@ -414,30 +414,31 @@ function Text(props) {
 }
 
 +Text.craft = {
-+  props: {
-+    text: '默认文本',
-+  },
-+  related: {
-+    setting: TextSetting,
-+  },
+  props: {
+    text: '默认文本',
+  },
+  related: {
+    setting: TextSetting,
+  },
 +}
 
 export default Text
 ```
 
-修改 `src/Demo1/TextSetting.js`
+修改 `src/Demo1/TextSetting.js`，在文本修改后通过 `setProp` 方法更新 `text` 属性
 ```diff
 +import { useNode } from '@craftjs/core'
 
 function TextSetting() {
-+  const { node } = useNode(node => ({ node }))
-+  const { text } = node.data.props
+  const { node, actions } = useNode(node => ({ node }))
+  const { text } = node.data.props
+  const { setProp } = actions
 
   return (
     <div>
       文本内容：
 -      <input />
-+      <input value={text} />
+      <input value={text} onChange={e => setProp(props => props.text = e.target.value)} />
     </div>
   )
 }
@@ -445,27 +446,179 @@ function TextSetting() {
 export default TextSetting
 ```
 
+当我们选中编辑器中的文本组件时，`useEditor` 中的编辑器状态中就可以获取到选中的组件ID，进而获取到选中的节点，这样我们就可以在设置面板中把 `TextSetting` 渲染出来。
 
 
+修改 `src/Demo1/Main.js`
+```diff
+import React from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
 
+import Text from './Text'
+import Image from './Image'
 
+import './Main.css'
 
+function App() {
+-  const { connectors } = useEditor()
+  const { connectors, editorState } = useEditor(editorState => ({ editorState }))
+  const { nodes, events } = editorState
+  const { selected } = events
+  const selectedNode = nodes[selected]
+  const { create } = connectors
 
+  return (
+    <div className="app">
+      <div className="head">
+        <div
+          className="item"
+          ref={ref => create(ref, <Text />)}
+        >文本</div>
+        <div
+          className="item"
+          ref={ref => create(ref, <Image />)}
+        >图片</div>
+      </div>
+      <div className="container">
 
+        <Frame>
+            <Element is="div" className="main" canvas>
+            </Element>
+        </Frame>
+        
+        <div className="sider">
+          <div className="title">配置栏</div>
+          {
+            selectedNode &&
+            selectedNode.related &&
+            selectedNode.related.setting &&
+            React.createElement(selectedNode.related.setting)
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
 
+export default App
+```
 
+通过以上修改，当我们选中文本或图片组件时，就可以在设置面板中可以设置文本和图片的属性。
 
+预览效果
 
-<!-- 
-
-另外 `<Editor />` 需要知道连接到它的自定义组件名称所对应的真实组件，所以这里需要给 `<Editor />` 添加一个 `resolver` 属性，明确告诉编辑器自定义组件的映射关系。
-
-
-
- -->
+![](/images/2021-10-29-craftjs-introduction/4.jpg)
 
 ## 编辑器结构序列化
-...
+
+到目前为止，我们实现了可视化编辑器组件的添加、移动、设置，基本上实现了一个较完整的编辑器，但是，我们还需要一个方法来将编辑器的结构序列化成 Schema，这样我们就可以将编辑器的结构保存下来，以便下次打开时直接加载。
+
+`useEditor()` 提供了一个 `serialize` 方法，可以将编辑器的结构序列化为 JSON 字符串，另外还提供了一个 `deserialize` 方法反序列化 JSON 字符串，可以将编辑器的 Schema 反序列化为结构。
+
+本文示例中会将序列化 JSON 字符串保存在 `localStorage` 中，下次打开时点加载再从 `localStorage` 中获取数据。
+
+修改 `src/Demo1/Main.js`
+```diff
+-import React from 'react'
++import React, { useCallback } from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
+
+import Text from './Text'
+import Image from './Image'
+
+import './Main.css'
+
+function App() {
+-  const { connectors, editorState } = useEditor(editorState => ({ editorState }))
++  const { connectors, actions, query, editorState } = useEditor(editorState => ({ editorState }))
+  const { nodes, events } = editorState
+  const { selected } = events
+  const selectedNode = nodes[selected]
+  const { create } = connectors
++  const { serialize } = query
++  const { deserialize } = actions
+
++  const loadJSON = useCallback(() => {
++    const json = localStorage.getItem('craftjs-demo1')
++    deserialize(json);
++  }, [])
++  const saveJSON = useCallback(() => {
++    localStorage.setItem('craftjs-demo1', serialize())
++  }, [])
+
+  return (
+    <div className="app">
+      <div className="head">
+        <div
+          className="item"
+          ref={ref => create(ref, <Text />)}
+        >文本</div>
+        <div
+          className="item"
+          ref={ref => create(ref, <Image />)}
+        >图片</div>
+      </div>
++      <div className="btns">
++        <button onClick={loadJSON}>加载</button>
++        <button onClick={saveJSON}>保存</button>
++      </div>
+      <div className="container">
+
+        <Frame>
+            <Element is="div" className="main" canvas>
+            </Element>
+        </Frame>
+        
+        <div className="sider">
+          <div className="title">配置栏</div>
+          {
+            selectedNode &&
+            selectedNode.related &&
+            selectedNode.related.setting &&
+            React.createElement(selectedNode.related.setting)
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+```
+
+如果此时我们先保存一下，刷新页面再加载，控制台会报错，why?
+
+这是因为 `craft.js` 在还原页面结构的时候，它没有找到 `Text` 和 `Image` 这2个组件名称所对应实际组件的映射，因此会报错。
+
+我们在显示已保存结构的时候需要在 `<Editor>` 中对组件进行映射，这样才能正常显示。
+
+修改 `src/Demo1/index.js`
+```diff
+import React from 'react'
+import { Editor } from '@craftjs/core'
+
++import Main from './Main'
++import Text from './Text'
++import Image from './Image'
+
+import Main from './Main'
+
+function App() {
+  return (
+-    <Editor>
++    <Editor resolver={{ Text, Image }}>
+      <Main />
+    </Editor>
+  )
+}
+
+export default App
+
+```
+
+预览效果
+
+![](/images/2021-10-29-craftjs-introduction/5.jpg)
 
 ## 操作历史记录
 ...
@@ -476,6 +629,14 @@ export default TextSetting
 ## 项目实战
 ...
 
+
+<!-- 
+
+另外 `<Editor />` 需要知道连接到它的自定义组件名称所对应的真实组件，所以这里需要给 `<Editor />` 添加一个 `resolver` 属性，明确告诉编辑器自定义组件的映射关系。
+
+
+
+ -->
 
 
 ## 资源来源
