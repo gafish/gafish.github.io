@@ -1,6 +1,6 @@
 title: "gafish's blog"
 languageCode: "zh-CN"
-baseurl: "http://gafish.code.so/"
+baseurl: "https://gafish.github.io/"
 theme: "hugo-rapid-theme"
 copyright: "Copyright (c) 2021. All rights reserved."
 MetaDataFormat: "yaml"
