@@ -5,7 +5,7 @@ end: 2021-10-26T09:20:00+08:00
 description: "本文通过介绍 Calibre 添加、管理、分享功能，帮助大家了解 Calibre 的基本操作"
 author: "gafish"
 categories:
-  - "软件推荐"
+  - "折腾爱好"
 keywords:
  - calibre
  - Calibre
