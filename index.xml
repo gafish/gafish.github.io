@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 29 Oct 2021 21:22:59 +0800</lastBuildDate><atom:link href="https://gafish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 21:41:30 +0800</lastBuildDate><atom:link href="https://gafish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>群晖720&#43; 折腾手记</title>
+      <link>https://gafish.github.io/2021/11/06/synology-nas/</link>
+      <pubDate>Sat, 06 Nov 2021 21:41:30 +0800</pubDate>
+      
+      <guid>https://gafish.github.io/2021/11/06/synology-nas/</guid>
+      <description>大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买</description>
+    </item>
+    
     <item>
       <title>Craft.js 入门与实践</title>
       <link>https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/</link>
@@ -32,7 +41,7 @@
       <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
       
       <guid>https://gafish.github.io/tools/</guid>
-      <description>编程开发辅助 random image nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator J</description>
+      <description>编程开发辅助 nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator Jso</description>
     </item>
     
     <item>
@@ -59,7 +68,7 @@
       <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
       
       <guid>https://gafish.github.io/about/</guid>
-      <description>一个爱折腾的程序员 一个非科班的程序员 一个有点理想的程序员 一个喜欢编程的程序员 反正，我是个程序员 我开发的小工具 用户脚本 新浪微博-新版-一键删除</description>
+      <description>一个爱折腾的程序员 我开发的小工具 用户脚本 新浪微博-新版-一键删除-清空助手 九酷音乐下载 声明 本博客所有文章皆为原创。转载请注明原文链接，并最好</description>
     </item>
     
     <item>

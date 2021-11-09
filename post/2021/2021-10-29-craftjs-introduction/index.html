@@ -88,7 +88,7 @@
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
         </li>
         
         <li class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -193,6 +193,26 @@
                   <div class="clear"></div>
 
                   <div class="entry">
+                    <div>
+                      <h3>目录</h3>
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#项目初始化及安装">项目初始化及安装</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#基本概念">基本概念</a>
+      <ul>
+        <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#组件">组件</a></li>
+        <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#hook">HOOK</a></li>
+      </ul>
+    </li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#基本使用">基本使用</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#添加组件">添加组件</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#组件抽象">组件抽象</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#组件设置">组件设置</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#编辑器结构序列化">编辑器结构序列化</a></li>
+    <li><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/#资源来源">资源来源</a></li>
+  </ul>
+</nav>
+                    </div>
                     <div class="entry-inner">
                       
                       <p>在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： <code>grapes.js</code> 和 <code>craft.js</code></p>
@@ -261,13 +281,13 @@ yarn start
 <p><code>craft.js</code> 的API非常简单，只有3个组件、2个Hook</p>
 <pre><code class="language-js">import { Editor, Frame, Element, useEditor, useNode } from '@craftjs/core'
 </code></pre>
-<h4 id="组件">组件</h4>
+<h3 id="组件">组件</h3>
 <ul>
 <li><code>&lt;Editor /&gt;</code>        创建存储编辑器状态的上下文</li>
 <li><code>&lt;Frame /&gt;</code>         定义了页面编辑器中的可编辑区域</li>
 <li><code>&lt;Element /&gt;</code>       定义了可拖拽组件的放置区域给定用户元素的节点</li>
 </ul>
-<h4 id="hook">HOOK</h4>
+<h3 id="hook">HOOK</h3>
 <ul>
 <li><code>useEditor()</code>        提供与整个编辑器相关联的方法和状态信息</li>
 <li><code>useNode()</code>          提供与管理当前组件的相应方法和状态信息相关的方法和状态信息</li>
@@ -778,6 +798,12 @@ export default App
     <ul class="post-nav group">
       <li class="next">
         
+        <a href="https://gafish.github.io/2021/11/06/synology-nas/" rel="next">
+          <i class="fa fa-chevron-right"></i>
+          <strong>Next post</strong>
+          <span>群晖720&#43; 折腾手记</span>
+        </a>
+        
       </li>
       <li class="previous">
         
@@ -818,7 +844,7 @@ export default App
           </li>
         
           <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
           </li>
         
           <li class="cat-item cat-item-1">
