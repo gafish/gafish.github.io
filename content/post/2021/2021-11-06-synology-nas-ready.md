@@ -1,5 +1,5 @@
 ---
-title: "群晖720+ 折腾手记"
+title: "群晖折腾手记一：开篇，正式折腾前的准备"
 date: 2021-11-06T21:41:30+08:00
 description: ""
 author: "gafish"
@@ -9,7 +9,7 @@ keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/11/06/synology-nas"
+url: "/2021/11/06/synology-nas-ready"
 ---
 
 大概在2020年初开始，我就想买一个`群晖(Synology)`来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动硬盘来勉强支撑我的需求。
@@ -29,7 +29,7 @@ url: "/2021/11/06/synology-nas"
 
 拿到设备、组装、联网之后，我做的第一件事就是在手机上下载群晖管家，然后查找连接设备，但无论如何操作都找不到我的新设备，最后在淘宝卖家客服的指引下打开网站 `find.synology.com`这才在线找到设备并连接成功，然后在群晖管家上通过找到的设备IP才在APP中连接成功。
 
-![](/images/2021-11-06-nas-use/4.jpg)
+![](/images/2021-11-06-synology-nas-ready/4.jpg)
 
 群晖管家连接成功后，用默认的 `admin` 账号登录，密码为空，然后会提示创建管理员账号，创建完之后原 `admin` 账号会被停用。
 
@@ -41,42 +41,42 @@ url: "/2021/11/06/synology-nas"
 
 1. 在 `主菜单`-`存储管理器` 中先停用第2块硬盘，停用后群晖会有警报声响起，如果嫌太吵的话，可以在  `控制面板`-`硬件与电源` 中停用哔声。
 
-![](/images/2021-11-06-nas-use/9.jpg)
-![](/images/2021-11-06-nas-use/10.jpg)
+![](/images/2021-11-06-synology-nas-ready/9.jpg)
+![](/images/2021-11-06-synology-nas-ready/10.jpg)
 
 2. 重新启动群晖后，会看到硬盘2现在是 `未初始化` 状态
 
-![](/images/2021-11-06-nas-use/11.jpg)
+![](/images/2021-11-06-synology-nas-ready/11.jpg)
 
 3. 创建新的存储空间，会自动创建新的存储池
 
-![](/images/2021-11-06-nas-use/12.jpg)
+![](/images/2021-11-06-synology-nas-ready/12.jpg)
 
 4. RAID 类型选择 `Basic`
 
-![](/images/2021-11-06-nas-use/13.jpg)
+![](/images/2021-11-06-synology-nas-ready/13.jpg)
 
 5. 硬盘2上的数据将会被清空
 
-![](/images/2021-11-06-nas-use/14.jpg)
+![](/images/2021-11-06-synology-nas-ready/14.jpg)
 
 6. 新的`存储空间2`创建完成，这里会看到`存储空间1`有红色警告，你可以不管它，可以正常使用，但建议还是将硬盘1也降级
 
-![](/images/2021-11-06-nas-use/15.jpg)
+![](/images/2021-11-06-synology-nas-ready/15.jpg)
 
 7. 硬盘1降级前进入共享文件夹，将所有文件夹都转移到刚才创建的`存储空间2`
 
-![](/images/2021-11-06-nas-use/16.jpg)
-![](/images/2021-11-06-nas-use/17.jpg)
+![](/images/2021-11-06-synology-nas-ready/16.jpg)
+![](/images/2021-11-06-synology-nas-ready/17.jpg)
 
 8. 确认所有文件都转移完成后，进入 `主菜单`-`存储管理器` 删除 `存储池1`  
 
-![](/images/2021-11-06-nas-use/18.jpg)
-![](/images/2021-11-06-nas-use/19.jpg)
+![](/images/2021-11-06-synology-nas-ready/18.jpg)
+![](/images/2021-11-06-synology-nas-ready/19.jpg)
 
 9. 删除完成后，重复步骤3-5创建新的存储空间1，至此降级完成
 
-![](/images/2021-11-06-nas-use/20.jpg)
+![](/images/2021-11-06-synology-nas-ready/20.jpg)
 
 ## 公网访问
 
@@ -84,11 +84,11 @@ url: "/2021/11/06/synology-nas"
 
 1. 在群晖的后台 `控制面板` - `外部访问` - `DDNS` ，新增一个DDNS，选择服务供应商 `Synology`，取一个好记的二级域名的名字，点 `测试联机` 看是否连接正常。
 
-![](/images/2021-11-06-nas-use/1.jpg)
+![](/images/2021-11-06-synology-nas-ready/1.jpg)
 
 2. 进入你的路由器后台，找到 `高级设置` -` 端口转发`，将群晖的管理后台端口号，转发到公网的端口号，这里需要注意端口号要保持一致，否则在非当前网络连接下会出现无法连接的情况。
 
-![](/images/2021-11-06-nas-use/2.jpg)
+![](/images/2021-11-06-synology-nas-ready/2.jpg)
 
 3. 在手机上安装了照片同步APP之后，用刚才申请的二级域名及转发的公网端口号作为地址连接，成功。
 
@@ -100,23 +100,23 @@ url: "/2021/11/06/synology-nas"
 
 如果是在局域网中挂载NAS文件夹是非常简单的，只要在群晖中启动 `文件服务`-`SMB` 服务，就可以在 Mac Finder 中以连接服务器的方式在局域网中连接上NAS文件夹。
 
-![](/images/2021-11-06-nas-use/8.jpg)
+![](/images/2021-11-06-synology-nas-ready/8.jpg)
 
 但只在局域网中使用并不是我买群晖的目的，我需要的是能够在公司的时候也可以远程连接到NAS文件夹，在群晖上可以通过启用 `WebDAV` 来实现这一功能。
 
 1. 在套件中心安装 `WebDAV Server` 套件
 
-![](/images/2021-11-06-nas-use/5.jpg)
+![](/images/2021-11-06-synology-nas-ready/5.jpg)
 
 2. 打开 `WebDAV Server` 套件，选中 `启用HTTP`，设置 HTTP 端口号
 
-![](/images/2021-11-06-nas-use/6.jpg)
+![](/images/2021-11-06-synology-nas-ready/6.jpg)
 
 3. 在路由器后台使用` 端口转发`，将上一步设置的端口号转发到一个公网端口号，这里同样需要注意端口号要保持一致。
 
 4. 在 Mac Finder 上连接服务器，使用之前设置的公网访问二级域名+上一步设置的端口号。
 
-![](/images/2021-11-06-nas-use/7.jpg)
+![](/images/2021-11-06-synology-nas-ready/7.jpg)
 
 ## 资料参考
 
