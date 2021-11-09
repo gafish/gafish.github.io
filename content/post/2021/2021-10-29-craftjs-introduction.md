@@ -97,13 +97,13 @@ yarn start
 import { Editor, Frame, Element, useEditor, useNode } from '@craftjs/core'
 ```
 
-#### 组件
+### 组件
 
 - `<Editor />`        创建存储编辑器状态的上下文
 - `<Frame />`         定义了页面编辑器中的可编辑区域
 - `<Element />`       定义了可拖拽组件的放置区域给定用户元素的节点
 
-#### HOOK
+### HOOK
 
 - `useEditor()`        提供与整个编辑器相关联的方法和状态信息
 - `useNode()`          提供与管理当前组件的相应方法和状态信息相关的方法和状态信息

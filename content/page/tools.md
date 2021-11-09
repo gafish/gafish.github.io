@@ -4,7 +4,7 @@ date: 2021-10-17T21:32:16+08:00
 url: /tools/
 ---
 
-### 编程开发辅助
+## 编程开发辅助
 
 - [nginx playground](https://nginx-playground.wizardzines.com/)
 - [JSFiddle](http://jsfiddle.net/)
@@ -25,17 +25,17 @@ url: /tools/
 - [SVG to Base64 | Image | Base64 Encode | Base64 Converter | Base64](https://base64.guru/converter/encode/image/svg)
 - [Base64 Image Encoder](https://www.base64-image.de/)
 
-### 在线服务
+## 在线服务
 
 - [mock data](https://mockapi.io/projects)
 - [random image](https://picsum.photos/)
 
-### 检索查询
+## 检索查询
 
 - [常用HTML转义字符](http://114.xixik.com/character/)
 - [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 
-### 图像处理
+## 图像处理
 
 - [TinyPNG – Compress PNG images while preserving transparency](https://tinypng.com/)
 - [mov to gif - CloudConvert](https://cloudconvert.com/mov-to-gif)
@@ -44,13 +44,13 @@ url: /tools/
 - [在线文字识别转换](http://ocr.wdku.net/)
 - [【在线PS】PS软件网页版，ps在线图片处理工具photopea-稿定设计PS](https://ps.gaoding.com/?hmsr=ivan-intro-juejin#/)
 
-### 网络查询
+## 网络查询
 
 - [The Best IP Address, Email and Networking Tools](https://www.ipaddress.com/)
 - [查看自己的IP地址和DNS地址](https://whoer.net/zh)
 - [测定在Twitter上屏蔽你的人数](https://blolook.osa-p.net/)
 
-### 通用工具
+## 通用工具
 
 - [在线文本比较工具 - 众人搜索网](http://wenbenbijiao.renrensousuo.com/#diff)
 - [草料二维码生成器](http://cli.im/)
