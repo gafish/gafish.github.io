@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 06 Nov 2021 21:41:30 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 12:44:22 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>群晖720&#43; 折腾手记</title>
-      <link>https://gafish.github.io/2021/11/06/synology-nas/</link>
+      <title>群晖折腾手记二：搭建个人数字图书馆</title>
+      <link>https://gafish.github.io/2021/11/06/synology-calibre-library/</link>
+      <pubDate>Tue, 09 Nov 2021 12:44:22 +0800</pubDate>
+      
+      <guid>https://gafish.github.io/2021/11/06/synology-calibre-library/</guid>
+      <description>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把</description>
+    </item>
+    
+    <item>
+      <title>群晖折腾手记一：开篇，正式折腾前的准备</title>
+      <link>https://gafish.github.io/2021/11/06/synology-nas-ready/</link>
       <pubDate>Sat, 06 Nov 2021 21:41:30 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/11/06/synology-nas/</guid>
+      <guid>https://gafish.github.io/2021/11/06/synology-nas-ready/</guid>
       <description>大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买</description>
     </item>
     
