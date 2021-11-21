@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <base href="https://gafish.github.io//">
+  <script>
+    document._writeOriginal = document.write;
+    document.write = function(str) {
+        if (str.indexOf('livereload.js') > -1) {
+            document._writeOriginal(str);
+        } else {
+            document._writeOriginal('<!-- Be Hijack!! -->');
+        }
+    }
+  </script>
+  <title>群晖折腾手记三：搭建个人网络音乐库 - gafish&#39;s blog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="synology,synology 720&#43;,群晖 720&#43;,">
+<meta name="description" content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winam">
+<meta name="author" content="gafish">
+<meta name="publisher" content="gafish">
+<meta name="generator" content="http://gohugo.io/"/>
+
+<meta itemprop="name" content="群晖折腾手记三：搭建个人网络音乐库 - gafish&#39;s blog">
+<meta itemprop="description" content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winam">
+<meta itemprop="image" content="https://gafish.github.io//public/gafish.png">
+
+<meta property="og:title" content="群晖折腾手记三：搭建个人网络音乐库 - gafish&#39;s blog" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gafish.github.io/2021/11/21/synology-audio/" />
+<meta property="og:image" content="https://gafish.github.io//public/gafish.png" />
+<meta property="og:description" content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winam">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@im_gafish">
+<meta name="twitter:title" content="群晖折腾手记三：搭建个人网络音乐库 - gafish&#39;s blog">
+<meta name="twitter:description" content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winam">
+<meta name="twitter:creator" content="@im_gafish">
+<meta name="twitter:image" content="https://gafish.github.io//public/gafish.png">
+
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <link rel="canonical" href="https://gafish.github.io/2021/11/21/synology-audio/">
+  <link rel='shortlink' href="https://gafish.github.io/2021/11/21/synology-audio/"/>
+  <link rel="shortcut icon" href="https://gafish.github.io//public/favicon.ico"/>
+  
+<link rel="stylesheet" id="human-style-css" href="https://gafish.github.io/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="human-style-css2" href="https://gafish.github.io/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="responsive-css" href="https://gafish.github.io/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="font-awesome-css" href="https://gafish.github.io/wp-content/themes/hueman/fonts/font-awesome.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://gafish.github.io/public/highlight/styles/monokai.css">
+<script src="https://gafish.github.io/public/highlight/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" id="human-style-css3" href="https://gafish.github.io/wp-content/themes/hueman-child/user.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="public/font/hack/css/hack.min.css">
+
+<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="wp-content/themes/hueman/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="wp-content/themes/hueman/js/scripts.js"></script>
+<script type="text/javascript" src="assets/picturefill/picturefill.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" async defer src="assets/js/myblog.js"></script>
+
+</head>
+
+<body class="single single-post single-format-standard col-3cm full-width topbar-enabled chrome">
+<div id="wrapper">
+  <header id="header">
+
+  <nav class="nav-container group" id="nav-topbar">
+    <div class="nav-toggle"><i class="fa fa-bars"></i></div>
+    <div class="nav-text"></div>
+    <div class="nav-wrap container">
+      <a rel="nofollow" href="https://gafish.github.io//" class="nav-cs-icon">
+        <img width="40" height="40" src="https://gafish.github.io/public/gafish.png" alt="gafish" title="Home">
+      </a>
+      <ul id="menu-default-menu" class="nav container-inner group">
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/post/">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/about/">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a rel="nofollow" href="https://gafish.github.io/tools/">实用工具</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-text">
+        
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="container-inner">
+        <div class="toggle-search"><i class="fa fa-search"></i></div>
+        <div class="search-expand">
+          <div class="search-expand-inner">
+            <form method="get" class="searchform themeform" action="https://www.google.com/search">
+              <div>
+                <input type="text" class="search" name="q" placeholder="Press enter to start searching">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+
+  </nav>
+  
+
+  <div class="container group">
+    <div class="container-inner">
+
+      <div class="group pad">
+
+        <div class="group pad">
+          <h1 class="site-title">
+            <a rel="nofollow" href="https://gafish.github.io//" rel="home">
+              <img style="border-radius: 50%;width:72px;height:72px;margin:0 auto;" alt="gafish" src="https://gafish.github.io/public/gafish.png"></img>
+              gafish&#39;s blog
+            </a>
+          </h1>
+          <p class="site-description">  </p>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+  
+
+</header>
+
+
+
+  <div class="container" id="page">
+    <div class="container-inner">
+      <div class="main">
+        <div class="main-inner group">
+          <section class="content">
+            <div class="page-title pad group">
+              <ul class="meta-single group">
+                
+                <li class="category">
+                  <a href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" rel="category tag">记录折腾</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="pad group">
+
+              <article
+                  class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
+                <div class="post-inner group">
+
+                  <h1 class="post-title">群晖折腾手记三：搭建个人网络音乐库</h1>
+
+                  <p class="post-byline">
+                    by gafish · 2021年11月21日 · 997 Words ·
+                    ~2min reading time |
+                  </p>
+
+                  <div class="clear"></div>
+
+                  <div class="entry">
+                    <div>
+                      <h3>目录</h3>
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#音乐服务器">音乐服务器</a></li>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#电脑音乐播放器">电脑音乐播放器</a></li>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#歌词插件">歌词插件</a></li>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#手机音乐app">手机音乐APP</a></li>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#音乐信息管理">音乐信息管理</a></li>
+    <li><a href="https://gafish.github.io/2021/11/21/synology-audio/#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+                    </div>
+                    <div class="entry-inner">
+                      
+                      <p>在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静听，这些古董，估计当今的00后听都没听过，而这些伴随了我们很多人的成长。</p>
+<p>现在的听歌方式都是各种音乐在线服务，像网易云音乐、酷狗音乐、QQ音乐，这些在线音乐服务，可以让你听音乐更加简单，更加方便，但同时因为版权的问题，也会让听歌更加费劲，为了你喜欢的歌曲，你可能需要在手机上安装好几个音乐APP。</p>
+<p>如果说上面这个问题还不算问题，那对我而言，更大的问题是我喜欢的很多音乐因为敏感原因而导致下架，要想听就只能下载到本地播放，为解决这种种问题，搭建个人网络音乐库就势在必行，那今天，我就开始借助群晖强大的音乐管理功能来实现这个目标。</p>
+<h2 id="音乐服务器">音乐服务器</h2>
+<p>打开群晖套件中心，搜索 <code>Audio Station</code> 并点击安装，这个音乐服务器是群晖的音乐管理功能，它可以让你更加方便的管理音乐</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/1.jpg" alt=""></p>
+<p>安装好之后，打开 <code>Audio Station</code> 就会启动网络音乐服务</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/2.jpg" alt=""></p>
+<p>打开 <code>File Station</code> 会看到一个 <code>music</code> 的文件夹，这个文件夹是你的音乐文件夹，你可以在这里通过在线上传或者局域网复制的方式添加你喜欢的音乐文件</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/3.jpg" alt=""></p>
+<h2 id="电脑音乐播放器">电脑音乐播放器</h2>
+<p><code>Audio Station</code> 本身就是一个音乐播放器，在你添加好音乐之后，在 <code>所有音乐</code> 中就能看到你添加的音乐文件列表，直接点击就可以播放</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/4.jpg" alt=""></p>
+<p>你也可以通过创建 <code>播放列表</code> 来归类你喜欢的音乐</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/5.jpg" alt=""></p>
+<p>我特别推荐这里的 <code>智能播放列表</code> 功能，它可以通过一系列规则，为你智能匹配歌曲，比如你可以创建一个 <code>最近30天添加的歌曲</code></p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/6.jpg" alt=""></p>
+<h2 id="歌词插件">歌词插件</h2>
+<p>当你此时通过 <code>Audio Station</code> 来听歌时，你可能会发现，经常会没有歌词可用</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/7.jpg" alt=""></p>
+<p>这是因为默认的歌词插件 <code>LyricWiki</code> 非常不好用，你可以在 <code>设置-歌词插件</code> 中，通过新增第三方歌词插件的方式来解决这个问题，比如我用的 <a href="https://github.com/LudySu/Synology-LrcPlugin" target="_blank" rel="noopener">网易云歌词插件</a></p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/8.jpg" alt=""></p>
+<p>新增了歌词插件之后，最好关闭 <code>Audio Station</code>，重新再打开一次，这样就可以看到歌词了</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/9.jpg" alt=""></p>
+<h2 id="手机音乐app">手机音乐APP</h2>
+<p>光在电脑上听歌肯定不能满足我们的需求，在手机上听才是目标，从应用商店下载 <code>DS Audio</code>，通过我们前期设置好的账号密码，就可以登录到 <code>DS Audio</code> 了</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/10.jpg" alt=""></p>
+<p>登录后就可以看到跟电脑端一样的音乐列表，选择音乐就可以播放，从功能上来说这已经满足了我的需求，不过说实话，界面真的丑</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/11.jpg" alt=""></p>
+<h2 id="音乐信息管理">音乐信息管理</h2>
+<p>你可能会发现在网络上下载的音乐，好多元信息都是错误的，比如歌手、专辑、封面等等，通过在 <code>Audio Station</code> 的歌曲上右键，点击 <code>歌曲信息</code>，我们可以简单的编辑歌曲的信息，</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/12.jpg" alt="">
+<img src="https://gafish.github.io/images/2021-11-21-synology-audio/13.jpg" alt=""></p>
+<p>如果需要编辑的歌曲很多，可以考虑使用 <a href="https://www.macwk.com/soft/meta" target="_blank" rel="noopener">Meta</a> 或 <a href="https://www.macwk.com/soft/mp3tag" target="_blank" rel="noopener">Mp3tag</a> 来批量编辑歌曲信息</p>
+<p><img src="https://gafish.github.io/images/2021-11-21-synology-audio/14.jpg" alt=""></p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000039068892" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039068892</a></li>
+</ul>
+
+                      
+                    </div>
+                    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+                        <div style="float:left;margin-top:0px;">
+                        </div>
+                        <div>
+                            <p style="margin-top:0px;">作者：<a target="_blank" href="https://gafish.github.io/">gafish</a>
+                            <br />本文出处：<a target="_blank" href="https://gafish.github.io/2021/11/21/synology-audio/">https://gafish.github.io/2021/11/21/synology-audio/</a>
+                            <br />
+                            文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
+                        </div>
+                    </div>
+                    <div>
+                      <a style="display: block; padding: 10px; margin-top: 10px; background-color: #eee; text-align: center;" href="https://github.com/gafish/gafish.github.io/discussions" target="_blank">点击留言</a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  
+
+                </div>
+                
+              </article>
+              
+              <div class="clear"></div>
+              
+              
+              
+            </div>
+          </section>
+          <div class="sidebar s1">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
+  <div class="sidebar-content">
+    <div class="sidebar-top group">
+      <p>Follow:</p>
+      <ul class="social-links">
+    <li>
+    <a class="social-tooltip" title="On GitHub"
+        href="https://github.com/gafish" target="_blank">
+        <i class="fa fa-github"></i>
+    </a>
+    </li>
+</ul>
+
+    </div>
+    <div class="widget qrcode">
+    
+    <p>” THIS IS NULL "</p>
+</div>
+
+    <ul class="post-nav group">
+      <li class="next">
+        
+      </li>
+      <li class="previous">
+        
+        <a href="https://gafish.github.io/2021/11/06/synology-calibre-library/" rel="prev">
+          <i class="fa fa-chevron-left"></i>
+          <strong>Previous Post</strong>
+          <span>群晖折腾手记二：搭建个人数字图书馆</span>
+        </a>
+        
+      </li>
+    </ul>
+    <div id="search-2" class="widget widget_search"><h3>Search</h3>
+      <form method="get" class="searchform themeform" action="https://www.google.com/search">
+        <div>
+          <input type="text" class="search" name="q" placeholder="Press enter to start searching">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+          <div class="sidebar s2">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
+  <div class="sidebar-content">
+    <div class="sidebar-top group">
+      <p>More</p>
+    </div>
+    <div id="categories-2" class="widget widget_categories"><h3>Categories</h3>
+      <ul>
+        
+          <li class="cat-item cat-item-1">
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
+          </li>
+        
+          <li class="cat-item cat-item-1">
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
+          </li>
+        
+          <li class="cat-item cat-item-1">
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
+          </li>
+        
+          <li class="cat-item cat-item-1">
+            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer">
+  <section class="container" id="footer-bottom">
+    <div class="container-inner">
+      <a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
+      <div class="pad group">
+        <div class="grid one-half">
+          <div id="copyright">
+              <p>Copyright (c) 2021. All rights reserved.<br>Powered by
+              <a rel="nofollow" href="http://gohugo.io/" target="_blank">Hugo - the static site generator</a>.
+              <a rel="nofollow" href="http://golang.org" target="_blank">#golang</a>.
+            </p>
+          </div>
+          
+        </div>
+        
+        <div class="grid one-half last">
+          <ul class="social-links">
+    <li>
+    <a class="social-tooltip" title="On GitHub"
+        href="https://github.com/gafish" target="_blank">
+        <i class="fa fa-github"></i>
+    </a>
+    </li>
+</ul>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </section>
+  
+</footer>
+
+</div>
+
+</body>
+</html>
+
