@@ -9,7 +9,7 @@ keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/11/22/synology-download"
+url: "/2021/12/01/synology-video"
 ---
 
 
