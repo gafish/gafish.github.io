@@ -12,30 +12,30 @@
         }
     }
   </script>
-  <title>群晖折腾手记五：家庭影视娱乐上手指南 - gafish&#39;s blog</title>
+  <title>群晖折腾手记四：搭建离线下载服务 - gafish&#39;s blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="synology,synology 720&#43;,群晖 720&#43;,">
-<meta name="description" content="安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数">
+<meta name="description" content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作">
 <meta name="author" content="gafish">
 <meta name="publisher" content="gafish">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="群晖折腾手记五：家庭影视娱乐上手指南 - gafish&#39;s blog">
-<meta itemprop="description" content="安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数">
+<meta itemprop="name" content="群晖折腾手记四：搭建离线下载服务 - gafish&#39;s blog">
+<meta itemprop="description" content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作">
 <meta itemprop="image" content="https://gafish.github.io//public/gafish.png">
 
-<meta property="og:title" content="群晖折腾手记五：家庭影视娱乐上手指南 - gafish&#39;s blog" />
+<meta property="og:title" content="群晖折腾手记四：搭建离线下载服务 - gafish&#39;s blog" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gafish.github.io/2021/11/22/synology-download/" />
 <meta property="og:image" content="https://gafish.github.io//public/gafish.png" />
-<meta property="og:description" content="安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数">
+<meta property="og:description" content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@im_gafish">
-<meta name="twitter:title" content="群晖折腾手记五：家庭影视娱乐上手指南 - gafish&#39;s blog">
-<meta name="twitter:description" content="安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数">
+<meta name="twitter:title" content="群晖折腾手记四：搭建离线下载服务 - gafish&#39;s blog">
+<meta name="twitter:description" content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作">
 <meta name="twitter:creator" content="@im_gafish">
 <meta name="twitter:image" content="https://gafish.github.io//public/gafish.png">
 
@@ -183,10 +183,10 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">群晖折腾手记五：家庭影视娱乐上手指南</h1>
+                  <h1 class="post-title">群晖折腾手记四：搭建离线下载服务</h1>
 
                   <p class="post-byline">
-                    by gafish · 2021年12月01日 · 574 Words ·
+                    by gafish · 2021年11月22日 · 672 Words ·
                     ~2min reading time |
                   </p>
 
@@ -197,47 +197,72 @@
                       <h3>目录</h3>
                       <nav id="TableOfContents">
   <ul>
-    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#安装与设置">安装与设置</a></li>
-    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#视频库">视频库</a></li>
-    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#权限管理">权限管理</a></li>
-    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#视频播放">视频播放</a>
-      <ul>
-        <li><a href="https://gafish.github.io/2021/11/22/synology-download/#手机">手机</a></li>
-        <li><a href="https://gafish.github.io/2021/11/22/synology-download/#平板">平板</a></li>
-        <li><a href="https://gafish.github.io/2021/11/22/synology-download/#电视">电视</a></li>
-      </ul>
-    </li>
+    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#安装与启动">安装与启动</a></li>
+    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#bt搜索">BT搜索</a></li>
+    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#加速配置">加速配置</a></li>
+    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#实用工具">实用工具</a></li>
+    <li><a href="https://gafish.github.io/2021/11/22/synology-download/#资料参考">资料参考</a></li>
   </ul>
 </nav>
                     </div>
                     <div class="entry-inner">
                       
-                      <h2 id="安装与设置">安装与设置</h2>
-<p>在套件中心搜索 <code>video station</code> 并安装，完成后会在一个新窗口打开界面</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/1.jpg" alt=""></p>
-<p>默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数据和封面数据</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/2.jpg" alt=""></p>
-<p>点击 <code>The Movie Database</code>，再点击编辑，会看到一个 API 密钥的输入框，点击下方的 <code>申请API密钥</code> 链接，会打开如何申请 API 密钥的帮助页面，按照教程一步步操作</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/4.jpg" alt=""></p>
-<p>需要注意的是，在填写 API 申请理由时，如果遇到一直报错 <code>Application summary please elaborate on how you plan to use our API</code>，直接把申请理由改成 <code>Application summary please elaborate on how you plan to use our API</code> 就可以了</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/5.png" alt=""></p>
-<h2 id="视频库">视频库</h2>
-<p>在设置界面中，点击 <code>视频库</code>，会有3个默认的视频库，点击右侧的 <code>+</code> 号，选择视频资源所在的文件夹，点击 <code>确定</code> 就会开始创建索引，大概1分钟后左侧点击视频库菜单就可以看到文件夹中的电影资源了</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/3.jpg" alt=""></p>
-<p>如果默认的视频库不能满足你的需求，你也可以创建自定义的视频库，同样可以在设置界面为自定义的视频库添加视频资源文件夹</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/6.jpg" alt=""></p>
-<h2 id="权限管理">权限管理</h2>
-<p>我有一个需求是给女儿的账号创建了一个学习视频库，但默认的视频库里添加的电影她也能看到，为了不耽误她的学习，我需要把其它的视频库资源隐藏起来，这里就可以用上自定义视频库的指定权限功能</p>
-<p>首先创建一个单独的账号，在自定义视频库的指定权限功能中，为不同账号指定访问权限</p>
-<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/7.jpg" alt=""></p>
-<h2 id="视频播放">视频播放</h2>
-<p>直接在电脑上访问 <code>video station</code> 就可以播放电影，在其它平台需要安装相应的 <code>DS Video</code> APP，用设置好的账号登录即可访问</p>
-<h3 id="手机">手机</h3>
-<p>在应用商店下载 <code>DS Video</code> APP</p>
-<h3 id="平板">平板</h3>
-<p>在应用商店下载 <code>DS Video</code> APP</p>
-<h3 id="电视">电视</h3>
-<p>&hellip;</p>
+                      <p>都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 <code>Download Station</code> 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的离线下载功能，它还是值得我们来体验下的。</p>
+<h2 id="安装与启动">安装与启动</h2>
+<p>在安装之前，我们最好先在 <code>共享文件夹</code> 下新建一个下载目录，如：<code>download</code>，后面会用到</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/1.jpg" alt=""></p>
+<p>在套件中心搜索 <code>download station</code> 并安装，完成后会自动启动服务</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/2.jpg" alt=""></p>
+<p>打开 <code>download station</code> 会让我们选择一个默认下载目录，这里就可以选择一开始我们创建好的 <code>download</code> 目录</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/3.jpg" alt=""></p>
+<p>在默认选项下使用 <code>download station</code> 就可以开始下载了，点击+号添加下载任务，支持普通的网址下载、BT种子下载、磁力下载等</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/4.jpg" alt=""></p>
+<h2 id="bt搜索">BT搜索</h2>
+<p>在左上角有BT搜索功能，但默认的搜索引擎经常会搜索不到结果</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/5.jpg" alt=""></p>
+<p>我们可以在 <code>设置</code> - <code>BT搜索</code> 中添加其它的搜索引擎模块，有2种方式可以方便的找到网络上的BT搜索引擎模块</p>
+<ol>
+<li>在 github 中搜索 <code>synology-dlm</code>，可以找到很多开源代码的 dlm 包</li>
+<li>在 <a href="http://www.synoboost.com/" target="_blank" rel="noopener">synoboost.com</a> 中直接下载模块</li>
+</ol>
+<p>这里我搜罗了一些现成的模块方便大家下载，<a href="https://gafish.github.io/images/2021-11-22-synology-download/dlm.zip">点击下载</a></p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/6.jpg" alt=""></p>
+<p>添加了新的搜索引擎模块后，最好把默认提供的2个搜索引擎模块删除，这样可以更加快速的搜索到结果</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/7.jpg" alt=""></p>
+<h2 id="加速配置">加速配置</h2>
+<p>默认配置下使用 <code>Download Station</code> 来下载文件，速度上确实不快，但也不是没有办法，我们可以通过添加 <code>Tracker服务器</code> 的方式来提速，最新的Tracker列表可以在<a href="https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt" target="_blank" rel="noopener">这里下载</a></p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/8.jpg" alt=""></p>
+<p>上面链接中复制过来的列表需要删除空格才能使用，这里我就直接将列表复制过来了</p>
+<pre><code>http://p4p.arenabg.com:1337/announce
+udp://tracker.opentrackr.org:1337/announce
+udp://9.rarbg.com:2810/announce
+udp://open.tracker.cl:1337/announce
+udp://exodus.desync.com:6969/announce
+udp://tracker.openbittorrent.com:6969/announce
+http://tracker.openbittorrent.com:80/announce
+http://openbittorrent.com:80/announce
+udp://www.torrent.eu.org:451/announce
+udp://vibe.sleepyinternetfun.xyz:1738/announce
+udp://udp-tracker.shittyurl.org:6969/announce
+udp://u.wwwww.wtf:1/announce
+udp://tracker1.bt.moack.co.kr:80/announce
+udp://tracker0.ufibox.com:6969/announce
+udp://tracker.zerobytes.xyz:1337/announce
+udp://tracker.torrent.eu.org:451/announce
+udp://tracker.tiny-vps.com:6969/announce
+udp://tracker.theoks.net:6969/announce
+udp://tracker.srv00.com:6969/announce
+udp://tracker.pomf.se:80/announce
+</code></pre>
+<h2 id="实用工具">实用工具</h2>
+<p>我所使用的环境是 Mac，所以在下载到 Windows 自解压文件后就有点麻烦，这里推荐一个实用的解压工具：<a href="https://apps.apple.com/cn/app/the-unarchiver/id425424353?l=en&amp;mt=12" target="_blank" rel="noopener">The Unarchiver</a>，免费并且支持 .exe 自解压格式，非常方便</p>
+<p><img src="https://gafish.github.io/images/2021-11-22-synology-download/9.jpg" alt=""></p>
+<h2 id="资料参考">资料参考</h2>
+<ul>
+<li><a href="https://blog.myds.cloud/archives/%E7%BE%A4%E6%99%96%E4%B8%8B%E8%BD%BD%E5%99%A8%E6%B7%BB%E5%8A%A0bt%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html" target="_blank" rel="noopener">https://blog.myds.cloud/archives/%E7%BE%A4%E6%99%96%E4%B8%8B%E8%BD%BD%E5%99%A8%E6%B7%BB%E5%8A%A0bt%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html</a></li>
+<li><a href="https://www.kocpc.com.tw/archives/60972" target="_blank" rel="noopener">https://www.kocpc.com.tw/archives/60972</a></li>
+<li><a href="https://post.smzdm.com/p/aqno9lwx/" target="_blank" rel="noopener">https://post.smzdm.com/p/aqno9lwx/</a></li>
+</ul>
 
                       
                     </div>
@@ -291,13 +316,19 @@
     <ul class="post-nav group">
       <li class="next">
         
+        <a href="https://gafish.github.io/2021/12/01/synology-video/" rel="next">
+          <i class="fa fa-chevron-right"></i>
+          <strong>Next post</strong>
+          <span>群晖折腾手记五：家庭影视娱乐上手指南</span>
+        </a>
+        
       </li>
       <li class="previous">
         
-        <a href="https://gafish.github.io/2021/11/22/synology-download/" rel="prev">
+        <a href="https://gafish.github.io/2021/11/21/synology-audio/" rel="prev">
           <i class="fa fa-chevron-left"></i>
           <strong>Previous Post</strong>
-          <span>群晖折腾手记四：搭建离线下载服务</span>
+          <span>群晖折腾手记三：搭建个人网络音乐库</span>
         </a>
         
       </li>
@@ -314,79 +345,6 @@
 </div>
 
           <div class="sidebar s2">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
-  <div class="sidebar-content">
-    <div class="sidebar-top group">
-      <p>More</p>
-    </div>
-    <div id="categories-2" class="widget widget_categories"><h3>Categories</h3>
-      <ul>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer id="footer">
-  <section class="container" id="footer-bottom">
-    <div class="container-inner">
-      <a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
-      <div class="pad group">
-        <div class="grid one-half">
-          <div id="copyright">
-              <p>Copyright (c) 2021. All rights reserved.<br>Powered by
-              <a rel="nofollow" href="http://gohugo.io/" target="_blank">Hugo - the static site generator</a>.
-              <a rel="nofollow" href="http://golang.org" target="_blank">#golang</a>.
-            </p>
-          </div>
-          
-        </div>
-        
-        <div class="grid one-half last">
-          <ul class="social-links">
-    <li>
-    <a class="social-tooltip" title="On GitHub"
-        href="https://github.com/gafish" target="_blank">
-        <i class="fa fa-github"></i>
-    </a>
-    </li>
-</ul>
-
-        </div>
-      </div>
-
-    </div>
-    
-  </section>
-  
-</footer>
-
-</div>
-
-</body>
-</html>
-
-ss="sidebar s2">
   <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
   <div class="sidebar-content">
     <div class="sidebar-top group">
