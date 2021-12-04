@@ -20,11 +20,11 @@ url: "/2021/12/04/synology-spk"
 
 在套件中心-设置-套件来源中，点新增，在名称中输入 `矿神SPK`，位置输入 `https://spk7.imnks.com/`，点击确定
 
-![](/images/2021-12-01-synology-video/2.jpg)
+![](/images/2021-12-04-synology-spk/2.jpg)
 
 在套件中心左侧会看到一个社群入口，点击进入就能看到矿神SPK的套件了。
 
-![](/images/2021-12-01-synology-video/3.jpg)
+![](/images/2021-12-04-synology-spk/3.jpg)
 
 ## 推荐套件
 
