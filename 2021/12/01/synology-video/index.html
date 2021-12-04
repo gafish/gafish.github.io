@@ -186,8 +186,8 @@
                   <h1 class="post-title">群晖折腾手记五：家庭影视娱乐上手指南</h1>
 
                   <p class="post-byline">
-                    by gafish · 2021年12月01日 · 574 Words ·
-                    ~2min reading time |
+                    by gafish · 2021年12月01日 · 1244 Words ·
+                    ~3min reading time |
                   </p>
 
                   <div class="clear"></div>
@@ -205,6 +205,12 @@
         <li><a href="https://gafish.github.io/2021/12/01/synology-video/#手机">手机</a></li>
         <li><a href="https://gafish.github.io/2021/12/01/synology-video/#平板">平板</a></li>
         <li><a href="https://gafish.github.io/2021/12/01/synology-video/#电视">电视</a></li>
+      </ul>
+    </li>
+    <li><a href="https://gafish.github.io/2021/12/01/synology-video/#常见问题及解决办法">常见问题及解决办法</a>
+      <ul>
+        <li><a href="https://gafish.github.io/2021/12/01/synology-video/#為什麼我無法在-video-station-播放-dts-或-eac3-音訊檔的影片">為什麼我無法在 Video Station 播放 DTS 或 EAC3 音訊檔的影片？</a></li>
+        <li><a href="https://gafish.github.io/2021/12/01/synology-video/#资料参考">资料参考</a></li>
       </ul>
     </li>
   </ul>
@@ -237,6 +243,59 @@
 <h3 id="平板">平板</h3>
 <p>在应用商店下载 <code>DS Video</code> APP</p>
 <h3 id="电视">电视</h3>
+<p>在 Synology <a href="https://www.synology.cn/zh-cn/support/download/DS720&#43;?version=7.0#androids" target="_blank" rel="noopener">下载中心</a> 下载 <code>AndroidTV-DSvideo</code> <a href="https://archive.synology.cn/download/Mobile/Android-DSvideo" target="_blank" rel="noopener">apk 安装包</a>。</p>
+<p>将安装包复制到U盘上，插入电视机的USB口，一般的电视在设置中找到U盘，点击安装包安装即可，有些电视系统会屏蔽U盘中的安装文件，这时候可能就需要针对这类系统在网上找找资料。以我家的TCL电视为例，在系统应用 <code>电视卫士</code> 中找到 应用管理-极速安装 就可以看到没有屏蔽安装包的U盘入口，点击进去就可以安装</p>
+<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/8.jpg" alt=""></p>
+<p>群晖TV DS Video使用了Android TV的特性，导致部分电视和电视盒设备在安装DS Video后没有显示启动图标，我们可以通过安装 <a href="http://www.tengmuz.com/index.php/2020/01/27/dsphoto-go%E7%BE%A4%E6%99%96tv-dsphoto%E5%90%AF%E5%8A%A8%E5%99%A8%EF%BC%8C%E8%A7%A3%E5%86%B3dsphoto%E5%AE%89%E8%A3%85%E5%90%8E%E6%97%A0%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98-solut/" target="_blank" rel="noopener">DSVideo-Go</a> 来修复这个问题。</p>
+<h2 id="常见问题及解决办法">常见问题及解决办法</h2>
+<h3 id="為什麼我無法在-video-station-播放-dts-或-eac3-音訊檔的影片">為什麼我無法在 Video Station 播放 DTS 或 EAC3 音訊檔的影片？</h3>
+<p>以下摘自官方的说明</p>
+<pre><code class="language-md">因專利授權的因素，Video Station 目前不支援以下的音訊播放格式：
+
+- 所有 DTS 音訊格式 (包含但不限於 DTS 及 DTS-HD)
+- 部分 Dolby Digital 音訊格式 (包含但不限於 Dolby Digital Plus (EAC3) 及 Dolby TrueHD)
+</code></pre>
+<p>解决办法</p>
+<p>在第三方套件中搜索安装 <code>FFmpeg</code> (关于第三方套件的安装方法可以参考 <a href="https://gafish.github.io/2021/12/04/synology-spk">这里</a>)</p>
+<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/9.jpg" alt=""></p>
+<p>进入 <code>控制面板</code>-<code>终端机和SNMP</code>-<code>终端机</code> 启用SSH功能</p>
+<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/10.jpg" alt=""></p>
+<p>在电脑上通过终端命令行执行 <code>ssh 管理员用户名@群晖的IP地址</code> 连接群晖，并输入 <code>sudo -i</code> 输入群晖管理员密码切换至root用户模式</p>
+<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/11.jpg" alt=""></p>
+<p>依次执行以下内容脚本</p>
+<pre><code class="language-shell">#备份 VideoStation's ffmpeg
+mv -n /var/packages/VideoStation/target/bin/ffmpeg /var/packages/VideoStation/target/bin/ffmpeg.orig
+
+#下载ffmpeg脚本
+wget -O - https://gist.githubusercontent.com/BenjaminPoncet/bbef9edc1d0800528813e75c1669e57e/raw/ffmpeg-wrapper &gt; /var/packages/VideoStation/target/bin/ffmpeg
+
+#设置脚本相应权限
+chown root:VideoStation /var/packages/VideoStation/target/bin/ffmpeg
+chmod 750 /var/packages/VideoStation/target/bin/ffmpeg
+chmod u+s /var/packages/VideoStation/target/bin/ffmpeg
+
+# 备份VideoStation's libsynovte.so
+cp -n /var/packages/VideoStation/target/lib/libsynovte.so /var/packages/VideoStation/target/lib/libsynovte.so.orig
+chown VideoStation:VideoStation /var/packages/VideoStation/target/lib/libsynovte.so.orig
+
+# 为libsynovte.so 添加 DTS, EAC3 and TrueHD支持
+sed -i -e 's/eac3/3cae/' -e 's/dts/std/' -e 's/truehd/dheurt/' /var/packages/VideoStation/target/lib/libsynovte.so
+
+#备份CodecPack的ffmpeg41
+cp /var/packages/CodecPack/target/bin/ffmpeg41 /var/packages/CodecPack/target/bin/ffmpeg41.bak
+
+#链接ffmpeg解码模块
+cp /var/packages/VideoStation/target/bin/ffmpeg /var/packages/CodecPack/target/bin/ffmpeg41
+</code></pre>
+<p>在套件中心先停用 <code>Video Station</code> 再重新打开，让ffmpeg与Video Station的关联生效</p>
+<p><img src="https://gafish.github.io/images/2021-12-01-synology-video/12.jpg" alt=""></p>
+<h3 id="资料参考">资料参考</h3>
+<ul>
+<li><a href="https://todsay.com/share/25.html" target="_blank" rel="noopener">https://todsay.com/share/25.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/393311059" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/393311059</a></li>
+<li><a href="https://www.znds.com/jc/article/2950-1.html" target="_blank" rel="noopener">https://www.znds.com/jc/article/2950-1.html</a></li>
+<li><a href="https://kb.synology.com/zh-hk/DSM/tutorial/Why_can_t_I_play_videos_with_DTS_or_EAC3_audio_format_on_Video_Station" target="_blank" rel="noopener">https://kb.synology.com/zh-hk/DSM/tutorial/Why_can_t_I_play_videos_with_DTS_or_EAC3_audio_format_on_Video_Station</a></li>
+</ul>
 <p>&hellip;</p>
 
                       
@@ -290,6 +349,12 @@
 
     <ul class="post-nav group">
       <li class="next">
+        
+        <a href="https://gafish.github.io/2021/12/04/synology-spk/" rel="next">
+          <i class="fa fa-chevron-right"></i>
+          <strong>Next post</strong>
+          <span>群晖折腾手记六：添加第三方套件源</span>
+        </a>
         
       </li>
       <li class="previous">

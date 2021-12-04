@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 01 Dec 2021 21:45:25 +0800</lastBuildDate><atom:link href="https://gafish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="https://gafish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>群晖折腾手记六：添加第三方套件源</title>
+      <link>https://gafish.github.io/2021/12/04/synology-spk/</link>
+      <pubDate>Sat, 04 Dec 2021 20:55:25 +0800</pubDate>
+      
+      <guid>https://gafish.github.io/2021/12/04/synology-spk/</guid>
+      <description>群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我</description>
+    </item>
+    
     <item>
       <title>群晖折腾手记五：家庭影视娱乐上手指南</title>
       <link>https://gafish.github.io/2021/12/01/synology-video/</link>
