@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>记录折腾 on gafish&#39;s blog</title>
-    <link>https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/</link>
+    <link>/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/</link>
     <description>Recent content in 记录折腾 on gafish&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>群晖折腾手记六：添加第三方套件源</title>
-      <link>https://gafish.github.io/2021/12/04/synology-spk/</link>
+      <link>/2021/12/04/synology-spk/</link>
       <pubDate>Sat, 04 Dec 2021 20:55:25 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/12/04/synology-spk/</guid>
-      <description>群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我</description>
+      <guid>/2021/12/04/synology-spk/</guid>
+      <description>群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我们更好的玩</description>
     </item>
     
     <item>
       <title>群晖折腾手记五：家庭影视娱乐上手指南</title>
-      <link>https://gafish.github.io/2021/12/01/synology-video/</link>
+      <link>/2021/12/01/synology-video/</link>
       <pubDate>Wed, 01 Dec 2021 21:45:25 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/12/01/synology-video/</guid>
-      <description>安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数</description>
+      <guid>/2021/12/01/synology-video/</guid>
+      <description>安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数据和封面数</description>
     </item>
     
     <item>
       <title>群晖折腾手记四：搭建离线下载服务</title>
-      <link>https://gafish.github.io/2021/11/22/synology-download/</link>
+      <link>/2021/11/22/synology-download/</link>
       <pubDate>Mon, 22 Nov 2021 21:00:56 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/11/22/synology-download/</guid>
-      <description>都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作</description>
+      <guid>/2021/11/22/synology-download/</guid>
+      <description>都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的</description>
     </item>
     
     <item>
       <title>群晖折腾手记三：搭建个人网络音乐库</title>
-      <link>https://gafish.github.io/2021/11/21/synology-audio/</link>
+      <link>/2021/11/21/synology-audio/</link>
       <pubDate>Sun, 21 Nov 2021 16:10:06 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/11/21/synology-audio/</guid>
-      <description>在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winam</description>
+      <guid>/2021/11/21/synology-audio/</guid>
+      <description>在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静</description>
     </item>
     
     <item>
       <title>群晖折腾手记二：搭建个人数字图书馆</title>
-      <link>https://gafish.github.io/2021/11/06/synology-calibre-library/</link>
+      <link>/2021/11/06/synology-calibre-library/</link>
       <pubDate>Tue, 09 Nov 2021 12:44:22 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/11/06/synology-calibre-library/</guid>
-      <description>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把</description>
+      <guid>/2021/11/06/synology-calibre-library/</guid>
+      <description>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，</description>
     </item>
     
     <item>
       <title>群晖折腾手记一：开篇，正式折腾前的准备</title>
-      <link>https://gafish.github.io/2021/11/06/synology-nas-ready/</link>
+      <link>/2021/11/06/synology-nas-ready/</link>
       <pubDate>Sat, 06 Nov 2021 21:41:30 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/11/06/synology-nas-ready/</guid>
-      <description>大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买</description>
+      <guid>/2021/11/06/synology-nas-ready/</guid>
+      <description>大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动</description>
     </item>
     
   </channel>

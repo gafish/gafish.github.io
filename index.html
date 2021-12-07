@@ -1,470 +1,593 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-  <base href="https://gafish.github.io//">
-  <script>
-    document._writeOriginal = document.write;
-    document.write = function(str) {
-        if (str.indexOf('livereload.js') > -1) {
-            document._writeOriginal(str);
-        } else {
-            document._writeOriginal('<!-- Be Hijack!! -->');
-        }
-    }
-  </script>
-  <title>gafish&#39;s blog</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="keywords" content="技术博客,程序员,读书思考,技术分享">
-<meta name="description" content="gafish&#39;s blog">
-<meta name="author" content="gafish">
-<meta name="publisher" content="gafish">
-<meta name="generator" content="http://gohugo.io/"/>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
-<meta itemprop="name" content="gafish&#39;s blog">
-<meta itemprop="description" content="gafish&#39;s blog">
-<meta itemprop="image" content="https://gafish.github.io//public/gafish.png">
+
+<title>gafish&#39;s blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="Eureka is a elegant and powerful theme for Hugo.">
+
+
 
 <meta property="og:title" content="gafish&#39;s blog" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gafish.github.io/" />
-<meta property="og:image" content="https://gafish.github.io//public/gafish.png" />
-<meta property="og:description" content="gafish&#39;s blog">
+<meta property="og:type" content="website" />
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@im_gafish">
-<meta name="twitter:title" content="gafish&#39;s blog">
-<meta name="twitter:description" content="gafish&#39;s blog">
-<meta name="twitter:creator" content="@im_gafish">
-<meta name="twitter:image" content="https://gafish.github.io//public/gafish.png">
 
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://gafish.github.io/">
-  <link rel='shortlink' href="https://gafish.github.io/"/>
-  <link rel="shortcut icon" href="https://gafish.github.io//public/favicon.ico"/>
-  
-  <link href="https://gafish.github.io/index.xml" rel="alternate" type="application/rss+xml" title="gafish&#39;s blog" />
-  <link href="https://gafish.github.io/index.xml" rel="feed" type="application/rss+xml" title="gafish&#39;s blog" />
+<meta property="og:image" content="/images/icon.png">
 
-<link rel="stylesheet" id="human-style-css" href="https://gafish.github.io/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="human-style-css2" href="https://gafish.github.io/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="responsive-css" href="https://gafish.github.io/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
-<link rel="stylesheet" id="font-awesome-css" href="https://gafish.github.io/wp-content/themes/hueman/fonts/font-awesome.min.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="https://gafish.github.io/public/highlight/styles/monokai.css">
-<script src="https://gafish.github.io/public/highlight/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<link rel="stylesheet" id="human-style-css3" href="https://gafish.github.io/wp-content/themes/hueman-child/user.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="public/font/hack/css/hack.min.css">
 
-<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="wp-content/themes/hueman/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="wp-content/themes/hueman/js/scripts.js"></script>
-<script type="text/javascript" src="assets/picturefill/picturefill.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" async defer src="assets/js/myblog.js"></script>
+<meta property="og:url" content="/" />
 
-</head>
 
-<body class="archive category col-3cm full-width topbar-enabled chrome">
 
-<div id="wrapper">
-  <header id="header">
 
-  <nav class="nav-container group" id="nav-topbar">
-    <div class="nav-toggle"><i class="fa fa-bars"></i></div>
-    <div class="nav-text"></div>
-    <div class="nav-wrap container">
-      <a rel="nofollow" href="https://gafish.github.io//" class="nav-cs-icon">
-        <img width="40" height="40" src="https://gafish.github.io/public/gafish.png" alt="gafish" title="Home">
-      </a>
-      <ul id="menu-default-menu" class="nav container-inner group">
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/">首页</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/post/">归档</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/about/">关于我</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          <a rel="nofollow" href="https://gafish.github.io/tools/">实用工具</a>
-        </li>
-        
-        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-          
-          <a rel="nofollow" href="https://gafish.github.io/index.xml" type="application/rss+xml" target="_blank">订阅</a>
-          
-        </li>
-        <li class="menu-item menu-item-type-post_type menu-item-text">
-        
-        </li>
-      </ul>
-    </div>
 
-    <div class="container">
-      <div class="container-inner">
-        <div class="toggle-search"><i class="fa fa-search"></i></div>
-        <div class="search-expand">
-          <div class="search-expand-inner">
-            <form method="get" class="searchform themeform" action="https://www.google.com/search">
-              <div>
-                <input type="text" class="search" name="q" placeholder="Press enter to start searching">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
+<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
 
-  </nav>
-  
 
-  <div class="container group">
-    <div class="container-inner">
 
-      <div class="group pad">
 
-        <div class="group pad">
-          <h1 class="site-title">
-            <a rel="nofollow" href="https://gafish.github.io//" rel="home">
-              <img style="border-radius: 50%;width:72px;height:72px;margin:0 auto;" alt="gafish" src="https://gafish.github.io/public/gafish.png"></img>
-              gafish&#39;s blog
-            </a>
-          </h1>
-          <p class="site-description">  </p>
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s blog" />
+
+
+
+
+
+
+<meta property="og:updated_time" content="2021-12-04T20:55:25&#43;08:00" />
+
+
+
+<meta property="article:section" content="" />
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="gafish's blog" />
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">博客</a>
         </div>
 
-      </div>
-    </div>
-    
-  </div>
-  
-
-</header>
-
-
-  <div class="container" id="page">
-    <div class="container-inner">
-      <div class="main">
-        <div class="main-inner group">
-          <section class="content">
-            <div class="pad group">
-              
-              <div class="featured">
-  <article class="post type-post status-publish format-standard has-post-thumbnail hentry group">
-      <div class="post-inner post-hover">
-          <div class="post-meta group">
-              <p class="post-category">
-              
-              <a href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" title="All posts in 记录折腾" rel="category tag">记录折腾</a>
-              
-              </p>
-              <p class="post-date">2021年12月04日</p>
-          </div>
-          <h2 class="post-title">
-              <a href="https://gafish.github.io/2021/12/04/synology-spk/" rel="bookmark" title="群晖折腾手记六：添加第三方套件源">群晖折腾手记六：添加第三方套件源</a>
-          </h2>
-          <div class="entry excerpt">
-              <p>群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我</p>
-          </div>
-      </div>
-  </article>
-</div>
-
-              
-              <div class="post-list group">
-                
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年12月01日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/12/01/synology-video/" rel="bookmark" title="群晖折腾手记五：家庭影视娱乐上手指南">群晖折腾手记五：家庭影视娱乐上手指南</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
                 </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年11月22日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/11/22/synology-download/" rel="bookmark" title="群晖折腾手记四：搭建离线下载服务">群晖折腾手记四：搭建离线下载服务</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年11月21日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/11/21/synology-audio/" rel="bookmark" title="群晖折腾手记三：搭建个人网络音乐库">群晖折腾手记三：搭建个人网络音乐库</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年11月09日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/11/06/synology-calibre-library/" rel="bookmark" title="群晖折腾手记二：搭建个人数字图书馆">群晖折腾手记二：搭建个人数字图书馆</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年11月06日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/11/06/synology-nas-ready/" rel="bookmark" title="群晖折腾手记一：开篇，正式折腾前的准备">群晖折腾手记一：开篇，正式折腾前的准备</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年10月29日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/post/2021/2021-10-29-craftjs-introduction/" rel="bookmark" title="Craft.js 入门与实践">Craft.js 入门与实践</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年10月28日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/10/28/html-tutorial/" rel="bookmark" title="[资源]HTML入门视频教程下载">[资源]HTML入门视频教程下载</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年10月17日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/10/17/calibre-introduction/" rel="bookmark" title="Calibre 入门指南">Calibre 入门指南</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2021年09月26日</p>
-  <p class="post-title-small"><a href="https://gafish.github.io/2021/09/26/hello-world/" rel="bookmark" title="Hello World! 博客重出江湖">Hello World! 博客重出江湖</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                
-                
-                
-              </div>
-              <nav class="pagination group">
-                <div class="wp-pagenavi">
-                  <a class="page" href="https://gafish.github.io/post/">More...</a>
-                </div>
-              </nav>
             </div>
-          </section>
-          <div class="sidebar s1">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
-  <div class="sidebar-content">
-    <div class="sidebar-top group">
-      <p>Follow:</p>
-      <ul class="social-links">
-    <li>
-    <a class="social-tooltip" title="On GitHub"
-        href="https://github.com/gafish" target="_blank">
-        <i class="fa fa-github"></i>
-    </a>
-    </li>
-</ul>
-
+        </div>
     </div>
-    <div class="widget qrcode">
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
     
-    <p>” THIS IS NULL "</p>
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
 </div>
-
-    <div id="search-2" class="widget widget_search"><h3>Search</h3>
-      <form method="get" class="searchform themeform" action="https://www.google.com/search">
-        <div>
-          <input type="text" class="search" name="q" placeholder="Press enter to start searching">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-          <div class="sidebar s2">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
-  <div class="sidebar-content">
-    <div class="sidebar-top group">
-      <p>More</p>
-    </div>
-    <div id="categories-2" class="widget widget_categories"><h3>Categories</h3>
-      <ul>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/">编程开发</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/">思考感悟</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/">记录折腾</a>
-          </li>
-        
-          <li class="cat-item cat-item-1">
-            <a rel="nofollow" href="https://gafish.github.io/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer id="footer">
-  <section class="container" id="footer-bottom">
-    <div class="container-inner">
-      <a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
-      <div class="pad group">
-        <div class="grid one-half">
-          <div id="copyright">
-              <p>Copyright (c) 2021. All rights reserved.<br>Powered by
-              <a rel="nofollow" href="http://gohugo.io/" target="_blank">Hugo - the static site generator</a>.
-              <a rel="nofollow" href="http://golang.org" target="_blank">#golang</a>.
-            </p>
-          </div>
-          
-        </div>
-        
-        <div class="grid one-half last">
-          <ul class="social-links">
-    <li>
-    <a class="social-tooltip" title="On GitHub"
-        href="https://github.com/gafish" target="_blank">
-        <i class="fa fa-github"></i>
-    </a>
-    </li>
-</ul>
-
-        </div>
-      </div>
-
-    </div>
-    
-  </section>
+  </header>
+  <main class="flex-grow pt-16">
   
-</footer>
+  
+  
+    
+      
+  
+
+  
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+    
+    
+    
+    
+  
+
+  <div class="pl-scrollbar bg-secondary-bg" 
+    >
+    <div class="max-w-screen-xl mx-auto">
+      <div id="about" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+        
+  
+
+  
+    <div class="flex flex-col md:flex-row items-center justify-center mb-12">
+  
+  
+    <div class="flex-none w-48 mx-auto md:ml-0 md:mr-8 md:pr-8 md:border-r">
+      <img src="/public/avatar.png" class="rounded-full" alt="Avatar">
+    </div>
+  
+  <div class="flex-grow mt-4 md:mt-0">
+    <div class="text-3xl py-4">GAFISH</div>
+    <div class="w-3/12 xl:w-2/12 border-b"></div>
+
+    <div class="flex items-center pt-4">
+      
+        <i class="fas fa-user"></i>
+      
+      <div class="flex flex-wrap">
+        
+          <span class="pl-4">前端开发工程师</span>
+        
+
+        
+      </div>
+
+    </div>
+
+    
+      <div class="py-8 text-lg leading-normal">
+        一个老程序员，群晖玩家，最爱瞎折腾
+      </div>
+    
+  </div>
+  <div class="flex md:flex-col justify-center items-end ml-8">
+    
+    
+      
+      
+      
+      
+      
+      <div class="pb-2 pr-4 md:pr-0 pt-4 md:pt-0">
+        <a href="https://twitter.com/im_gafish"><i class="fab fa-twitter"></i></a>
+      </div>
+    
+      
+      
+      
+      
+      
+      <div class="pb-2 pr-4 md:pr-0 pt-4 md:pt-0">
+        <a href="https://github.com/gafish"><i class="fab fa-github"></i></a>
+      </div>
+    
+  </div>
+</div>
+<div class="content">
+  <h2 id="自我介绍">自我介绍</h2>
+<p>爱折腾的程序员</p>
 
 </div>
 
-</body>
-</html>
+  
 
+      </div>
+    </div>
+  </div>
+
+    
+
+  
+  
+    
+      
+  
+
+  
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+      
+      
+    
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+    
+    
+    
+    
+  
+
+  <div class="pl-scrollbar bg-primary-bg" 
+    >
+    <div class="max-w-screen-xl mx-auto">
+      <div id="pages" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+        
+  
+
+  
+    
+  <h2 class=" font-bold text-3xl my-4">最近文章</h2>
+
+
+  
+  
+  <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/2021/12/04/synology-spk/" class="font-bold text-xl hover:text-eureka">群晖折腾手记六：添加第三方套件源</a>
+</div>
+<div class="content">
+  
+    群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我们更好的玩
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-04</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" class="hover:text-eureka">记录折腾</a>
+        
+    </div>
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/2021/12/01/synology-video/" class="font-bold text-xl hover:text-eureka">群晖折腾手记五：家庭影视娱乐上手指南</a>
+</div>
+<div class="content">
+  
+    安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数据和封面数
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" class="hover:text-eureka">记录折腾</a>
+        
+    </div>
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/2021/11/22/synology-download/" class="font-bold text-xl hover:text-eureka">群晖折腾手记四：搭建离线下载服务</a>
+</div>
+<div class="content">
+  
+    都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-22</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" class="hover:text-eureka">记录折腾</a>
+        
+    </div>
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/2021/11/21/synology-audio/" class="font-bold text-xl hover:text-eureka">群晖折腾手记三：搭建个人网络音乐库</a>
+</div>
+<div class="content">
+  
+    在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-21</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" class="hover:text-eureka">记录折腾</a>
+        
+    </div>
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/2021/11/06/synology-calibre-library/" class="font-bold text-xl hover:text-eureka">群晖折腾手记二：搭建个人数字图书馆</a>
+</div>
+<div class="content">
+  
+    一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-09</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E8%AE%B0%E5%BD%95%E6%8A%98%E8%85%BE/" class="hover:text-eureka">记录折腾</a>
+        
+    </div>
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+</div>
+
+
+  <div class="pt-2 hover:text-eureka">
+    
+  <a href="/posts/" class="font-semibold">阅读更多</a>
+  <i class="fas fa-caret-right ml-1"></i>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+      </div>
+    </div>
+  </div>
+
+    
+
+  
+  
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

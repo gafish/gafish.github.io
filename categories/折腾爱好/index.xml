@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>折腾爱好 on gafish&#39;s blog</title>
-    <link>https://gafish.github.io/categories/%E6%8A%98%E8%85%BE%E7%88%B1%E5%A5%BD/</link>
+    <link>/categories/%E6%8A%98%E8%85%BE%E7%88%B1%E5%A5%BD/</link>
     <description>Recent content in 折腾爱好 on gafish&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 17 Oct 2021 11:00:52 +0800</lastBuildDate><atom:link href="https://gafish.github.io/categories/%E6%8A%98%E8%85%BE%E7%88%B1%E5%A5%BD/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 11:00:52 +0800</lastBuildDate><atom:link href="/categories/%E6%8A%98%E8%85%BE%E7%88%B1%E5%A5%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calibre 入门指南</title>
-      <link>https://gafish.github.io/2021/10/17/calibre-introduction/</link>
+      <link>/2021/10/17/calibre-introduction/</link>
       <pubDate>Sun, 17 Oct 2021 11:00:52 +0800</pubDate>
       
-      <guid>https://gafish.github.io/2021/10/17/calibre-introduction/</guid>
-      <description>Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。 具体的功能列表如下： 可以管理各种类别的电</description>
+      <guid>/2021/10/17/calibre-introduction/</guid>
+      <description>Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。 具体的功能列表如下： 可以管理各种类别的电子书，of</description>
     </item>
     
   </channel>
