@@ -1,17 +1,21 @@
 ---
 title: "群晖折腾手记三：搭建个人网络音乐库"
-
-toc: true
-date:  2021-11-21T16:10:06+08:00
-description: ""
-author: "gafish"
-categories:
-  - "记录折腾"
+description:
 keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/11/21/synology-audio"
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-11-21T16:10:06+08:00
+lastmod: 2021-11-21T16:10:06+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/11/21/synology-audio
 ---
 
 在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静听，这些古董，估计当今的00后听都没听过，而这些伴随了我们很多人的成长。

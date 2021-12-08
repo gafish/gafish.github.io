@@ -1,19 +1,23 @@
 ---
 title: "Craft.js 入门与实践"
-
-toc: true
-date:  2021-10-29T21:22:59+08:00
 description: "Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库"
-author: "gafish"
-categories:
-  - "编程开发"
 keywords:
  - Craft
  - Craft.js
  - Craft 入门
  - Craft 中文
  - 可视化编辑器
-url: ""
+toc: true
+authors: []
+tags: []
+categories: 技术
+series: []
+date: 2021-10-29T21:22:59+08:00
+lastmod: 2021-10-29T21:22:59+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/10/29/craftjs-introduction
 ---
 
 在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： `grapes.js` 和 `craft.js`

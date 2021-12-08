@@ -1,17 +1,21 @@
 ---
 title: "群晖折腾手记一：开篇，正式折腾前的准备"
-
-toc: true
-date:  2021-11-06T21:41:30+08:00
-description: ""
-author: "gafish"
-categories:
-  - "记录折腾"
+description:
 keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/11/06/synology-nas-ready"
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-11-06T21:41:30+08:00
+lastmod: 2021-11-06T21:41:30+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/11/06/synology-nas-ready
 ---
 
 大概在2020年初开始，我就想买一个`群晖(Synology)`来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动硬盘来勉强支撑我的需求。

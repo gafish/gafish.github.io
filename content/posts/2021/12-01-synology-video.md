@@ -1,19 +1,22 @@
 ---
 title: "群晖折腾手记五：家庭影视娱乐上手指南"
-
-toc: true
-date:  2021-12-01T21:45:25+08:00
-description: ""
-author: "gafish"
-categories:
-  - "记录折腾"
+description:
 keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/12/01/synology-video"
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-12-01T21:45:25+08:00
+lastmod: 2021-12-01T21:45:25+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/12/01/synology-video
 ---
-
 
 ## 安装与设置
 

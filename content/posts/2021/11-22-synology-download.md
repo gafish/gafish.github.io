@@ -1,17 +1,21 @@
 ---
 title: "群晖折腾手记四：搭建离线下载服务"
-
-toc: true
-date:  2021-11-22T21:00:56+08:00
-description: ""
-author: "gafish"
-categories:
-  - "记录折腾"
+description:
 keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/11/22/synology-download"
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-11-22T21:00:56+08:00
+lastmod: 2021-11-22T21:00:56+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/11/22/synology-download
 ---
 
 都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 `Download Station` 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的离线下载功能，它还是值得我们来体验下的。

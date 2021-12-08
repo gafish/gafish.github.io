@@ -1,17 +1,20 @@
 ---
 title: "Lerna 入门教程"
-draft: true
-toc: true
-date:  2021-12-07T11:40:25+08:00
-description: ""
-author: "gafish"
-categories:
-  - "编程开发"
+description: 
 keywords:
  - Lerna
-url: "/2021/12/07/lerna-introduction/"
+toc: true
+authors: []
+tags: []
+categories: 技术
+series: []
+date: 2021-12-07T11:40:25+08:00
+lastmod: 2021-12-07T11:40:25+08:00
+featuredVideo:
+featuredImage:
+draft: true
+url: /posts/2021/12/07/lerna-introduction/
 ---
-
 
 ## 参考文档
 

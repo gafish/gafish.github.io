@@ -1,9 +1,9 @@
 ---
 title: GAFISH
 draft: false
-role: 前端开发工程师
+role: 程序员
 avatar: public/avatar.png
-bio: 一个老程序员，群晖玩家，最爱瞎折腾
+bio: 写了很多年代码，依旧能写很多年
 # organization:
 #   name: 顶象科技
 #   url: https://www.dingxiang-inc.com/
@@ -42,4 +42,4 @@ widget:
 
 ## 自我介绍
 
-爱折腾的程序员
+一个爱折腾的程序员，做过站长，搞过SEO，写过ASP，玩过IOT，开过淘宝店铺，写过微信公众号，折腾过Wordpress博客，现在开始折腾Hugo博客

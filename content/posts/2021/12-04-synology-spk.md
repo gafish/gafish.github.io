@@ -1,17 +1,21 @@
 ---
 title: "群晖折腾手记六：添加第三方套件源"
-
-toc: true
-date:  2021-12-04T20:55:25+08:00
-description: ""
-author: "gafish"
-categories:
-  - "记录折腾"
+description:
 keywords:
  - synology
  - synology 720+
  - 群晖 720+
-url: "/2021/12/04/synology-spk"
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-12-04T20:55:25+08:00
+lastmod: 2021-12-04T20:55:25+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/12/04/synology-spk
 ---
 
 群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我们更好的玩转群晖。

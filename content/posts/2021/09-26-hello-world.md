@@ -1,13 +1,18 @@
 ---
-title: "Hello World! 博客重出江湖"
+title: Hello World! 博客重出江湖
+description:
+keywords:
 toc: true
-date:  2021-09-26T21:32:16+08:00
-description: ""
-author: "gafish"
-categories:
-  - "思考感悟"
-url: "/2021/09/26/hello-world/"
-
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-09-26T21:32:16+08:00
+lastmod: 2021-09-26T21:32:16+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/09/26/hello-world
 ---
 
 Hello World!

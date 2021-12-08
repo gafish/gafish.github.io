@@ -1,21 +1,23 @@
 ---
 title: "Calibre 入门指南"
-
-toc: true
-date:  2021-10-17T11:00:52+08:00
-end: 2021-10-26T09:20:00+08:00
 description: "本文通过介绍 Calibre 添加、管理、分享功能，帮助大家了解 Calibre 的基本操作"
-author: "gafish"
-categories:
-  - "折腾爱好"
 keywords:
  - calibre
  - Calibre
  - Calibre 入门
  - Calibre 中文
  - Calibre 教程
-url: "/2021/10/17/calibre-introduction"
-
+toc: true
+authors: []
+tags: []
+categories: 生活
+series: []
+date: 2021-10-17T11:00:52+08:00
+lastmod: 2021-10-26T09:20:00+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/10/17/calibre-introduction
 ---
 
 Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。

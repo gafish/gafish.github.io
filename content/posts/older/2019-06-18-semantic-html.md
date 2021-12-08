@@ -1,16 +1,19 @@
 ---
-title: "HTML5语义化开发指南"
-
-toc: true
-date:  2019-06-18T22:11:00+08:00
-description: ""
-author: "gafish"
-categories:
-  - "编程开发"
+title: HTML5语义化开发指南
+description:
 keywords:
  - "HTML语义化"
-url: "/older/semantic-html/"
-
+toc: true
+authors: []
+tags: []
+categories: 技术
+series: []
+date: 2019-06-18T22:11:00+08:00
+lastmod: 2019-06-18T22:11:00+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2019/06/18/semantic-html
 ---
 
 ## 为什么要做 HTML5 语义化

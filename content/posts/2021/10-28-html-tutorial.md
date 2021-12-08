@@ -1,16 +1,18 @@
 ---
-title: "[资源]HTML入门视频教程下载"
-
-toc: true
-date:  2021-10-28T08:52:29+08:00
-description: ""
-author: "gafish"
-categories:
-  - "资源分享"
+title: "HTML入门视频教程下载"
+description:
 keywords:
- - xxx
-url: "2021/10/28/html-tutorial"
-
+toc: true
+authors: []
+tags: []
+categories: 资源
+series: []
+date: 2021-10-28T08:52:29+08:00
+lastmod: 2021-10-28T08:52:29+08:00
+featuredVideo:
+featuredImage:
+draft: false
+url: /posts/2021/10/28/html-tutorial-video
 ---
 
 ## 资源截图
