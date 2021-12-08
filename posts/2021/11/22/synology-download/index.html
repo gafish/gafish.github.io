@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>群晖折腾手记四：搭建离线下载服务 | gafish&#39;s Blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"群晖折腾手记四：搭建离线下载服务",
+      "item":"/posts/2021/11/22/synology-download/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/2021/11/22/synology-download/"
+    },
+    "headline": "群晖折腾手记四：搭建离线下载服务 | gafish\u0027s Blog","datePublished": "2021-11-22T21:00:56+08:00",
+    "dateModified": "2021-11-22T21:00:56+08:00",
+    "wordCount":  672 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "gafish",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的"
+}
+</script><meta property="og:title" content="群晖折腾手记四：搭建离线下载服务 | gafish&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/2021/11/22/synology-download/" />
+
+
+
+
+<meta property="og:description" content="都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s Blog" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-22T21:00:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-11-22T21:00:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<meta property="og:see_also" content="/posts/2021/11/21/synology-audio/" />
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-nas-ready/" />
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-calibre-library/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s Blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于我</a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术</a>
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">生活</a>
+            <a href="/categories/%E8%B5%84%E6%BA%90/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">资源</a>
+            <a href="/tools/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">工具</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">群晖折腾手记四：搭建离线下载服务</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-22</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E7%94%9F%E6%B4%BB/" class="hover:text-eureka">生活</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 <code>Download Station</code> 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的离线下载功能，它还是值得我们来体验下的。</p>
+<h2 id="安装与启动">安装与启动</h2>
+<p>在安装之前，我们最好先在 <code>共享文件夹</code> 下新建一个下载目录，如：<code>download</code>，后面会用到</p>
+<p><img src="/images/2021-11-22-synology-download/1.jpg" alt=""></p>
+<p>在套件中心搜索 <code>download station</code> 并安装，完成后会自动启动服务</p>
+<p><img src="/images/2021-11-22-synology-download/2.jpg" alt=""></p>
+<p>打开 <code>download station</code> 会让我们选择一个默认下载目录，这里就可以选择一开始我们创建好的 <code>download</code> 目录</p>
+<p><img src="/images/2021-11-22-synology-download/3.jpg" alt=""></p>
+<p>在默认选项下使用 <code>download station</code> 就可以开始下载了，点击+号添加下载任务，支持普通的网址下载、BT种子下载、磁力下载等</p>
+<p><img src="/images/2021-11-22-synology-download/4.jpg" alt=""></p>
+<h2 id="bt搜索">BT搜索</h2>
+<p>在左上角有BT搜索功能，但默认的搜索引擎经常会搜索不到结果</p>
+<p><img src="/images/2021-11-22-synology-download/5.jpg" alt=""></p>
+<p>我们可以在 <code>设置</code> - <code>BT搜索</code> 中添加其它的搜索引擎模块，有2种方式可以方便的找到网络上的BT搜索引擎模块</p>
+<ol>
+<li>在 github 中搜索 <code>synology-dlm</code>，可以找到很多开源代码的 dlm 包</li>
+<li>在 <a href="http://www.synoboost.com/">synoboost.com</a> 中直接下载模块</li>
+</ol>
+<p>这里我搜罗了一些现成的模块方便大家下载，<a href="/images/2021-11-22-synology-download/dlm.zip">点击下载</a></p>
+<p><img src="/images/2021-11-22-synology-download/6.jpg" alt=""></p>
+<p>添加了新的搜索引擎模块后，最好把默认提供的2个搜索引擎模块删除，这样可以更加快速的搜索到结果</p>
+<p><img src="/images/2021-11-22-synology-download/7.jpg" alt=""></p>
+<h2 id="加速配置">加速配置</h2>
+<p>默认配置下使用 <code>Download Station</code> 来下载文件，速度上确实不快，但也不是没有办法，我们可以通过添加 <code>Tracker服务器</code> 的方式来提速，最新的Tracker列表可以在<a href="https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt">这里下载</a></p>
+<p><img src="/images/2021-11-22-synology-download/8.jpg" alt=""></p>
+<p>上面链接中复制过来的列表需要删除空格才能使用，这里我就直接将列表复制过来了</p>
+<pre><code>http://p4p.arenabg.com:1337/announce
+udp://tracker.opentrackr.org:1337/announce
+udp://9.rarbg.com:2810/announce
+udp://open.tracker.cl:1337/announce
+udp://exodus.desync.com:6969/announce
+udp://tracker.openbittorrent.com:6969/announce
+http://tracker.openbittorrent.com:80/announce
+http://openbittorrent.com:80/announce
+udp://www.torrent.eu.org:451/announce
+udp://vibe.sleepyinternetfun.xyz:1738/announce
+udp://udp-tracker.shittyurl.org:6969/announce
+udp://u.wwwww.wtf:1/announce
+udp://tracker1.bt.moack.co.kr:80/announce
+udp://tracker0.ufibox.com:6969/announce
+udp://tracker.zerobytes.xyz:1337/announce
+udp://tracker.torrent.eu.org:451/announce
+udp://tracker.tiny-vps.com:6969/announce
+udp://tracker.theoks.net:6969/announce
+udp://tracker.srv00.com:6969/announce
+udp://tracker.pomf.se:80/announce
+</code></pre>
+<h2 id="实用工具">实用工具</h2>
+<p>我所使用的环境是 Mac，所以在下载到 Windows 自解压文件后就有点麻烦，这里推荐一个实用的解压工具：<a href="https://apps.apple.com/cn/app/the-unarchiver/id425424353?l=en&amp;mt=12">The Unarchiver</a>，免费并且支持 .exe 自解压格式，非常方便</p>
+<p><img src="/images/2021-11-22-synology-download/9.jpg" alt=""></p>
+<h2 id="资料参考">资料参考</h2>
+<ul>
+<li><a href="https://blog.myds.cloud/archives/%E7%BE%A4%E6%99%96%E4%B8%8B%E8%BD%BD%E5%99%A8%E6%B7%BB%E5%8A%A0bt%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html">https://blog.myds.cloud/archives/%E7%BE%A4%E6%99%96%E4%B8%8B%E8%BD%BD%E5%99%A8%E6%B7%BB%E5%8A%A0bt%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html</a></li>
+<li><a href="https://www.kocpc.com.tw/archives/60972">https://www.kocpc.com.tw/archives/60972</a></li>
+<li><a href="https://post.smzdm.com/p/aqno9lwx/">https://post.smzdm.com/p/aqno9lwx/</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/2021/12/01/synology-video/" class="block">群晖折腾手记五：家庭影视娱乐上手指南</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/2021/11/21/synology-audio/" class="block">群晖折腾手记三：搭建个人网络音乐库</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装与启动">安装与启动</a></li>
+    <li><a href="#bt搜索">BT搜索</a></li>
+    <li><a href="#加速配置">加速配置</a></li>
+    <li><a href="#实用工具">实用工具</a></li>
+    <li><a href="#资料参考">资料参考</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/posts/2021/11/21/synology-audio/">群晖折腾手记三：搭建个人网络音乐库</a>
+            <br />
+            
+            <a href="/posts/2021/11/06/synology-nas-ready/">群晖折腾手记一：开篇，正式折腾前的准备</a>
+            <br />
+            
+            <a href="/posts/2021/11/06/synology-calibre-library/">群晖折腾手记二：搭建个人数字图书馆</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

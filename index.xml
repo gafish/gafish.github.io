@@ -1,118 +1,127 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gafish&#39;s blog</title>
+    <title>gafish&#39;s Blog</title>
     <link>/</link>
-    <description>Recent content on gafish&#39;s blog</description>
+    <description>Recent content on gafish&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
     <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>群晖折腾手记六：添加第三方套件源</title>
-      <link>/2021/12/04/synology-spk/</link>
+      <link>/posts/2021/12/04/synology-spk/</link>
       <pubDate>Sat, 04 Dec 2021 20:55:25 +0800</pubDate>
       
-      <guid>/2021/12/04/synology-spk/</guid>
+      <guid>/posts/2021/12/04/synology-spk/</guid>
       <description>群晖官方的套件中心为我们提供了很多官方的实用套件可供下载，基本满足普通用户的需求了，但是套件数量还是太少，这时候添加一些第三方套件源可以让我们更好的玩</description>
     </item>
     
     <item>
       <title>群晖折腾手记五：家庭影视娱乐上手指南</title>
-      <link>/2021/12/01/synology-video/</link>
+      <link>/posts/2021/12/01/synology-video/</link>
       <pubDate>Wed, 01 Dec 2021 21:45:25 +0800</pubDate>
       
-      <guid>/2021/12/01/synology-video/</guid>
+      <guid>/posts/2021/12/01/synology-video/</guid>
       <description>安装与设置 在套件中心搜索 video station 并安装，完成后会在一个新窗口打开界面 默认会打开设置界面，提示你启用视频信息插件，它的作用是自动为你的电影下载元数据和封面数</description>
     </item>
     
     <item>
       <title>群晖折腾手记四：搭建离线下载服务</title>
-      <link>/2021/11/22/synology-download/</link>
+      <link>/posts/2021/11/22/synology-download/</link>
       <pubDate>Mon, 22 Nov 2021 21:00:56 +0800</pubDate>
       
-      <guid>/2021/11/22/synology-download/</guid>
+      <guid>/posts/2021/11/22/synology-download/</guid>
       <description>都用上了 群晖NAS ，那下载是逃不过去的一个服务，群晖的官方套件 Download Station 为我们提供了功能强大，上手简单的离线下载功能，虽然很多人诟病它下载慢，但作为入门级的</description>
     </item>
     
     <item>
       <title>群晖折腾手记三：搭建个人网络音乐库</title>
-      <link>/2021/11/21/synology-audio/</link>
+      <link>/posts/2021/11/21/synology-audio/</link>
       <pubDate>Sun, 21 Nov 2021 16:10:06 +0800</pubDate>
       
-      <guid>/2021/11/21/synology-audio/</guid>
+      <guid>/posts/2021/11/21/synology-audio/</guid>
       <description>在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静</description>
     </item>
     
     <item>
-      <title>群晖折腾手记二：搭建个人数字图书馆</title>
-      <link>/2021/11/06/synology-calibre-library/</link>
-      <pubDate>Tue, 09 Nov 2021 12:44:22 +0800</pubDate>
-      
-      <guid>/2021/11/06/synology-calibre-library/</guid>
-      <description>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，</description>
-    </item>
-    
-    <item>
       <title>群晖折腾手记一：开篇，正式折腾前的准备</title>
-      <link>/2021/11/06/synology-nas-ready/</link>
+      <link>/posts/2021/11/06/synology-nas-ready/</link>
       <pubDate>Sat, 06 Nov 2021 21:41:30 +0800</pubDate>
       
-      <guid>/2021/11/06/synology-nas-ready/</guid>
+      <guid>/posts/2021/11/06/synology-nas-ready/</guid>
       <description>大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动</description>
     </item>
     
     <item>
       <title>Craft.js 入门与实践</title>
-      <link>/posts/2021/2021-10-29-craftjs-introduction/</link>
+      <link>/posts/2021/10/29/craftjs-introduction/</link>
       <pubDate>Fri, 29 Oct 2021 21:22:59 +0800</pubDate>
       
-      <guid>/posts/2021/2021-10-29-craftjs-introduction/</guid>
+      <guid>/posts/2021/10/29/craftjs-introduction/</guid>
       <description>在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： grapes.js 和 craft.js grapes.js 是一个 HTML Web 构建器框架，它提供了一个开箱即用的解决方案，自带非常完整的组件，基</description>
     </item>
     
     <item>
-      <title>[资源]HTML入门视频教程下载</title>
-      <link>/2021/10/28/html-tutorial/</link>
+      <title>HTML入门视频教程下载</title>
+      <link>/posts/2021/10/28/html-tutorial-video/</link>
       <pubDate>Thu, 28 Oct 2021 08:52:29 +0800</pubDate>
       
-      <guid>/2021/10/28/html-tutorial/</guid>
+      <guid>/posts/2021/10/28/html-tutorial-video/</guid>
       <description>资源截图 下载方式 我用阿里云盘分享了「HTML入门教程」，你可以不限速下载🚀 链接：https://www.aliyundrive.com/s/Gs3AS</description>
     </item>
     
     <item>
+      <title>实用工具</title>
+      <link>/tools/</link>
+      <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
+      
+      <guid>/tools/</guid>
+      <description>编程开发辅助 nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator Json在线解析</description>
+    </item>
+    
+    <item>
       <title>Calibre 入门指南</title>
-      <link>/2021/10/17/calibre-introduction/</link>
+      <link>/posts/2021/10/17/calibre-introduction/</link>
       <pubDate>Sun, 17 Oct 2021 11:00:52 +0800</pubDate>
       
-      <guid>/2021/10/17/calibre-introduction/</guid>
+      <guid>/posts/2021/10/17/calibre-introduction/</guid>
       <description>Calibre 是一款功能强大且易于使用的电子书管理器，它可以帮助你管理你的电子书，并且可以自动生成电子书的索引。 具体的功能列表如下： 可以管理各种类别的电子书，of</description>
     </item>
     
     <item>
       <title>Hello World! 博客重出江湖</title>
-      <link>/2021/09/26/hello-world/</link>
+      <link>/posts/2021/09/26/hello-world/</link>
       <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
       
-      <guid>/2021/09/26/hello-world/</guid>
+      <guid>/posts/2021/09/26/hello-world/</guid>
       <description>Hello World! 不管出于何种目的，我又开始写博客了。 作为开篇，我想说一下，我对博客的态度是如何一步一步变化的。 作为一个大龄码农，其实我接触的博客的时间很早，最早可</description>
     </item>
     
     <item>
+      <title>群晖折腾手记二：搭建个人数字图书馆</title>
+      <link>/posts/2021/11/06/synology-calibre-library/</link>
+      <pubDate>Sun, 26 Sep 2021 21:32:16 +0800</pubDate>
+      
+      <guid>/posts/2021/11/06/synology-calibre-library/</guid>
+      <description>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，</description>
+    </item>
+    
+    <item>
       <title>HTML Lang 规范用法</title>
-      <link>/older/html-lang/</link>
+      <link>/posts/2019/06/20/html-lang/</link>
       <pubDate>Thu, 20 Jun 2019 23:22:00 +0800</pubDate>
       
-      <guid>/older/html-lang/</guid>
+      <guid>/posts/2019/06/20/html-lang/</guid>
       <description>前言 做 web 无障碍相关的研究时，遇到的第一件事就是要给 &amp;lt;html&amp;gt; 设置正确的 lang 属性，这么简单的一件事，想也不用就写好了：&amp;lt;html lang=&amp;quot;zh-</description>
     </item>
     
     <item>
       <title>HTML5语义化开发指南</title>
-      <link>/older/semantic-html/</link>
+      <link>/posts/2019/06/18/semantic-html/</link>
       <pubDate>Tue, 18 Jun 2019 22:11:00 +0800</pubDate>
       
-      <guid>/older/semantic-html/</guid>
+      <guid>/posts/2019/06/18/semantic-html/</guid>
       <description>为什么要做 HTML5 语义化 HTML5的主要进步之一是引入了一组标准化的语义元素。 ”语义元素“是用于以更有意义的方式标记文档结构的元素，这种方式可以清楚地表明它</description>
     </item>
     

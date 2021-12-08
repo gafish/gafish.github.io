@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>群晖折腾手记三：搭建个人网络音乐库 | gafish&#39;s Blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"群晖折腾手记三：搭建个人网络音乐库",
+      "item":"/posts/2021/11/21/synology-audio/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/2021/11/21/synology-audio/"
+    },
+    "headline": "群晖折腾手记三：搭建个人网络音乐库 | gafish\u0027s Blog","datePublished": "2021-11-21T16:10:06+08:00",
+    "dateModified": "2021-11-21T16:10:06+08:00",
+    "wordCount":  997 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "gafish",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静"
+}
+</script><meta property="og:title" content="群晖折腾手记三：搭建个人网络音乐库 | gafish&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/2021/11/21/synology-audio/" />
+
+
+
+
+<meta property="og:description" content="在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s Blog" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-21T16:10:06&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-11-21T16:10:06&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-nas-ready/" />
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-calibre-library/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s Blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于我</a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术</a>
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">生活</a>
+            <a href="/categories/%E8%B5%84%E6%BA%90/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">资源</a>
+            <a href="/tools/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">工具</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">群晖折腾手记三：搭建个人网络音乐库</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-21</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E7%94%9F%E6%B4%BB/" class="hover:text-eureka">生活</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>在当今互联网音乐盛行的年代，可能很多人都已经忘了曾经的我们是怎样听歌的，录音机、磁带、唱片光盘、VCD、MP3播放机、百度MP3、Winamp、千千静听，这些古董，估计当今的00后听都没听过，而这些伴随了我们很多人的成长。</p>
+<p>现在的听歌方式都是各种音乐在线服务，像网易云音乐、酷狗音乐、QQ音乐，这些在线音乐服务，可以让你听音乐更加简单，更加方便，但同时因为版权的问题，也会让听歌更加费劲，为了你喜欢的歌曲，你可能需要在手机上安装好几个音乐APP。</p>
+<p>如果说上面这个问题还不算问题，那对我而言，更大的问题是我喜欢的很多音乐因为敏感原因而导致下架，要想听就只能下载到本地播放，为解决这种种问题，搭建个人网络音乐库就势在必行，那今天，我就开始借助群晖强大的音乐管理功能来实现这个目标。</p>
+<h2 id="音乐服务器">音乐服务器</h2>
+<p>打开群晖套件中心，搜索 <code>Audio Station</code> 并点击安装，这个音乐服务器是群晖的音乐管理功能，它可以让你更加方便的管理音乐</p>
+<p><img src="/images/2021-11-21-synology-audio/1.jpg" alt=""></p>
+<p>安装好之后，打开 <code>Audio Station</code> 就会启动网络音乐服务</p>
+<p><img src="/images/2021-11-21-synology-audio/2.jpg" alt=""></p>
+<p>打开 <code>File Station</code> 会看到一个 <code>music</code> 的文件夹，这个文件夹是你的音乐文件夹，你可以在这里通过在线上传或者局域网复制的方式添加你喜欢的音乐文件</p>
+<p><img src="/images/2021-11-21-synology-audio/3.jpg" alt=""></p>
+<h2 id="电脑音乐播放器">电脑音乐播放器</h2>
+<p><code>Audio Station</code> 本身就是一个音乐播放器，在你添加好音乐之后，在 <code>所有音乐</code> 中就能看到你添加的音乐文件列表，直接点击就可以播放</p>
+<p><img src="/images/2021-11-21-synology-audio/4.jpg" alt=""></p>
+<p>你也可以通过创建 <code>播放列表</code> 来归类你喜欢的音乐</p>
+<p><img src="/images/2021-11-21-synology-audio/5.jpg" alt=""></p>
+<p>我特别推荐这里的 <code>智能播放列表</code> 功能，它可以通过一系列规则，为你智能匹配歌曲，比如你可以创建一个 <code>最近30天添加的歌曲</code></p>
+<p><img src="/images/2021-11-21-synology-audio/6.jpg" alt=""></p>
+<h2 id="歌词插件">歌词插件</h2>
+<p>当你此时通过 <code>Audio Station</code> 来听歌时，你可能会发现，经常会没有歌词可用</p>
+<p><img src="/images/2021-11-21-synology-audio/7.jpg" alt=""></p>
+<p>这是因为默认的歌词插件 <code>LyricWiki</code> 非常不好用，你可以在 <code>设置-歌词插件</code> 中，通过新增第三方歌词插件的方式来解决这个问题，比如我用的 <a href="https://github.com/LudySu/Synology-LrcPlugin">网易云歌词插件</a></p>
+<p><img src="/images/2021-11-21-synology-audio/8.jpg" alt=""></p>
+<p>新增了歌词插件之后，最好关闭 <code>Audio Station</code>，重新再打开一次，这样就可以看到歌词了</p>
+<p><img src="/images/2021-11-21-synology-audio/9.jpg" alt=""></p>
+<h2 id="手机音乐app">手机音乐APP</h2>
+<p>光在电脑上听歌肯定不能满足我们的需求，在手机上听才是目标，从应用商店下载 <code>DS Audio</code>，通过我们前期设置好的账号密码，就可以登录到 <code>DS Audio</code> 了</p>
+<p><img src="/images/2021-11-21-synology-audio/10.jpg" alt=""></p>
+<p>登录后就可以看到跟电脑端一样的音乐列表，选择音乐就可以播放，从功能上来说这已经满足了我的需求，不过说实话，界面真的丑</p>
+<p><img src="/images/2021-11-21-synology-audio/11.jpg" alt=""></p>
+<h2 id="音乐信息管理">音乐信息管理</h2>
+<p>你可能会发现在网络上下载的音乐，好多元信息都是错误的，比如歌手、专辑、封面等等，通过在 <code>Audio Station</code> 的歌曲上右键，点击 <code>歌曲信息</code>，我们可以简单的编辑歌曲的信息，</p>
+<p><img src="/images/2021-11-21-synology-audio/12.jpg" alt="">
+<img src="/images/2021-11-21-synology-audio/13.jpg" alt=""></p>
+<p>如果需要编辑的歌曲很多，可以考虑使用 <a href="https://www.macwk.com/soft/meta">Meta</a> 或 <a href="https://www.macwk.com/soft/mp3tag">Mp3tag</a> 来批量编辑歌曲信息</p>
+<p><img src="/images/2021-11-21-synology-audio/14.jpg" alt=""></p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000039068892">https://segmentfault.com/a/1190000039068892</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/2021/11/22/synology-download/" class="block">群晖折腾手记四：搭建离线下载服务</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/2021/11/06/synology-nas-ready/" class="block">群晖折腾手记一：开篇，正式折腾前的准备</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#音乐服务器">音乐服务器</a></li>
+    <li><a href="#电脑音乐播放器">电脑音乐播放器</a></li>
+    <li><a href="#歌词插件">歌词插件</a></li>
+    <li><a href="#手机音乐app">手机音乐APP</a></li>
+    <li><a href="#音乐信息管理">音乐信息管理</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/posts/2021/11/06/synology-nas-ready/">群晖折腾手记一：开篇，正式折腾前的准备</a>
+            <br />
+            
+            <a href="/posts/2021/11/06/synology-calibre-library/">群晖折腾手记二：搭建个人数字图书馆</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

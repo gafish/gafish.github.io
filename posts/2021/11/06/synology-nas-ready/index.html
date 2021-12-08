@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>群晖折腾手记一：开篇，正式折腾前的准备 | gafish&#39;s Blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"群晖折腾手记一：开篇，正式折腾前的准备",
+      "item":"/posts/2021/11/06/synology-nas-ready/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/2021/11/06/synology-nas-ready/"
+    },
+    "headline": "群晖折腾手记一：开篇，正式折腾前的准备 | gafish\u0027s Blog","datePublished": "2021-11-06T21:41:30+08:00",
+    "dateModified": "2021-11-06T21:41:30+08:00",
+    "wordCount":  1721 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "gafish",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动"
+}
+</script><meta property="og:title" content="群晖折腾手记一：开篇，正式折腾前的准备 | gafish&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/2021/11/06/synology-nas-ready/" />
+
+
+
+
+<meta property="og:description" content="大概在2020年初开始，我就想买一个群晖(Synology)来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s Blog" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-06T21:41:30&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-11-06T21:41:30&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-calibre-library/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s Blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于我</a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术</a>
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">生活</a>
+            <a href="/categories/%E8%B5%84%E6%BA%90/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">资源</a>
+            <a href="/tools/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">工具</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">群晖折腾手记一：开篇，正式折腾前的准备</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-06</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E7%94%9F%E6%B4%BB/" class="hover:text-eureka">生活</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>大概在2020年初开始，我就想买一个<code>群晖(Synology)</code>来组一个小型家庭服务器，但它那不太亲民的价格阻碍了我折腾的脚步，于是退而求其次买了2个移动硬盘来勉强支撑我的需求。</p>
+<p>这样的临时方案我用了一年半，直到有一天打开移动硬盘，收到警告硬盘受损，当时真是吓出一身冷汗，要知道这里面可是存了我十几年来的照片跟视频，于是下定决心还是要组一个家庭服务器。</p>
+<p>于是乎，购买<code>群晖</code>的想法再次被提上日程，一个多月的时间里，找资料、对比型号、对比价格，终于在双11的时候下单，接下来我就把折腾群晖的主要过程在本文中记录下来。</p>
+<p>本文所使用的环境及版本</p>
+<ul>
+<li>MacOS Big Sur 11.6</li>
+<li>Synology DS720+</li>
+<li>西数红盘 WD40EFZX-68AWUN0*(型号符合官方兼容性要求)* / 4T 两块</li>
+<li>系统 DSM 7.0.1-42218</li>
+</ul>
+<h2 id="查找设备">查找设备</h2>
+<p>拿到设备、组装、联网之后，我做的第一件事就是在手机上下载群晖管家，然后查找连接设备，但无论如何操作都找不到我的新设备，最后在淘宝卖家客服的指引下打开网站 <code>find.synology.com</code>这才在线找到设备并连接成功，然后在群晖管家上通过找到的设备IP才在APP中连接成功。</p>
+<p><img src="/images/2021-11-06-synology-nas-ready/4.jpg" alt=""></p>
+<p>群晖管家连接成功后，用默认的 <code>admin</code> 账号登录，密码为空，然后会提示创建管理员账号，创建完之后原 <code>admin</code> 账号会被停用。</p>
+<h2 id="raid1-降级为-basic">Raid1 降级为 Basic</h2>
+<p>群晖在安装系统的时候默认会为硬盘设置 <code>Raid1</code> 模式，以我的720双盘位为例，2个4T硬盘会同时写入数据作为备份，这对普通用户来说可以起到保护数据的作用，如果其中一块硬盘块了，还有一块硬盘的数据可以用来恢复，但代价就是2块4T硬盘只能当一块硬盘用。</p>
+<p>我对数据备份有自己的想法，重要的数据我会放在一个盘里，同时用额外的移动硬盘、网盘作为备份，所以不需要在一台NAS里做数据备份，同时我需要的是更多的存储空间，于是把 Raid1 降级为 Basic 就非常必要了，接下来简单记录下降级的过程。</p>
+<ol>
+<li>在 <code>主菜单</code>-<code>存储管理器</code> 中先停用第2块硬盘，停用后群晖会有警报声响起，如果嫌太吵的话，可以在  <code>控制面板</code>-<code>硬件与电源</code> 中停用哔声。</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/9.jpg" alt="">
+<img src="/images/2021-11-06-synology-nas-ready/10.jpg" alt=""></p>
+<ol start="2">
+<li>重新启动群晖后，会看到硬盘2现在是 <code>未初始化</code> 状态</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/11.jpg" alt=""></p>
+<ol start="3">
+<li>创建新的存储空间，会自动创建新的存储池</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/12.jpg" alt=""></p>
+<ol start="4">
+<li>RAID 类型选择 <code>Basic</code></li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/13.jpg" alt=""></p>
+<ol start="5">
+<li>硬盘2上的数据将会被清空</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/14.jpg" alt=""></p>
+<ol start="6">
+<li>新的<code>存储空间2</code>创建完成，这里会看到<code>存储空间1</code>有红色警告，你可以不管它，可以正常使用，但建议还是将硬盘1也降级</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/15.jpg" alt=""></p>
+<ol start="7">
+<li>硬盘1降级前进入共享文件夹，将所有文件夹都转移到刚才创建的<code>存储空间2</code></li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/16.jpg" alt="">
+<img src="/images/2021-11-06-synology-nas-ready/17.jpg" alt=""></p>
+<ol start="8">
+<li>确认所有文件都转移完成后，进入 <code>主菜单</code>-<code>存储管理器</code> 删除 <code>存储池1</code></li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/18.jpg" alt="">
+<img src="/images/2021-11-06-synology-nas-ready/19.jpg" alt=""></p>
+<ol start="9">
+<li>删除完成后，重复步骤3-5创建新的存储空间1，至此降级完成</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/20.jpg" alt=""></p>
+<h2 id="公网访问">公网访问</h2>
+<p>作为一个正版群晖用户，按理说我应该使用专属福利 <code>QuickConnect</code> 来获得公网访问的功能，但恰好我买NAS的时候，在 2021-11-01 之后《中华人民共和国网络安全法》施行，所有国内的群晖用户都要求手机实名并且将帐户转到国内服务器，这样才能开启 <code>QuickConnect</code> 服务，我对这种强制要求非常反感，加之有用户反馈这个服务很慢，所以索性我就放弃这个福利，还是自己来折腾 DDNS + 端口转发 这种老办法。</p>
+<ol>
+<li>在群晖的后台 <code>控制面板</code> - <code>外部访问</code> - <code>DDNS</code> ，新增一个DDNS，选择服务供应商 <code>Synology</code>，取一个好记的二级域名的名字，点 <code>测试联机</code> 看是否连接正常。</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/1.jpg" alt=""></p>
+<ol start="2">
+<li>进入你的路由器后台，找到 <code>高级设置</code> -<code> 端口转发</code>，将群晖的管理后台端口号，转发到公网的端口号，这里需要注意端口号要保持一致，否则在非当前网络连接下会出现无法连接的情况。</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/2.jpg" alt=""></p>
+<ol start="3">
+<li>在手机上安装了照片同步APP之后，用刚才申请的二级域名及转发的公网端口号作为地址连接，成功。</li>
+</ol>
+<h2 id="手机照片备份">手机照片备份</h2>
+<p>在套件中心安装 <code>Synology Photos</code> 套件并启动服务，在手机上安装 <code>Photos Mobile</code> ，用之前配置好的二级域名地址+账号登录，这样就可以实时同步照片啦，iCloud 包月的钱可以省啦。</p>
+<h2 id="挂载nas文件夹">挂载NAS文件夹</h2>
+<p>如果是在局域网中挂载NAS文件夹是非常简单的，只要在群晖中启动 <code>文件服务</code>-<code>SMB</code> 服务，就可以在 Mac Finder 中以连接服务器的方式在局域网中连接上NAS文件夹。</p>
+<p><img src="/images/2021-11-06-synology-nas-ready/8.jpg" alt=""></p>
+<p>但只在局域网中使用并不是我买群晖的目的，我需要的是能够在公司的时候也可以远程连接到NAS文件夹，在群晖上可以通过启用 <code>WebDAV</code> 来实现这一功能。</p>
+<ol>
+<li>在套件中心安装 <code>WebDAV Server</code> 套件</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/5.jpg" alt=""></p>
+<ol start="2">
+<li>打开 <code>WebDAV Server</code> 套件，选中 <code>启用HTTP</code>，设置 HTTP 端口号</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/6.jpg" alt=""></p>
+<ol start="3">
+<li>
+<p>在路由器后台使用<code> 端口转发</code>，将上一步设置的端口号转发到一个公网端口号，这里同样需要注意端口号要保持一致。</p>
+</li>
+<li>
+<p>在 Mac Finder 上连接服务器，使用之前设置的公网访问二级域名+上一步设置的端口号。</p>
+</li>
+</ol>
+<p><img src="/images/2021-11-06-synology-nas-ready/7.jpg" alt=""></p>
+<h2 id="资料参考">资料参考</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34319867">https://zhuanlan.zhihu.com/p/34319867</a></li>
+<li><a href="https://www.autoahk.com/archives/35279">https://www.autoahk.com/archives/35279</a></li>
+<li><a href="https://www.xiebruce.top/1201.html">https://www.xiebruce.top/1201.html</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/2021/11/21/synology-audio/" class="block">群晖折腾手记三：搭建个人网络音乐库</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/2021/10/29/craftjs-introduction/" class="block">Craft.js 入门与实践</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#查找设备">查找设备</a></li>
+    <li><a href="#raid1-降级为-basic">Raid1 降级为 Basic</a></li>
+    <li><a href="#公网访问">公网访问</a></li>
+    <li><a href="#手机照片备份">手机照片备份</a></li>
+    <li><a href="#挂载nas文件夹">挂载NAS文件夹</a></li>
+    <li><a href="#资料参考">资料参考</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/posts/2021/11/06/synology-calibre-library/">群晖折腾手记二：搭建个人数字图书馆</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
