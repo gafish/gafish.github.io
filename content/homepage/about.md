@@ -42,4 +42,4 @@ widget:
 
 ## 自我介绍
 
-一个爱折腾的程序员，做过站长，搞过SEO，写过ASP，玩过IOT，开过淘宝店铺，写过微信公众号，折腾过Wordpress博客，现在开始折腾Hugo博客
+一个爱折腾的程序员，做过站长，搞过SEO，当过美工，写过ASP，玩过IOT，溜过轮滑，开过淘宝店铺，写过微信公众号，会写Javascript/CSS/Node.js，折腾过Wordpress博客，现在开始折腾Hugo博客

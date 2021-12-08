@@ -1,19 +1,15 @@
 main:
-  - name: 关于我
-    url: '#about'
-    weight: 1
   - name: 技术
     url: /categories/技术/
     weight: 2
   - name: 生活
     url: /categories/生活/
     weight: 3
-  - name: 资源
-    url: /categories/资源/
-    weight: 4
-  - name: 工具
-    url: /tools/
-    weight: 99
   # - name: 文档
   #   url: /docs/
   #   weight: 3
+
+page:
+  - name: 工具
+    url: /tools/
+    weight: 99
