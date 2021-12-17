@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gafish&#39;s Blog</title>
-    <link>/</link>
-    <description>Recent content on gafish&#39;s Blog</description>
+    <title>文章 on gafish&#39;s Blog</title>
+    <link>/posts/</link>
+    <description>Recent content in 文章 on gafish&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>群晖折腾手记六：添加第三方套件源</title>
       <link>/posts/2021/12/04/synology-spk/</link>
@@ -69,15 +69,6 @@
       
       <guid>/posts/2021/10/29/craftjs-introduction/</guid>
       <description>在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： grapes.js 和 craft.js grapes.js 是一个 HTML Web 构建器框架，它提供了一个开箱即用的解决方案，自带非常完整的组件，基</description>
-    </item>
-    
-    <item>
-      <title>实用工具</title>
-      <link>/tools/</link>
-      <pubDate>Sun, 17 Oct 2021 21:32:16 +0800</pubDate>
-      
-      <guid>/tools/</guid>
-      <description>编程开发辅助 nginx playground JSFiddle JS Bin CodePen css2sass | Convert CSS Snippets to Syntactically Awesome StyleSheets code cubic-bezier HEX to RGB Converter JSONPlaceholder - Fake online REST API for developers First Pull Request • What was the first pull request you sent on GitHub? httpbin(1): HTTP Client Testing Service Shields.io: Quality metadata badges for open source projects Placeholder.com Easy Bash Prompt Generator Json在线解析</description>
     </item>
     
     <item>
