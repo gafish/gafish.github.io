@@ -10,12 +10,12 @@ authors: []
 tags: []
 categories: 生活
 series: []
-date: 2021-09-26T21:32:16+08:00
-lastmod: 2021-09-26T21:32:16+08:00
+date: 2021-11-09T21:32:16+08:00
+lastmod: 2021-11-09T21:32:16+08:00
 featuredVideo:
 featuredImage:
 draft: false
-url: /posts/2021/11/06/synology-calibre-library
+url: /posts/2021/11/09/synology-calibre-library
 ---
 
 一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 `Calibre` 这个好用的电子书管理软件，帮我把书籍归类，编辑，省去了不好事情，现在有了群晖 ，我就开始琢磨如何通过群晖来把本地的电子书做成在线电子图书馆，好在开源社区已经有了好的解决方案 [calibre-web](https://github.com/janeczku/calibre-web)，一个可以将本机的  `Calibre`  数据库转换成在线电子书网站的应用，另外它有一个由 LinuxServer 团队维护的  `Docker`  镜像，这正是本文要使用的工具。
