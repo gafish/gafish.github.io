@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>群晖折腾手记二：搭建个人数字图书馆 | gafish&#39;s Blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102953279-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-102953279-1');
+</script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar_hu1cbc6e5b6e4d3d49e9f6e4cb094fdd9c_51187_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar_hu1cbc6e5b6e4d3d49e9f6e4cb094fdd9c_51187_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"群晖折腾手记二：搭建个人数字图书馆",
+      "item":"/posts/2021/11/09/synology-calibre-library/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/2021/11/09/synology-calibre-library/"
+    },
+    "headline": "群晖折腾手记二：搭建个人数字图书馆 | gafish\u0027s Blog","datePublished": "2021-11-09T21:32:16+08:00",
+    "dateModified": "2021-11-09T21:32:16+08:00",
+    "wordCount":  1621 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "gafish",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar.png"
+        }
+        },
+    "description": "一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，"
+}
+</script><meta property="og:title" content="群晖折腾手记二：搭建个人数字图书馆 | gafish&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar.png">
+
+
+<meta property="og:url" content="/posts/2021/11/09/synology-calibre-library/" />
+
+
+
+
+<meta property="og:description" content="一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 Calibre 这个好用的电子书管理软件，帮我把书籍归类，" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s Blog" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-09T21:32:16&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-11-09T21:32:16&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<meta property="og:see_also" content="/posts/2021/11/06/synology-nas-ready/" />
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s Blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术</a>
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">生活</a>
+        </div>
+
+        <div class="flex md:items-center">
+            <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+                <a href="/tools/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">工具</a>
+            </div>
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">群晖折腾手记二：搭建个人数字图书馆</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-09</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E7%94%9F%E6%B4%BB/" class="hover:text-eureka">生活</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>一直以来我都有收藏电子书的习惯，特别是实体书的PDF版本是我的最爱，收藏的书多了，如何管理是个问题，好在有 <code>Calibre</code> 这个好用的电子书管理软件，帮我把书籍归类，编辑，省去了不好事情，现在有了群晖 ，我就开始琢磨如何通过群晖来把本地的电子书做成在线电子图书馆，好在开源社区已经有了好的解决方案 <a href="https://github.com/janeczku/calibre-web">calibre-web</a>，一个可以将本机的  <code>Calibre</code>  数据库转换成在线电子书网站的应用，另外它有一个由 LinuxServer 团队维护的  <code>Docker</code>  镜像，这正是本文要使用的工具。</p>
+<p>在群晖720中，支持  <code>Docker</code>  套件，所以我们可以直接搜索安装 <code>linuxserver/calibre-web</code> 镜像，接下就随我一起来一步一步搭建个人数字图书馆，在实际的搭建过程中我遇到了一些难题，网上找的资料也不全，不过最终在不断摸索下成功了，所以本文就把一个可行的过程写出来。</p>
+<h2 id="写在开头">写在开头</h2>
+<p>在线电子书平台所需的数据来自在我们本机的 <code>Calibre</code> ，所以你需要先了解 <code>Calibre</code> 如何管理电子书，以及如何导出数据，关于这点在本文不做详细说明，可以参见我的另外一篇文章<a href="/2021/10/17/calibre-introduction/">《 Calibre 入门指南》</a>。</p>
+<p><em>好了本文正式开始</em></p>
+<h2 id="选择镜像源">选择镜像源</h2>
+<p>由于国内网络众所周知的原因，下载 <code>Docker</code> 镜像会非常慢，所以我们要做的第一件事就是先选择一个国内的 <code>Docker</code> 镜像源，有非常多的选择，这里我选择的是阿里云的 <code>Docker</code> 镜像。</p>
+<p>用淘宝账号进入阿里云 <a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">容器镜像加速器</a>，复制类似这样的地址 <code>https://*******.mirror.aliyuncs.com</code> 备用</p>
+<p><img src="/images/2021-11-09-synology-calibre-library/1.jpg" alt=""></p>
+<h2 id="下载安装">下载安装</h2>
+<ol>
+<li>在套件中心搜索安装 <code>Docker</code> ，安装完成后打开</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/2.jpg" alt=""></p>
+<ol start="2">
+<li>在 <code>Docker</code> 中，进入注册表，点设置，选中  <code>Docker  Hub</code>，点编辑，勾选 <code>启用注册表镜像</code>，在 <code>注册表镜像URL</code> 中填入刚才获取到的阿里云镜像地址</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/3.jpg" alt=""></p>
+<ol start="3">
+<li>搜索 <code>calibre-web</code>，选中 <code>linuxserver/calibre-web</code> 点下载</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/4.jpg" alt=""></p>
+<ol start="4">
+<li>请求连接成功后，会弹出选择标签弹窗，我们保持默认就好，注意这一步视每个人网络情况而定，有可能需要重试多次才能成功</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/5.jpg" alt=""></p>
+<ol start="5">
+<li>开始下载，在映像中可以看到当前下载进度，下载中启动按钮是禁用状态</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/6.jpg" alt=""></p>
+<ol start="6">
+<li>下载完成，启动按钮变为可点击状态</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/7.jpg" alt=""></p>
+<h2 id="启动服务">启动服务</h2>
+<ol>
+<li>点击启动按钮，会打开常规设置界面</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/8.jpg" alt=""></p>
+<ol start="2">
+<li>点击 <code>高级设置</code>，选择存储空间，添加文件夹，可以选择已有的文件夹或创建一个新的文件夹，这里我选择的是 <code>docker/calibre</code> 文件夹，设定一个装载路径 <code>/calibre-web</code>，<strong>注意这里的斜杠是必须的</strong></li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/9.jpg" alt=""></p>
+<ol start="3">
+<li>选择端口设置，本地端口设置可以自定义，容器端口必须为 <code>8083</code></li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/10.jpg" alt=""></p>
+<ol start="4">
+<li>应用设置，容器启动完成不会有提示，大概等2分钟后，你直接在浏览器中访问 <code>群晖IP地址:8083</code>，如 <code>192.168.1.123:8083</code>， 就可以看到已经启动好的电子书网站，使用默认的初始化账号 <code>admin/admin123</code> 登录</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/11.jpg" alt=""></p>
+<ol start="5">
+<li>如果此时我们直接开始接下来的第6步操作，会遇到 <code>DB Location is not Valid, Please Enter Correct Path</code> 报错</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/12.jpg" alt=""></p>
+<p>我研究发现产生这个错误有以下2个原因</p>
+<ul>
+<li>选择的存储空间 <code>docker/calibre</code> 文件夹中没有预先准备数据</li>
+<li><code>Docker</code>  中的  <code>/calibre-web</code> 目录没有读写权限</li>
+</ul>
+<p>我们需要先在本机上找到 <code>Calibre</code> 的书库目录，默认是在用户目录的  <code>Calibre  书库</code> 文件夹中，把整个目录里的文件都复制到 <code>docker/calibre</code> 文件夹，最重要的是不要忘了 <code>metadata.db</code> 这个数据文件。</p>
+<p><img src="/images/2021-11-09-synology-calibre-library/13.jpg" alt=""></p>
+<p>然后打开群晖上的 <code>Docker</code>，找到刚才创建的容器 <code>linuxserver-calibre-web1</code>，点击详情，打开 <code>终端机</code> tab，点击新增，会出现一个<code>bash</code> 的选项，点击 <code>bash</code>，在右侧的命令行中输入 <code>chmod 777 /calibre-web</code>，就是给 <code> /calibre-web</code> 目录添加可读写权限</p>
+<p><img src="/images/2021-11-09-synology-calibre-library/14.jpg" alt=""></p>
+<ol start="6">
+<li>以上准备工作完成，再次打开电子书网站，开始设置 Database Configuration ，输入第2步里设定的装载路径 <code>/calibre-web</code>，点保存，出现绿色提示框说明设置成功</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/15.jpg" alt=""></p>
+<ol start="7">
+<li>网站默认是英文界面，如果看不习惯，可以选择切换到中文界面，点击右上角的 <code>admin</code> 用户名，在 <code>language</code> 里选择中文，点击最底下的 <code>save</code> 就会切换到中文界面</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/16.jpg" alt=""></p>
+<ol start="8">
+<li>打开网站首页，就可以看到之前我们复制到群晖的电子书数据了</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/17.jpg" alt=""></p>
+<h2 id="书籍管理">书籍管理</h2>
+<p>如果每次在本机的电子书数据更新了，要同步到群晖上，都要复制本机的文件及数据替换群晖上的数据，这让书籍管理起来就非常不方便，这里推荐一种在局域网环境中在本机  <code>Calibre</code>  直接管理群晖上数据的办法。</p>
+<ol>
+<li>进入 <code>控制面板</code>-<code>文件服务</code>，启用SMB服务</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/18.jpg" alt=""></p>
+<ol start="2">
+<li>在 <code>Calibre</code> 中创建新书库</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/19.jpg" alt=""></p>
+<ol start="3">
+<li>新书库文件夹从局域网络中选择之前我们在群晖上放置电子书数据的共享文件夹，选中 <code>在新位置使用现有的书库</code>。</li>
+</ol>
+<p><img src="/images/2021-11-09-synology-calibre-library/20.jpg" alt=""></p>
+<p>此时我们看到的就是群晖上的电子书数据了，你直接编辑书籍信息后，刷新网站就能看到最新的改动</p>
+<h2 id="资料参考">资料参考</h2>
+<ul>
+<li><a href="https://post.smzdm.com/p/a6l8ovxe/">https://post.smzdm.com/p/a6l8ovxe/</a></li>
+<li><a href="https://fugary.com/?p=203">https://fugary.com/?p=203</a></li>
+<li><a href="https://csdaomin.com/2021/05/28/self-hosted-your-own-calibre-web-service-on-ubuntu-20/">https://csdaomin.com/2021/05/28/self-hosted-your-own-calibre-web-service-on-ubuntu-20/</a></li>
+<li><a href="https://mariushosting.com/how-to-install-calibre-web-on-your-synology-nas/">https://mariushosting.com/how-to-install-calibre-web-on-your-synology-nas/</a></li>
+<li><a href="http://ifoxfactory.com/2018/05/15/Synology-NAS-with-Calibre-web-one/">http://ifoxfactory.com/2018/05/15/Synology-NAS-with-Calibre-web-one/</a></li>
+<li><a href="https://sspai.com/post/64202">https://sspai.com/post/64202</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/2021/11/21/synology-audio/" class="block">群晖折腾手记三：搭建个人网络音乐库</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/2021/11/06/synology-nas-ready/" class="block">群晖折腾手记一：开篇，正式折腾前的准备</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#写在开头">写在开头</a></li>
+    <li><a href="#选择镜像源">选择镜像源</a></li>
+    <li><a href="#下载安装">下载安装</a></li>
+    <li><a href="#启动服务">启动服务</a></li>
+    <li><a href="#书籍管理">书籍管理</a></li>
+    <li><a href="#资料参考">资料参考</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="/posts/2021/11/06/synology-nas-ready/">群晖折腾手记一：开篇，正式折腾前的准备</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

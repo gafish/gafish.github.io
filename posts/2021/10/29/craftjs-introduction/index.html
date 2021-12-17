@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Craft.js 入门与实践 | gafish&#39;s Blog</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102953279-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-102953279-1');
+</script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar_hu1cbc6e5b6e4d3d49e9f6e4cb094fdd9c_51187_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar_hu1cbc6e5b6e4d3d49e9f6e4cb094fdd9c_51187_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Craft.js 入门与实践",
+      "item":"/posts/2021/10/29/craftjs-introduction/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/2021/10/29/craftjs-introduction/"
+    },
+    "headline": "Craft.js 入门与实践 | gafish\u0027s Blog","datePublished": "2021-10-29T21:22:59+08:00",
+    "dateModified": "2021-10-29T21:22:59+08:00",
+    "wordCount":  3805 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "gafish",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar.png"
+        }
+        },
+    "description": "Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库"
+}
+</script><meta property="og:title" content="Craft.js 入门与实践 | gafish&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar.png">
+
+
+<meta property="og:url" content="/posts/2021/10/29/craftjs-introduction/" />
+
+
+
+<meta property="og:description" content="Craft.js 是一个用于构建可扩展的拖放页面编辑器的 React 库" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="gafish&#39;s Blog" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-10-29T21:22:59&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-10-29T21:22:59&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">gafish&#39;s Blog</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术</a>
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">生活</a>
+        </div>
+
+        <div class="flex md:items-center">
+            <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+                <a href="/tools/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">工具</a>
+            </div>
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Craft.js 入门与实践</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-10-29</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>8分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="hover:text-eureka">技术</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>在做可视化页面编辑器技术选型调研的时候，我发现了2个很好的开源库： <code>grapes.js</code> 和 <code>craft.js</code></p>
+<p><code>grapes.js</code> 是一个 HTML Web 构建器框架，它提供了一个开箱即用的解决方案，自带非常完整的组件，基本用法如下：</p>
+<pre><code class="language-html">&lt;div id=&quot;gjs&quot;&gt;
+  &lt;h1&gt;Hello World Component!&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">const editor = grapesjs.init({
+  container: '#gjs',
+  fromElement: true,
+  height: '300px',
+  width: 'auto',
+  storageManager: false,
+  panels: { defaults: [] },
+});
+</code></pre>
+<p><code>craft.js</code> 是一个用于构建可扩展的拖放页面编辑器的 React 框架，不提供组件本身，可以根据业务需要完全自己开发组件，基本用法如下：</p>
+<pre><code class="language-js">import React from &quot;react&quot;;
+import {Editor, Frame, Canvas, Element} from &quot;@craftjs/core&quot;;
+import TextComponent from './TextComponent'
+import Container from './Container'
+
+const App = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;header&gt;Some fancy header or whatever&lt;/header&gt;
+      &lt;Editor resolver={TextComponent, Container}&gt;
+        &lt;Frame&gt;
+          &lt;Element is=&quot;div&quot; canvas&gt;
+            &lt;TextComponent text=&quot;I'm already rendered here&quot; /&gt;
+          &lt;/Element&gt;
+        &lt;/Frame&gt;
+      &lt;/Editor&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<p>我们团队是以 React 技术栈为主，所以非常明显，我选择了 <code>craft.js</code> 来开发我们的可视化编辑器，当然还有2个重要的原因：</p>
+<ol>
+<li>它支持完全的组件定制，对组件UI没有限制；</li>
+<li>它的API设计足够简单，逻辑清晰，功能强大；</li>
+</ol>
+<p>在 <code>craft.js</code> 的官网 <a href="https://craft.js.org/">https://craft.js.org/</a> 有着完善的文档和教程来讲解如何使用它来搭建你自己的编辑器，但因为项目还在发展期，版本更新比较快，文档更新却比较落后，官网上的很多示例都已经无法正常运行，所以我才决定自己写一篇文章来讲解如何入门及深入的使用。</p>
+<p>本文所使用的环境及版本</p>
+<ul>
+<li>MacOS Big Sur 11.6</li>
+<li>node: 16.13.0</li>
+<li>yarn: 1.22.4</li>
+<li>react: 17.0.2</li>
+<li>craft.js: v0.1.0-beta.20</li>
+</ul>
+<p>本文会以一个Demo项目的形式讲解如何使用craft.js，项目开源仓库地址： <a href="https://github.com/gafish/craft.js_demo">https://github.com/gafish/craft.js_demo</a></p>
+<h2 id="项目初始化及安装">项目初始化及安装</h2>
+<pre><code class="language-bash"># 初始化React项目
+npx create-react-app craft.js_demo
+
+# 安装craft.js
+yarn add craft.js
+
+# 运行项目
+cd craft.js_demo
+yarn start
+</code></pre>
+<h2 id="基本概念">基本概念</h2>
+<p><code>craft.js</code> 的API非常简单，只有3个组件、2个Hook</p>
+<pre><code class="language-js">import { Editor, Frame, Element, useEditor, useNode } from '@craftjs/core'
+</code></pre>
+<h3 id="组件">组件</h3>
+<ul>
+<li><code>&lt;Editor /&gt;</code>        创建存储编辑器状态的上下文</li>
+<li><code>&lt;Frame /&gt;</code>         定义了页面编辑器中的可编辑区域</li>
+<li><code>&lt;Element /&gt;</code>       定义了可拖拽组件的放置区域给定用户元素的节点</li>
+</ul>
+<h3 id="hook">HOOK</h3>
+<ul>
+<li><code>useEditor()</code>        提供与整个编辑器相关联的方法和状态信息</li>
+<li><code>useNode()</code>          提供与管理当前组件的相应方法和状态信息相关的方法和状态信息</li>
+</ul>
+<h2 id="基本使用">基本使用</h2>
+<p>我们先添加第1个Demo，如示例仓库中的 <code>src/Demo1</code>，文件结构如下：</p>
+<pre><code>src/
+  Demo1/
+    index.js
+    Main.js
+    Main.css
+</code></pre>
+<p>这里之所以要新建一个 <code>&lt;Main /&gt;</code> 组件，是因为 <code>&lt;Editor /&gt;</code> 组件需要注入状态给到它后面的组件中，下面的组件才可以通过  <code>useEditor()</code> 拿到编辑器的状态。</p>
+<p>本文中我们主要讲解js逻辑，所以本文会省略css代码，此时代码如下：</p>
+<p><code>src/Demo1/index.js</code></p>
+<pre><code class="language-js">import React from 'react'
+import { Editor } from '@craftjs/core'
+
+import Main from './Main'
+
+function App() {
+  return (
+    &lt;Editor&gt;
+      &lt;Main /&gt;
+    &lt;/Editor&gt;
+  )
+}
+
+export default App
+
+</code></pre>
+<p><code>src/Demo1/Main.js</code></p>
+<pre><code class="language-js">import React from 'react'
+import { Frame, Element } from '@craftjs/core'
+
+import './Main.css'
+
+function App() {
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;div className=&quot;head&quot;&gt;
+        &lt;div className=&quot;item&quot;&gt;文本&lt;/div&gt;
+        &lt;div className=&quot;item&quot;&gt;图片&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;container&quot;&gt;
+
+        &lt;Frame&gt;
+            &lt;Element is=&quot;div&quot; className=&quot;main&quot; canvas&gt;
+              &lt;div className=&quot;text&quot;&gt;
+                显示第一段文本
+              &lt;/div&gt;
+              &lt;div className=&quot;image&quot;&gt;
+                &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+              &lt;/div&gt;
+              &lt;div className=&quot;text&quot;&gt;
+                显示第二段文本
+              &lt;/div&gt;
+              &lt;div className=&quot;image&quot;&gt;
+                &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+              &lt;/div&gt;
+            &lt;/Element&gt;
+        &lt;/Frame&gt;
+        
+        &lt;div className=&quot;sider&quot;&gt;
+          &lt;div className=&quot;title&quot;&gt;配置栏&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+</code></pre>
+<p>以上代码我们定义了编辑器的基本结构，当拖拽 <code>&lt;Element /&gt;</code> 的子节点时，会出现一个绿色的<strong>放置指示器</strong>，放开组件就会移动到当前放置位置。</p>
+<p>预览效果</p>
+<p><img src="/images/2021-10-29-craftjs-introduction/1.jpg" alt=""></p>
+<h2 id="添加组件">添加组件</h2>
+<p>上述示例中，编辑器中的组件是固定不变的，接下来我们通过 <code>useEditor()</code> 提供的 <code>create</code> 方法以拖拽的方式来为编辑器添加组件。</p>
+<p>修改 <code>src/Demo1/Main.js</code></p>
+<pre><code class="language-diff">import React from 'react'
+-import { Frame, Element } from '@craftjs/core'
++import { Frame, Element, useEditor } from '@craftjs/core'
+
+import './Main.css'
+
+function App() {
+  const { connectors } = useEditor()
+  const { create } = connectors
+
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;div className=&quot;head&quot;&gt;
+-        &lt;div className=&quot;item&quot;&gt;文本&lt;/div&gt;
+-        &lt;div className=&quot;item&quot;&gt;图片&lt;/div&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, &lt;div className=&quot;text&quot;&gt;显示一段文本&lt;/div&gt;)}
+        &gt;文本&lt;/div&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, 
+            &lt;div className=&quot;image&quot;&gt;
+              &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+            &lt;/div&gt;
+          )}
+        &gt;图片&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;container&quot;&gt;
+
+        &lt;Frame&gt;
+            &lt;Element is=&quot;div&quot; className=&quot;main&quot; canvas&gt;
+-              &lt;div className=&quot;text&quot;&gt;
+-                显示第一段文本
+-              &lt;/div&gt;
+-              &lt;div className=&quot;image&quot;&gt;
+-                &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+-              &lt;/div&gt;
+-              &lt;div className=&quot;text&quot;&gt;
+-                显示第二段文本
+-              &lt;/div&gt;
+-              &lt;div className=&quot;image&quot;&gt;
+-                &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+-              &lt;/div&gt;
+            &lt;/Element&gt;
+        &lt;/Frame&gt;
+        
+        &lt;div className=&quot;sider&quot;&gt;
+          &lt;div className=&quot;title&quot;&gt;配置栏&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+</code></pre>
+<p>此时我们就可以通过拖拽的方式不断的从顶部拖动新组件到编辑器中，同时组件之间也可以调整位置。</p>
+<p>预览效果</p>
+<p><img src="/images/2021-10-29-craftjs-introduction/2.jpg" alt=""></p>
+<h2 id="组件抽象">组件抽象</h2>
+<p>在目前的示例代码中，我们将组件 <code>&lt;div className=&quot;text&quot;&gt;显示一段文本&lt;/div&gt;</code> 在代码中写死作为 <code>create</code> 的第2个参数，接下来我们来讲解如何将组件抽象成独立的组件，该章节中我们仅以文本组件为讲解示例，图片组件方法类似所以过程省略。</p>
+<p>新建文本组件 <code>src/Demo1/Text.js</code></p>
+<pre><code class="language-js">function Text(props) {
+  const { text = '默认文本' } = props
+  return (
+    &lt;div className=&quot;text&quot;&gt;
+      {text}
+    &lt;/div&gt;
+  )
+}
+
+export default Text
+</code></pre>
+<p>在 <code>src/Demo1/Main.js</code> 中引入新建的组件替换之前的组件部分，此时如果预览页面，你会发现从顶部拖拽可以添加新组件，但添加的组件之间位置无法调整了，WHY?</p>
+<p>这是因为在抽象成自定义组件之前，<code>create</code> 的参数是一个原生的 <code>div</code> 组件，它和 <code>&lt;Editor /&gt;</code> 的默认行为是连接且可拖拽，但是自定义组件默认和 <code>&lt;Editor /&gt;</code> 没有连接且不可拖拽，所以我们需要在自定义组件中使用 <code>connect</code> 方法连接到 <code>&lt;Editor /&gt;</code>，并通过 <code>drag</code> 方法为自定义组件添加拖拽行为。</p>
+<p>这里要注意的是 <code>connect</code> 方法的执行位置，决定了<strong>放置指示器</strong>的位置， <code>drag</code> 方法的执行位置，决定了自定义组件可拖拽区域的位置。</p>
+<p>修改文本组件 <code>src/Demo1/Text.js</code></p>
+<pre><code class="language-diff">+import { useNode } from '@craftjs/core'
+
+function Text(props) {
+  const { text = '默认文本' } = props
+  const { connectors } = useNode()
+  const { connect, drag } = connectors
+
+  return (
+    &lt;div
+      className=&quot;text&quot;
+      ref={ref =&gt; {
+        connect(ref)
+        drag(ref)
+      }}
+    &gt;
+      {text}
+    &lt;/div&gt;
+  )
+}
+
+export default Text
+</code></pre>
+<p>修改 <code>src/Demo1/Main.js</code></p>
+<pre><code class="language-diff">import React from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
+
++import Text from './Text'
++import Image from './Image'
+
+import './Main.css'
+
+function App() {
+  const { connectors } = useEditor()
+  const { create } = connectors
+
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;div className=&quot;head&quot;&gt;
+        &lt;div
+          className=&quot;item&quot;
+-          ref={ref =&gt; create(ref, &lt;div className=&quot;text&quot;&gt;显示一段文本&lt;/div&gt;)}
+          ref={ref =&gt; create(ref, &lt;Text /&gt;)}
+        &gt;文本&lt;/div&gt;
+        &lt;div
+          className=&quot;item&quot;
+-          ref={ref =&gt; create(ref, 
+-            &lt;div className=&quot;image&quot;&gt;
+-              &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;/&gt;
+-            &lt;/div&gt;
+-          )}
+          ref={ref =&gt; create(ref, &lt;Image /&gt;)}
+        &gt;图片&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;container&quot;&gt;
+
+        &lt;Frame&gt;
+            &lt;Element is=&quot;div&quot; className=&quot;main&quot; canvas&gt;
+            &lt;/Element&gt;
+        &lt;/Frame&gt;
+        
+        &lt;div className=&quot;sider&quot;&gt;
+          &lt;div className=&quot;title&quot;&gt;配置栏&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+</code></pre>
+<p>预览效果</p>
+<p><img src="/images/2021-10-29-craftjs-introduction/3.jpg" alt=""></p>
+<h2 id="组件设置">组件设置</h2>
+<p>在可视化编辑器中，<code>组件</code>和<code>组件设置</code>通常是相关联的，我们在设置中做的改动都需要即时的在组件中得到显示反馈，所以这里就存在一个共享上下文的问题。</p>
+<p><code>craft.js</code> 可以给自定义组件添加静态属性 <code>craft</code> ，它的值会与<code>组件设置</code>共享</p>
+<p>我们先新建一个文本设置组件 <code>src/Demo1/TextSetting.js</code></p>
+<pre><code class="language-js">function TextSetting() {
+  return (
+    &lt;div&gt;
+      文本内容：
+      &lt;input /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default TextSetting
+</code></pre>
+<p>在文本组件中，通过在静态属性 <code>craft</code> 的 <code>related</code> 字段中添加对 <code>TextSetting</code> 的引用，这样就可以将<code>组件</code>和<code>组件设置</code>进行关联，同时在静态属性 <code>craft</code> 中设置 <code>props</code> ，将组件的默认配置放在这里，这样就可以在<code>组件</code>和<code>组件设置</code>之间进行 <code>props</code> 共享。</p>
+<p>修改 <code>src/Demo1/Text.js</code></p>
+<pre><code class="language-diff">import { useNode } from '@craftjs/core'
++import TextSetting from './TextSetting'
+
+function Text(props) {
+-  const { text = '默认文本' } = props
+-  const { connectors } = useNode()
+  const { connectors, node } = useNode(node =&gt; ({ node }))
+  const { text } = node.data.props
+  const { connect, drag } = connectors
+
+  return (
+    &lt;div
+      className=&quot;text&quot;
+      ref={ref =&gt; {
+        connect(ref)
+        drag(ref)
+      }}
+    &gt;
+      {text}
+    &lt;/div&gt;
+  )
+}
+
++Text.craft = {
+  props: {
+    text: '默认文本',
+  },
+  related: {
+    setting: TextSetting,
+  },
++}
+
+export default Text
+</code></pre>
+<p>修改 <code>src/Demo1/TextSetting.js</code>，在文本修改后通过 <code>setProp</code> 方法更新 <code>text</code> 属性</p>
+<pre><code class="language-diff">+import { useNode } from '@craftjs/core'
+
+function TextSetting() {
+  const { node, actions } = useNode(node =&gt; ({ node }))
+  const { text } = node.data.props
+  const { setProp } = actions
+
+  return (
+    &lt;div&gt;
+      文本内容：
+-      &lt;input /&gt;
+      &lt;input value={text} onChange={e =&gt; setProp(props =&gt; props.text = e.target.value)} /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default TextSetting
+</code></pre>
+<p>当我们选中编辑器中的文本组件时，<code>useEditor</code> 中的编辑器状态中就可以获取到选中的组件ID，进而获取到选中的节点，这样我们就可以在设置面板中把 <code>TextSetting</code> 渲染出来。</p>
+<p>修改 <code>src/Demo1/Main.js</code></p>
+<pre><code class="language-diff">import React from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
+
+import Text from './Text'
+import Image from './Image'
+
+import './Main.css'
+
+function App() {
+-  const { connectors } = useEditor()
+  const { connectors, editorState } = useEditor(editorState =&gt; ({ editorState }))
+  const { nodes, events } = editorState
+  const { selected } = events
+  const selectedNode = nodes[selected]
+  const { create } = connectors
+
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;div className=&quot;head&quot;&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, &lt;Text /&gt;)}
+        &gt;文本&lt;/div&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, &lt;Image /&gt;)}
+        &gt;图片&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;container&quot;&gt;
+
+        &lt;Frame&gt;
+            &lt;Element is=&quot;div&quot; className=&quot;main&quot; canvas&gt;
+            &lt;/Element&gt;
+        &lt;/Frame&gt;
+        
+        &lt;div className=&quot;sider&quot;&gt;
+          &lt;div className=&quot;title&quot;&gt;配置栏&lt;/div&gt;
+          {
+            selectedNode &amp;&amp;
+            selectedNode.related &amp;&amp;
+            selectedNode.related.setting &amp;&amp;
+            React.createElement(selectedNode.related.setting)
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+</code></pre>
+<p>通过以上修改，当我们选中文本或图片组件时，就可以在设置面板中可以设置文本和图片的属性。</p>
+<p>预览效果</p>
+<p><img src="/images/2021-10-29-craftjs-introduction/4.jpg" alt=""></p>
+<h2 id="编辑器结构序列化">编辑器结构序列化</h2>
+<p>到目前为止，我们实现了可视化编辑器组件的添加、移动、设置，基本上实现了一个较完整的编辑器，但是，我们还需要一个方法来将编辑器的结构序列化成 Schema，这样我们就可以将编辑器的结构保存下来，以便下次打开时直接加载。</p>
+<p><code>useEditor()</code> 提供了一个 <code>serialize</code> 方法，可以将编辑器的结构序列化为 JSON 字符串，另外还提供了一个 <code>deserialize</code> 方法反序列化 JSON 字符串，可以将编辑器的 Schema 反序列化为结构。</p>
+<p>本文示例中会将序列化 JSON 字符串保存在 <code>localStorage</code> 中，下次打开时点加载再从 <code>localStorage</code> 中获取数据。</p>
+<p>修改 <code>src/Demo1/Main.js</code></p>
+<pre><code class="language-diff">-import React from 'react'
++import React, { useCallback } from 'react'
+import { Frame, Element, useEditor } from '@craftjs/core'
+
+import Text from './Text'
+import Image from './Image'
+
+import './Main.css'
+
+function App() {
+-  const { connectors, editorState } = useEditor(editorState =&gt; ({ editorState }))
++  const { connectors, actions, query, editorState } = useEditor(editorState =&gt; ({ editorState }))
+  const { nodes, events } = editorState
+  const { selected } = events
+  const selectedNode = nodes[selected]
+  const { create } = connectors
++  const { serialize } = query
++  const { deserialize } = actions
+
++  const loadJSON = useCallback(() =&gt; {
++    const json = localStorage.getItem('craftjs-demo1')
++    deserialize(json);
++  }, [])
++  const saveJSON = useCallback(() =&gt; {
++    localStorage.setItem('craftjs-demo1', serialize())
++  }, [])
+
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;div className=&quot;head&quot;&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, &lt;Text /&gt;)}
+        &gt;文本&lt;/div&gt;
+        &lt;div
+          className=&quot;item&quot;
+          ref={ref =&gt; create(ref, &lt;Image /&gt;)}
+        &gt;图片&lt;/div&gt;
+      &lt;/div&gt;
++      &lt;div className=&quot;btns&quot;&gt;
++        &lt;button onClick={loadJSON}&gt;加载&lt;/button&gt;
++        &lt;button onClick={saveJSON}&gt;保存&lt;/button&gt;
++      &lt;/div&gt;
+      &lt;div className=&quot;container&quot;&gt;
+
+        &lt;Frame&gt;
+            &lt;Element is=&quot;div&quot; className=&quot;main&quot; canvas&gt;
+            &lt;/Element&gt;
+        &lt;/Frame&gt;
+        
+        &lt;div className=&quot;sider&quot;&gt;
+          &lt;div className=&quot;title&quot;&gt;配置栏&lt;/div&gt;
+          {
+            selectedNode &amp;&amp;
+            selectedNode.related &amp;&amp;
+            selectedNode.related.setting &amp;&amp;
+            React.createElement(selectedNode.related.setting)
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+</code></pre>
+<p>如果此时我们先保存一下，刷新页面再加载，控制台会报错，why?</p>
+<p>这是因为 <code>craft.js</code> 在还原页面结构的时候，它没有找到 <code>Text</code> 和 <code>Image</code> 这2个组件名称所对应实际组件的映射，因此会报错。</p>
+<p>我们在显示已保存结构的时候需要在 <code>&lt;Editor&gt;</code> 中对组件进行映射，这样才能正常显示。</p>
+<p>修改 <code>src/Demo1/index.js</code></p>
+<pre><code class="language-diff">import React from 'react'
+import { Editor } from '@craftjs/core'
+
++import Main from './Main'
++import Text from './Text'
++import Image from './Image'
+
+import Main from './Main'
+
+function App() {
+  return (
+-    &lt;Editor&gt;
++    &lt;Editor resolver={{ Text, Image }}&gt;
+      &lt;Main /&gt;
+    &lt;/Editor&gt;
+  )
+}
+
+export default App
+
+</code></pre>
+<p>预览效果</p>
+<p><img src="/images/2021-10-29-craftjs-introduction/5.jpg" alt=""></p>
+<p>好了，<code>craft.js</code> 入门篇先更新到这里，后续如果有新的想法了再继续。</p>
+<h2 id="资源来源">资源来源</h2>
+<p><a href="https://craft.js.org/">craft.js</a>
+<a href="https://grapesjs.com/">grape.js</a></p>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/2021/11/06/synology-nas-ready/" class="block">群晖折腾手记一：开篇，正式折腾前的准备</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/2021/10/17/calibre-introduction/" class="block">Calibre 入门指南</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#项目初始化及安装">项目初始化及安装</a></li>
+    <li><a href="#基本概念">基本概念</a>
+      <ul>
+        <li><a href="#组件">组件</a></li>
+        <li><a href="#hook">HOOK</a></li>
+      </ul>
+    </li>
+    <li><a href="#基本使用">基本使用</a></li>
+    <li><a href="#添加组件">添加组件</a></li>
+    <li><a href="#组件抽象">组件抽象</a></li>
+    <li><a href="#组件设置">组件设置</a></li>
+    <li><a href="#编辑器结构序列化">编辑器结构序列化</a></li>
+    <li><a href="#资源来源">资源来源</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">Copyright (c) 2021. All rights reserved. &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
