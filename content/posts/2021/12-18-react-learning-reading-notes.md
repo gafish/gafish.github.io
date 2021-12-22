@@ -85,3 +85,69 @@ console.log(color_lawn.rating);  // 0
 
 纯函数是指，对于相同的输入，必定会得到相同的输出，而且不会有任何副作用、不修改全局变量，纯函数至少需要接收一个参数并且总是返回一个值或者其它函数
 
+编写纯函数三原则：
+
+  - 函数应该至少接收一个参数
+  - 函数应该总是返回一个值或者其它函数
+  - 函数不应该修改或影响任何传入的参数
+
+
+#### 数据转换
+
+当需要从一个数组中移除某个元素时，我们倾向于使用 `Array.filter` 方法替代 `Array.pop` 或 `Array.splice` 方法，因为 `Array.filter` 方法是不可变的。
+
+两个必须熟练掌握的函数：
+
+  - `Array.map`
+  - `Array.reduce`
+
+它们是任何函数式程序员的主要武器，从其它数据源创建一个新的数据集的能力是程序员的必备技能。
+
+`Array.reduce` 方法的几种用法示例(通过 copillot 生成)：
+
+```js
+// 使用 Array.reduce 求最大值
+var numbers = [1, 2, 3, 4, 5];
+var max = numbers.reduce(function(max, number) {
+  return Math.max(max, number);
+}, -Infinity);
+```
+
+```js
+// 使用 Array.reduce 求和
+var numbers = [1, 2, 3, 4, 5];
+var sum = numbers.reduce(function(sum, number) {
+  return sum + number;
+}, 0);
+```
+
+```js
+// 使用 Array.reduce 求组合
+var numbers = [1, 2, 3, 4, 5];
+var combinations = numbers.reduce(function(combinations, number) {
+  return combinations.concat(
+    combinations.map(function(combination) {
+      return combination.concat(number);
+    })
+  );
+}, [[]]);
+```
+
+```js
+// 使用 Array.reduce 将数组转换为对象
+var numbers = [{ name: 'a1', vlaue: 1 }, { name: 'a2', value: 2 }];
+var object = numbers.reduce(function(object, number) {
+  return Object.assign({}, object, { [number.name]: number.value });
+}, {});
+```
+
+```js
+// 使用 Array.reduce 将数组去重
+var numbers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+var unique = numbers.reduce(function(unique, number) {
+  if (unique.indexOf(number) === -1) {
+    unique.push(number);
+  }
+  return unique;
+}, []);
+```
