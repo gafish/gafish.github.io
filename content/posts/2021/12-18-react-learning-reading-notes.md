@@ -151,3 +151,80 @@ var unique = numbers.reduce(function(unique, number) {
   return unique;
 }, []);
 ```
+
+#### 高阶函数
+
+  - 函数作为参数传递
+  - 函数作为返回值返回
+
+`Array.map`、`Array.filter`、`Array.reduce` 等方法都是高阶函数，它们接收一个函数作为参数
+
+`Currying(柯里化)` 是一种将某个操作中已经完成的结果保留，直到其余部分后续也完成后可以一并提供的机制。
+
+```js
+const userLogs = userName => message => {
+  console.log(`${userName}: ${message}`);
+};
+const log = userLogs('John');
+
+log('Hello'); // John: Hello
+log('World'); // John: World
+```
+
+#### 递归
+
+递归是用户创建的函数调用自身的一种技术，一般来说，在解决实际问题涉及到循环时，递归函数可以提供一种替代性方案。
+
+```js
+const countdown = (n, fn) => {
+  if (n <= 0) {
+    fn();
+  } else {
+    countdown(n - 1, fn);
+  }
+}
+```
+
+#### 合成
+
+链式调用是合成技术的一种
+
+合成的目标是：通过整合若干简单函数构造一个更高阶的函数
+
+
+#### 总结
+
+三个简单的规则
+
+- 保持数据的不可变性
+- 确保尽量使用纯函数，只接收一个参数，返回数据或其它函数
+- 尽量使用递归处理循环
+
+
+
+## React
+
+虚拟DOM是由React元素组成的，概念上和HTML类似，不过它们实际上是JavaScript对象，直接访问JavaScript对象比访问DOM API高效的多。
+
+浏览器的DOM是由DOM元素构成的，同样React的DOM是由React元素构成的，一个Reaact元素是对实际DOM元素应该如何表示的具体描述。
+
+一个React元素只是一个JavaScript语法，用来告知React如何构造一个DOM元素。
+
+React元素 `<h1 id="recipe-0" data-type="title">Baked Salmon</h1>` 实际创建的内容
+
+```js
+{
+  $$typeof: Symbol(react.element),
+  type: 'h1',
+  key: null,
+  ref: null,
+  props: {
+    id: 'recipe-0',
+    'data-type': 'title',
+    children: 'Baked Salmon'
+  },
+  _owner: null,
+  _store: {}
+}
+```
+
