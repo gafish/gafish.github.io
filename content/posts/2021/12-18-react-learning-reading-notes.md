@@ -210,6 +210,11 @@ const countdown = (n, fn) => {
 
 一个React元素只是一个JavaScript语法，用来告知React如何构造一个DOM元素。
 
+两种创建React元素的方式：
+
+  - React.createElement(type, props, children)
+  - React.createFactory(type) / React.DOM.type
+
 React元素 `<h1 id="recipe-0" data-type="title">Baked Salmon</h1>` 实际创建的内容
 
 ```js
@@ -227,4 +232,38 @@ React元素 `<h1 id="recipe-0" data-type="title">Baked Salmon</h1>` 实际创建
   _store: {}
 }
 ```
+
+三种创建React组件的方式
+
+  - React.createClass（将废弃）
+  - React.Component
+  - 无状态函数式组件
+
+### 无状态函数式组件
+
+它们是简单的纯函数，所以我们应该在项目开发中尽可能地使用它们。
+
+React开发团队承诺使用它们之后能够在某些方向提高性能，Facebook暗示将来无状态函数式组件将会比类组件更加高效。
+
+
+## React与JSX
+
+`React.createElement(IngredientList, { list: [...] })`
+
+vs
+
+`<IngredientList list={[...]}>`
+
+### jsx使用注意事项
+
+  - 支持组件嵌套
+  - calssName替代class
+  - JavaScript表达式用花括号包裹
+  - 支持求值计算
+  - JSX数组映射
+
+### Babel
+
+Babel的主要功能是转译，它的第一版程序叫6to5，是一款可以将 ES6 转换成 ES5 的工具。该项目于2015年2月正式更名为Babel
+
 
