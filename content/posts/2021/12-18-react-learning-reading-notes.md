@@ -266,4 +266,39 @@ vs
 
 Babel的主要功能是转译，它的第一版程序叫6to5，是一款可以将 ES6 转换成 ES5 的工具。该项目于2015年2月正式更名为Babel
 
+Babel presets 模块
 
+    备注：以年命名的preset已经不再推荐使用，建议使用@babel/preset-env
+
+  - babel-preset-es2015 将ES2015、ES6转换成ES5
+  - babel-preset-es2016 将ES2016转换成ES5
+  - babel-preset-es2017 将ES2017转换成ES5
+  - babel-preset-env 包含前面三个preset，并且支持最新的ES语法
+  - babel-preset-react 将React转换成ES5
+  - babel-preset-stage-0 实验性提议
+  - babel-preset-stage-1 建议
+  - babel-preset-stage-2 草稿
+  - babel-preset-stage-3 候选
+
+### Webpack
+
+一个可以兼容多种不同类型文件的模块绑定器，并且可以将它们转换成单个文件，两个主要优点是模块化和网络性能。
+
+模块化：用户可以将源代码分解成易于使用的部分或模块，特别是对于团队开发来说非常有用。
+
+网络性能：在浏览器中只需载入依赖即可，即bundle，每个脚本标签都会创建http请求，并且每个http请求都会有延迟。将所有依赖项打包成单个文件后，只需发送一次http请求，就能加载所有必须的资源，从而避免了额外的网络延迟。
+
+webpack可以处理的任务
+
+  - 代码转译
+  - 代码拆分
+  - 代码压缩
+  - 特性标记
+  - 热替换(HMR)
+
+使用webpack模块打包工具的好处
+
+  - 模块化
+  - 合成
+  - 效率
+  - 一致性
