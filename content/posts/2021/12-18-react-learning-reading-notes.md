@@ -302,3 +302,7 @@ webpack可以处理的任务
   - 合成
   - 效率
   - 一致性
+
+## Props 和 State
+
+最新的ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的静态属性允许用户在类的内部声明中封装 propTypes 和 defaultProps。
