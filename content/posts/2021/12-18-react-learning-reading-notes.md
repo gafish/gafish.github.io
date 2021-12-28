@@ -1,5 +1,5 @@
 ---
-title: 《React 学习手册》2017版学习笔记
+title: 《React 学习手册》2017版读书笔记
 description: 
 keywords:
  - React 学习手册
@@ -306,3 +306,12 @@ webpack可以处理的任务
 ## Props 和 State
 
 最新的ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的静态属性允许用户在类的内部声明中封装 propTypes 和 defaultProps。
+
+ES6类组件会使用注入的忏悔作为第一个参数调用构造函数，这些属性通过调用super方法最终被传递给了其父类，调用super方法将会初始化组件实例。
+
+## 组件扩展
+
+我们可以将任意JavaScript库与React集成，生命周期函数是其它JavaScript库进入，React库离开的地方，不过我们应该竭力避免添加管理UI的脚本库，这是React的工作。
+
+高阶组件是一种极佳的功能复用方式，并且能够将组件State和生命周期管理的细节封装起来，它允许用户构建更多无状态函数式组件，以便可以一心一意的管理UI。
+
