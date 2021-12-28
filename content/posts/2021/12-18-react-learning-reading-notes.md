@@ -305,4 +305,6 @@ webpack可以处理的任务
 
 ## Props 和 State
 
-最新的ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的静态属性允许用户在类的内部声明中封装 propTypes 和 defaultProps。
+ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的静态属性允许用户在类的内部声明中封装 propTypes 和 defaultProps。
+
+大部分情况下，用户将会希望避免根据属性初始化state变量，因为在使用React组件时，用户希望限制包含state的组件的数量。
