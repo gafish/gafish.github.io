@@ -315,3 +315,5 @@ ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的
 
 高阶组件是一种极佳的功能复用方式，并且能够将组件State和生命周期管理的细节封装起来，它允许用户构建更多无状态函数式组件，以便可以一心一意的管理UI。
 
+在React之外管理State意味着很多不同的事情，用户可以把React和Backbone模型搭配使用，或者其它任意MVC库的模型State，用户可以创建专属于自己的State管理系统，甚至可以使用全局变量，本地存储和Javascript纯文本管理State。在React之外管理State，简单的理解就是不在应用程序中使用React的State或者setState方法。
+
