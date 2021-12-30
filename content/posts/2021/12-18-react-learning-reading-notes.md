@@ -317,3 +317,33 @@ ECMAScript提案中提供了 Class Fields & Static Properties 的支持，类的
 
 在React之外管理State意味着很多不同的事情，用户可以把React和Backbone模型搭配使用，或者其它任意MVC库的模型State，用户可以创建专属于自己的State管理系统，甚至可以使用全局变量，本地存储和Javascript纯文本管理State。在React之外管理State，简单的理解就是不在应用程序中使用React的State或者setState方法。
 
+
+### Flux
+
+Flux是Facebook开发的一种设计模式，旨在保持数据单向流动，在Flux诞生之前，Web开发架构由多种MVC设计模式的变体所主导，Flux是MVC的替代品，是一种完全不同的设计模式，并且与函数编程范式相辅相成。
+
+Flux为我们提供一种Web应用架构，可以把它视为React的有益补充，具体来说，Flux提供了一种方法可以为React创建UI将要用的数据提供支持。
+
+在Flux中应用程序的State数据是存放在React组件外部的Store进行管理的，Store保留或者修改数据，是唯一可以更新Flux视图的办法。
+
+## Redux
+
+Redux是类Flux的脚本库，但它不完全是Flux，它包含Action、Action生成器、Store，以及用于修改State的Action对象。
+
+Redux通过移除Dixpatcher，对Flux的概念进行了一些简化，并使用单个不可变对象表示应用程序的State，Redux还引入了Reducer，它并不是Flux模式中的内容，Reducer是纯函数，它会根据当前的State和Action来返回一个新的State。
+
+### State
+
+在纯React或者Flux应用中，比较推荐的做法是将State尽量存放在少数几个对象中，在Redux中，这是一条规则。
+
+在构建Redux应用时，用户首先需要考虑的事情就是State树，尝试在单个对象中定义State，使用一些占位符数据草拟一个State树的JSON示例是一个非常好的习惯。
+
+### Action
+
+Action是更新Redux应用程序State的唯一方式，Action为我们提供了应该变更哪些内容的指令。
+
+使用一个Javascript常量来代替字符串，Javascript变量中的拼写错误将会导致浏览器抛出异常，将Action定义为常量也使得用户能够充分利用IDE工具的智能提示和代码自动补全功能。常量的使用并不是必需的，但是采用这种编码习惯也不失为一个好主意。
+
+### Reducer
+
+Reducer是一个纯函数，它接受当前的State和Action，并返回一个新的State。
