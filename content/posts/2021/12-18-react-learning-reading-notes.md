@@ -347,3 +347,20 @@ Action是更新Redux应用程序State的唯一方式，Action为我们提供了�
 ### Reducer
 
 Reducer是一个纯函数，它接受当前的State和Action，并返回一个新的State。
+
+### Store
+
+Store是Redux应用程序中保存和管理State的地方，也是通过Store分发ction的形式，唯一的修改State数据的方式。Store会将应用程序的State作为单个对象进行保存。State的变更是通过Reducer来完成的。Store的创建是通过提供一个Reducer和可选的初始State来完成的。
+
+### Action 生成器
+
+Action对象是通过简单的Javascript语法表示的，Action生成器就是返回这类语法格式的函数。
+
+### 中间件
+
+Redux中间件扮演了Store分发管理的角色，在Redux中，中间件是在分发某个Action过程中一系列顺序执行的若干函数构成。
+
+## React-Redux
+
+灵气在组件树中向上和向下传递的过程增加了程序的复杂性，类似Redux这样的库就是为了缓解这一问题而诞生的，为了替代通过双向函数绑定实现组件树上的数据传递，我们可以直接从子组件分发Action来达到更新应用程序的目的。
+
