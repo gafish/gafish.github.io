@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 04 Dec 2021 20:55:25 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 22:52:51 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《React 学习手册》2017版读书笔记</title>
+      <link>/posts/2021/12/18/react-learning-reading-notes/</link>
+      <pubDate>Sat, 18 Dec 2021 22:52:51 +0800</pubDate>
+      
+      <guid>/posts/2021/12/18/react-learning-reading-notes/</guid>
+      <description>Javascript 函数式编程 命令式与声明式 命令式编程的特点是，其代码重点关注的是达成目标的具体过程。 var string = &#39;hello world&#39;; var urlFriendly = &#39;&#39;; for (var i = 0; i &amp;lt; string.length; i++) { if (string[i] === &#39;&#39;) { urlFriendly += &#39;-&#39;; } else { urlFriendly += string[i]</description>
+    </item>
+    
     <item>
       <title>群晖折腾手记六：添加第三方套件源</title>
       <link>/posts/2021/12/04/synology-spk/</link>
