@@ -12,7 +12,6 @@ date: 2022-01-26T16:53:14+08:00
 lastmod: 2022-01-26T16:53:14+08:00
 featuredVideo:
 featuredImage:
-draft: true
 url: /posts/2022/01-26-tauri-app
 ---
 
@@ -240,7 +239,9 @@ $ yarn tauri build
 
 ![](/images/2022-01-26-tauri-app/5.jpg)
 
-至此，我们已经完成了一个简单的 Tauri 应用的开发与构建，后续关于如何构建跨平台的应用，以及如何更新当前应用，我们放到下一篇博客中进行讨论
+至此，我们已经完成了一个简单的 Tauri 应用的开发与构建，文章对应的仓库地址为：[https://github.com/gafish/mac-system-viewer-app](https://github.com/gafish/mac-system-viewer-app)
+
+后续关于如何构建跨平台的应用，以及如何更新当前应用，我们放到下一篇博客中进行讨论
 
 ## 注意事项
 
