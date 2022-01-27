@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright (c) 2021. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 18 Dec 2021 22:52:51 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Jan 2022 16:53:14 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Tauri&#43;React&#43;Tailwind 打造一款简单的Mac工具</title>
+      <link>/posts/2022/01-26-tauri-app/</link>
+      <pubDate>Wed, 26 Jan 2022 16:53:14 +0800</pubDate>
+      
+      <guid>/posts/2022/01-26-tauri-app/</guid>
+      <description>Tauri 是一个可以用前端来写界面的跨平台 Rust GUI 框架，简单的理解就是对标 Electron 的一个类似产品，本文我们将以 Tauri+React+Tailwind 的组合来打造一款简单的Mac系统信息查看工具。 本文所使用</description>
+    </item>
+    
     <item>
       <title>《React 学习手册》2017版读书笔记</title>
       <link>/posts/2021/12/18/react-learning-reading-notes/</link>
