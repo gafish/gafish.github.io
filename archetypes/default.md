@@ -13,5 +13,5 @@ lastmod: {{ .Date }}
 featuredVideo:
 featuredImage:
 draft: true
-url: /posts/2021/
+url: /posts/2022/{{title}}
 ---

@@ -12,7 +12,6 @@ date: 2021-12-18T22:52:51+08:00
 lastmod: 2021-12-18T22:52:51+08:00
 featuredVideo:
 featuredImage:
-draft: true
 url: /posts/2021/12/18/react-learning-reading-notes/
 ---
 
