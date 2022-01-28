@@ -42,4 +42,4 @@ widget:
 
 ## 自我介绍
 
-一个会写 Javascript / CSS / Node.js 的程序员
+一个会写代码的人，完！
